@@ -1,0 +1,101 @@
+name: AAS operator-approved executor
+on:
+  workflow_dispatch:
+    inputs:
+      workflow_id:
+        description: AAS workflow id from the command center
+        required: true
+        type: string
+      source_sha:
+        description: Full commit SHA matching the AAS workflow source
+        required: true
+        type: string
+      config_path:
+        description: Operator-reviewed JSON path in the trusted tooling revision
+        required: true
+        default: integrations/runner/config.json
+        type: string
+      apply:
+        description: Apply configured patches and create LOCAL commits only
+        default: false
+        type: boolean
+      advance:
+        description: Advance verified gates (does not push source)
+        default: false
+        type: boolean
+      all_steps:
+        description: Process subsequent configured steps; requires advance
+        default: false
+        type: boolean
+      upload_artifacts:
+        description: Upload reviewed local patch/log artifacts (disabled by default)
+        default: false
+        type: boolean
+permissions:
+  contents: read
+concurrency:
+  group: aas-executor-${{ inputs.workflow_id }}
+  cancel-in-progress: false
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    # Private-host variant: replace with [self-hosted, linux, aas-private].
+    # Select a protected environment with required reviewers before adding secrets.
+    environment: aas-executor
+    timeout-minutes: 45
+    steps:
+      - name: Check out trusted workflow tooling separately
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.workflow_sha }}
+          path: .aas-tooling
+          persist-credentials: false
+      - name: Check out the exact target source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ inputs.source_sha }}
+          path: source
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      # Android baseline. Remove these three setup steps for a different stack.
+      - uses: actions/setup-java@7a445ee88d4e23b52c33bf736b0d604a5cf98d4d # v4.7.1
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install required Android SDK platform
+        shell: bash
+        run: sdkmanager 'platforms;android-36.1' 'build-tools;36.0.0'
+      - uses: gradle/actions/setup-gradle@ed408507eac070d1f99cc633dbcf757c94c7933a # v4
+        with:
+          gradle-version: '9.3.1'
+      - name: Process pinned source and report actual receipts
+        env:
+          AAS_BASE_URL: ${{ secrets.AAS_BASE_URL }}
+          AAS_RUNNER_KEY: ${{ secrets.AAS_RUNNER_KEY }}
+          AAS_SITES_AUTHORIZATION: ${{ secrets.AAS_SITES_AUTHORIZATION }}
+          AAS_WORKFLOW_ID: ${{ inputs.workflow_id }}
+          AAS_SOURCE_SHA: ${{ inputs.source_sha }}
+          AAS_CONFIG_PATH: ${{ inputs.config_path }}
+          AAS_APPLY: ${{ inputs.apply }}
+          AAS_ADVANCE: ${{ inputs.advance }}
+          AAS_ALL_STEPS: ${{ inputs.all_steps }}
+        shell: bash
+        run: |
+          args=(--repo "$GITHUB_WORKSPACE/source" --config-root "$GITHUB_WORKSPACE/.aas-tooling" --config "$AAS_CONFIG_PATH" --workflow "$AAS_WORKFLOW_ID" --source-revision "$AAS_SOURCE_SHA" --work-dir "$RUNNER_TEMP/aas-execution-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" --runner-id "github-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}")
+          if [ "$AAS_APPLY" = "true" ]; then args+=(--apply); fi
+          if [ "$AAS_ADVANCE" = "true" ]; then args+=(--advance); fi
+          if [ "$AAS_ALL_STEPS" = "true" ]; then args+=(--all); fi
+          node "$GITHUB_WORKSPACE/.aas-tooling/integrations/runner/runner.mjs" "${args[@]}"
+      - name: Retain actual source evidence and local Git commits
+        if: always() && inputs.upload_artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: aas-local-execution-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/aas-execution-${{ github.run_id }}-${{ github.run_attempt }}/artifacts/
+            ${{ runner.temp }}/aas-execution-${{ github.run_id }}-${{ github.run_attempt }}/local-changes.bundle
+          if-no-files-found: warn
+          retention-days: 7

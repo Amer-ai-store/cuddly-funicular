@@ -1,0 +1,15 @@
+@page { size: A4; margin: 17mm 15mm; }
+html { direction: rtl; }
+body { direction: rtl; color: #17243a; background: #fff; font-family: "Noto Sans Arabic", "Noto Naskh Arabic", sans-serif; font-size: 10.5pt; line-height: 1.75; }
+h1, h2, h3 { color: #17304d; line-height: 1.4; page-break-after: avoid; }
+h1 { font-size: 21pt; margin-top: 0; }
+h2 { font-size: 15pt; border-bottom: 1px solid #d7e0ea; padding-bottom: 3px; margin-top: 20px; }
+h3 { font-size: 12pt; }
+p, li { orphans: 3; widows: 3; }
+table { width: 100%; border-collapse: collapse; font-size: 8.2pt; line-height: 1.5; margin: 12px 0; }
+th, td { border: 1px solid #cfd9e5; padding: 5px 7px; vertical-align: top; text-align: right; }
+th { background: #eef3f8; }
+tr { break-inside: avoid; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 0.88em; direction: ltr; unicode-bidi: isolate; }
+a { color: #135a9c; text-decoration: none; }
+strong { color: #102b48; }

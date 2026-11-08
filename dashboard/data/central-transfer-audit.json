@@ -1,0 +1,161 @@
+{
+  "schema": "aas.central.transfer.audit.v1",
+  "verified_date": "2026-11-06",
+  "checked_source_commit": "SOURCE_COMMIT_CHANGING_VERIFY_CI",
+  "central_url": "https://amer-ai-store.github.io/Mohammad-Ahmed-Ghannam/",
+  "canonical_release_evidence": "https://github.com/Amer-ai-store/Mohammad-Ahmed-Ghannam/actions/runs/41757350444",
+  "status_semantics": {
+    "present": "موجود في المصدر والمنشور",
+    "verified": "تم التحقق من المصدر المنشور",
+    "unverified": "لا توجد أدلة كافية عن التشغيل الحي",
+    "pending": "كود قيد المراجعة، لم يدمج",
+    "blocked": "محجوب وفق ضوابط الأمن"
+  },
+  "public_inventory": {
+    "main_native_views": 40,
+    "main_navigation_destinations": 81,
+    "main_groups": 6,
+    "aas_routes": 14,
+    "aas_manifest_files": 17,
+    "aas_files_hash_verified": 17,
+    "aas_files_sha_mismatch": 0,
+    "aas_files_unavailable": 0,
+    "official_agent_definitions": 19,
+    "organizational_agent_profiles": 9,
+    "advisor_interfaces": 1,
+    "jawafa_existing_panes": 17,
+    "trustsoft_published_sections": 12
+  },
+  "source_files": [
+    "dashboard/index.html",
+    "dashboard/aas/integration-manifest.json",
+    "dashboard/aas/official-agent-roster.mjs",
+    "dashboard/aas-roster.html",
+    "dashboard/jawafa-integration.js",
+    "dashboard/trustsoft/app.js",
+    "dashboard/aas-integration.js",
+    "dashboard/luqta-integration.js"
+  ],
+  "sections": [
+    {
+      "id": "central",
+      "title": "القيادة الرئيسية والتنقل",
+      "source_status": "verified",
+      "runtime_status": "unverified",
+      "count": "40 شاشة / 81 رابط تنقل / 6 مجموعات",
+      "evidence": "dashboard/index.html",
+      "note": "بنية التنقل موجودة ومثبتة في ملفات الموقع، ولا يعني ذلك أن كل زر متصل بخدمة حية."
+    },
+    {
+      "id": "aas",
+      "title": "AAS-CC وAAS-AW",
+      "source_status": "verified",
+      "runtime_status": "unverified",
+      "count": "14 قسمًا / 17 ملفًا متطابقًا SHA-256",
+      "evidence": "dashboard/aas/integration-manifest.json",
+      "note": "تحققت بصمات SHA-256 لجميع ملفات العميل الـ17. يتطلب نقل مهام D1 والموافقات جلسة مالك؛ الطلب المجهول إلى API الخاص أعاد HTTP 401، وهذا لا يثبت القراءة المصرح بها."
+    },
+    {
+      "id": "agents",
+      "title": "الوكلاء والمستشار",
+      "source_status": "present",
+      "runtime_status": "unverified",
+      "count": "19 وكيلًا رسميًا / 9 ملفات تنظيمية / مستشار 1",
+      "evidence": "dashboard/aas-roster.html",
+      "note": "تعريفات المصدر ليست تشغيل نماذج أو استلامًا للمهام. لا يوجد إقرار SENT/READ/ACK حي لجميعها."
+    },
+    {
+      "id": "jawafa",
+      "title": "شاشات جوافة والمهام",
+      "source_status": "present",
+      "runtime_status": "unverified",
+      "count": "17 واجهة مرتبطة بالتنقل",
+      "evidence": "dashboard/jawafa-integration.js",
+      "note": "أُضيفت مساحة التحقيق الموسع على GitHub Pages بفهرس موضوعات عامة فقط. تقارير المستندات الأصلية وبيانات القيود تحتاج جلسة مالك وبوابة HTTPS داخل الخادم؛ مصدر حي للمعاملات غير مثبت."
+    },
+    {
+      "id": "trustsoft",
+      "title": "لوحة TrustSoft",
+      "source_status": "present",
+      "runtime_status": "pending",
+      "count": "12 قسمًا في النسخة العامة",
+      "evidence": "dashboard/trustsoft/app.js",
+      "note": "وجدنا في تطبيق TrustSoft السابق عبر AppDeploy وظيفتي قارئ صور المستندات وواجهة الاتصال الموقّع، بينما لا توجد أدلة على تكافؤهما مع الواجهة المنشورة ذات 12 قسمًا. توسعة PR #148 ما زالت غير مدمجة."
+    },
+    {
+      "id": "luqta",
+      "title": "تطبيق المتجر لُقطة",
+      "source_status": "present",
+      "runtime_status": "unverified",
+      "count": "تنقل ووظائف خادم داخل الواجهة",
+      "evidence": "dashboard/luqta-integration.js",
+      "note": "وجود الواجهة لا يثبت أن الجسر الخاص وتطبيق Android والبيانات الحية متطابقة."
+    },
+    {
+      "id": "audit15",
+      "title": "التحقيق التاريخي للجداول الـ15",
+      "source_status": "pending",
+      "runtime_status": "blocked",
+      "count": "15 جدولًا - تقرير محمي على الخادم",
+      "evidence": "dashboard/jawafa-investigation.js",
+      "note": "مساحة تحقيق 26 محورًا منشورة للبيانات الوصفية؛ تفاصيل الجداول التاريخية الحية ما تزال في PR #148/جسر خاص، ولم تُختبر مصادقة المالك أو قبول GATE-15."
+    },
+    {
+      "id": "acceptance",
+      "title": "اختبارات E2E والصلاحيات والتسليم",
+      "source_status": "present",
+      "runtime_status": "blocked",
+      "count": "Issue #102 / PR #148",
+      "evidence": "dashboard/release-verification.mjs",
+      "note": "قبول GATE-15، مصادقة المالك الحقيقية، حساب SQL الأقل صلاحية، المراجعة الأمنية المستقلة غير مثبتة للإصدار المطوّر."
+    }
+  ],
+  "links": {
+    "pr148": "https://github.com/Amer-ai-store/Mohammad-Ahmed-Ghannam/pull/148",
+    "issue102": "https://github.com/Amer-ai-store/Mohammad-Ahmed-Ghannam/issues/102",
+    "issue149": "https://github.com/Amer-ai-store/Mohammad-Ahmed-Ghannam/issues/149"
+  },
+  "scope": "PUBLIC_METADATA_ONLY_NO_PRIVATE_DB_ROWS_NO_SECRETS",
+  "limitations": "فحص SHA-256 يثبت تطابق ملفات النشر فقط، وليس اكتمال نقل سجلات D1، أو تشغيل نماذج الوكلاء، أو اتصال SQL.",
+  "legacy_source_gaps": [
+    {
+      "id": "trustsoft-document-reader",
+      "title": "قارئ مستندات TrustSoft القديم",
+      "source_app": "trustcontrol-jawafa-h3gws3",
+      "source_modules": [
+        "src/DocumentReader.tsx",
+        "src/LiveConnection.tsx"
+      ],
+      "source_features": [
+        "قراءة صور المستندات بموافقة",
+        "مراجعة الحقول وتصدير CSV",
+        "فحص اتصال موصل موقّع"
+      ],
+      "migration_status": "NOT_VERIFIED_IN_CENTRAL",
+      "risk": "لا تنقل رفع مستندات مالية إلى الواجهة العامة أو خدمة AI دون موافقة وصلاحيات محمية."
+    },
+    {
+      "id": "guava-legacy-tasks",
+      "title": "سجل مهام جوافة السابق",
+      "source_app": "guava-forensic-command-center-dhv9z9",
+      "source_modules": [
+        "src/main.ts",
+        "backend/index.ts"
+      ],
+      "source_features": [
+        "مهام بحالات متعددة",
+        "مراجع أدلة",
+        "خدمة تقرأ قاعدة تطبيق محمية"
+      ],
+      "migration_status": "OPERATIONAL_DATA_NOT_VERIFIED_MIGRATED",
+      "risk": "عدد السجلات الحالي ومطابقته غير مثبتين؛ لا تدمج أو تستبدل بيانات التشغيل دون نسخ ومطابقة."
+    }
+  ],
+  "private_connection_checks": {
+    "scope": "ANONYMOUS_NEGATIVE_TEST_ONLY",
+    "private_aas_state_http_status": 401,
+    "owner_authenticated_read_verified": false,
+    "agent_runtime_verified": false,
+    "jawafa_sql_e2e_verified": false
+  }
+}

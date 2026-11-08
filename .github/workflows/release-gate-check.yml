@@ -1,0 +1,36 @@
+name: Release gate check
+# Shows which condition of the publish job in release.yml would pass for the current main commit, so a skipped
+# publish can be explained without guessing. Read-only: it changes nothing and needs no secrets. Values printed are
+# repository variables (not secrets) and the commit SHA; for the signing key it only says whether it is saved.
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Compare the publish conditions with this commit
+        shell: bash
+        env:
+          REF: ${{ github.ref }}
+          SHA: ${{ github.sha }}
+          ENABLED: ${{ vars.RELEASE_PUBLISHING_ENABLED }}
+          APPROVED: ${{ vars.RELEASE_APPROVED_SHA }}
+          HAS_KEY: ${{ secrets.SIGNING_KEYSTORE_BASE64 != '' }}
+        run: |
+          set -euo pipefail
+          row() { if [ "$2" = yes ]; then echo "| $1 | ✅ |"; else echo "| $1 | ❌ $3 |"; fi; }
+          approved_trim="$(printf '%s' "$APPROVED" | tr -d '[:space:]')"
+          {
+            echo "### Release gate check — $SHA"
+            echo "| Condition | Result |"
+            echo "|---|---|"
+            row "Runs on main" "$([ "$REF" = refs/heads/main ] && echo yes || echo no)" "ref is $REF"
+            row "RELEASE_PUBLISHING_ENABLED is true" "$([ "$ENABLED" = true ] && echo yes || echo no)" "value is '${ENABLED}'"
+            row "RELEASE_APPROVED_SHA equals this commit" "$([ "$APPROVED" = "$SHA" ] && echo yes || echo no)" "value is '${APPROVED}' (${#APPROVED} characters)$([ "$approved_trim" = "$SHA" ] && [ "$APPROVED" != "$SHA" ] && echo '; it has extra spaces or a line break')"
+            row "Stable signing key saved" "$([ "$HAS_KEY" = true ] && echo yes || echo no)" "SIGNING_KEYSTORE_BASE64 is empty"
+            echo
+            echo "The production approval itself cannot be checked here; it is asked for when the publish job starts."
+          } >> "$GITHUB_STEP_SUMMARY"
+          cat "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>جوافة ONE AI | مركز القيادة</title>
+<meta name="description" content="JAWAFA ONE AI — منصة قيادة موحدة متعددة الشركات للأسواق والمطاعم والأفران والمستودعات. مجانية بلا رسوم ولا عمولة.">
+<meta name="theme-color" content="#05080a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>try{const t=localStorage.getItem("jawafa-one-theme");document.documentElement.dataset.theme=t||"dark";const l=localStorage.getItem("jawafa-one-lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}}catch{}</script>
+</head>
+<body>
+<div class="shell">
+  <aside class="side" id="side" aria-label="القائمة الرئيسية">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lf" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#16a34a"/><stop offset="1" stop-color="#4ade80"/></linearGradient></defs><path d="M10 54C10 26 28 8 56 8c0 30-18 46-46 46z" fill="url(#lf)"/><path d="M14 50C26 36 36 26 50 14" stroke="#05200f" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      <div><b data-i18n="brand">جوافة</b><small>JAWAFA ONE AI</small></div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="saas-card"><b data-i18n="saasTitle">مجانية لكل صاحب مصلحة</b><p class="small" style="margin:.3rem 0 0" data-i18n="saasBody">بلا رسوم ولا عمولة. كل شركة معزولة ببياناتها. الاشتراك الوحيد اختياري: Premium Plus.</p></div>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <button class="menu-btn ghost" id="menu-btn" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <div class="search" role="search">
+        <span class="ico" aria-hidden="true">⌕</span>
+        <label class="sr" for="q">بحث</label>
+        <input id="q" type="search" placeholder="بحث في النظام..." autocomplete="off" aria-controls="q-results">
+        <kbd class="hide-m">Ctrl K</kbd>
+        <div class="results" id="q-results" hidden></div>
+      </div>
+      <div class="grow"></div>
+      <div class="company-pill" id="company-pill" hidden>
+        <span aria-hidden="true">🏢</span>
+        <label class="sr" for="company-select">الشركة</label>
+        <select id="company-select"></select>
+      </div>
+      <button class="ghost" id="lang-btn" aria-label="Language">EN</button>
+      <button class="ghost" id="theme-btn" aria-label="الوضع الليلي/النهاري">☀</button>
+      <div class="user" id="user-box"></div>
+    </header>
+
+    <main class="content" id="content">
+      <div id="banner"></div>
+      <!-- Views are rendered by app.js into these sections. -->
+      <section class="view" data-view="home"></section>
+      <section class="view" data-view="sales" hidden></section>
+      <section class="view" data-view="inventory" hidden></section>
+      <section class="view" data-view="finance" hidden></section>
+      <section class="view" data-view="investigations" hidden></section>
+      <section class="view" data-view="maps" hidden></section>
+      <section class="view" data-view="assistant" hidden></section>
+      <section class="view" data-view="agents" hidden></section>
+      <section class="view" data-view="connections" hidden></section>
+      <section class="view" data-view="company" hidden></section>
+      <section class="view" data-view="members" hidden></section>
+      <section class="view" data-view="branches" hidden></section>
+      <section class="view" data-view="audit" hidden></section>
+      <section class="view" data-view="plans" hidden></section>
+    </main>
+
+    <footer class="statusbar" role="status" aria-live="polite">
+      <span id="status-conn">حالة الاتصال: جارٍ الفحص...</span>
+      <span id="status-data"></span>
+      <a href="../index.html" data-i18n="legacy">مركز القيادة السابق (جميع الوحدات الحالية)</a>
+    </footer>
+  </div>
+</div>
+<nav class="bottom-nav" id="bottom-nav" aria-label="تنقل سريع"></nav>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="../firebase-config.js"></script>
+<script src="core.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "adapter": "sqlite",
+  "bridgeId": "bridge-REPLACE_WITH_ID_FROM_AAS",
+  "databasePath": "/var/lib/amer/store.sqlite",
+  "backupDirectory": "/var/backups/aas-sqlite",
+  "readTables": [
+    { "name": "products", "columns": ["id", "name", "price", "stock"], "limit": 25 }
+  ],
+  "writableTables": [
+    { "name": "products", "columns": ["name", "price", "stock"], "primaryKey": ["id"] }
+  ]
+}

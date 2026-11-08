@@ -1,0 +1,16 @@
+{
+  "name": "JAWAFA ONE AI — مركز القيادة",
+  "short_name": "جوافة ONE",
+  "description": "منصة قيادة موحدة متعددة الشركات — مجانية بلا رسوم ولا عمولة.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#05080a",
+  "theme_color": "#05080a",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

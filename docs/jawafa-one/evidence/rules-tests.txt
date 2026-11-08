@@ -1,0 +1,20 @@
+# ran 2026-11-06T18:48:25Z · Firestore emulator
+ok 1 - TEN-01 a user can create a company only as its sole owner
+ok 2 - TEN-02 company A data is not readable or writable by company B owner (API level)
+ok 3 - TEN-03 unauthenticated access is denied everywhere
+ok 4 - TEN-04 company listing returns only the caller's companies
+ok 5 - RBAC-01 accountant writes data, auditor and employee are read only
+ok 6 - RBAC-02 only owner / chairman / general manager manage members; ownership cannot move
+ok 7 - RBAC-03 a role value of "owner" in roles grants nothing beyond member rights
+ok 8 - INV-01 invitation flow: manager invites, only the addressed email can join with that role
+ok 9 - INV-02 a member can leave; the owner cannot be removed
+ok 10 - MSG-01 agent messages: queued as self, forward-only status, immutable body, no delete
+ok 11 - AUD-01 audit log is append-only
+ok 12 - SOC-01 social links accept only the matching platform host over https
+ok 13 - STORE-01 Android live-store collections stay readable only by the original owner
+ok 14 - PROF-01 profiles are private to their user
+ok 15 - PLAN-01 companies start free and no client can upgrade itself to Premium Plus
+ok 16 - BR-01 branches: writers add validated branches, read-only roles and other companies cannot
+# tests 16
+# pass 16
+# fail 0

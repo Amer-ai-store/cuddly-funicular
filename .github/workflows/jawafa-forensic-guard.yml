@@ -1,0 +1,43 @@
+name: Build standalone Jawafa Forensic Guard
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/jawafa-forensic-guard/**'
+      - '.github/workflows/jawafa-forensic-guard.yml'
+  pull_request:
+    paths:
+      - 'tools/jawafa-forensic-guard/**'
+      - '.github/workflows/jawafa-forensic-guard.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-readonly-guard:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Compile stand-alone executable (no SQL drivers)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $source = (Resolve-Path 'tools/jawafa-forensic-guard/Program.cs').Path
+          $output = Join-Path (Resolve-Path 'tools/jawafa-forensic-guard').Path 'JawafaForensicGuard.exe'
+          & "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:exe "/out:$output" /reference:System.Web.Extensions.dll $source
+          if ($LASTEXITCODE -ne 0) { throw "Compilation failed" }
+      - name: Verify read-only policy, CSV parser and binary SHA256
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $exe = 'tools/jawafa-forensic-guard/JawafaForensicGuard.exe'
+          & $exe self-test
+          if ($LASTEXITCODE -ne 0) { throw "Read-only self test failed" }
+          Get-FileHash $exe -Algorithm SHA256 | Format-Table
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: jawafa-forensic-guard-windows
+          path: tools/jawafa-forensic-guard/JawafaForensicGuard.exe
+          retention-days: 30

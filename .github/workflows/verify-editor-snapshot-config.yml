@@ -1,0 +1,56 @@
+name: Verify editor and snapshot configuration
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.vscode/launch.json'
+      - '.snapshots/config.json'
+      - '.github/workflows/verify-editor-snapshot-config.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  config-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout PR files (no persisted token)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Validate JSONC and snapshot exclusions (read-only)
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          # VS Code launch.json permits full-line comments. Do not strip
+          # URLs inside JSON strings when reading this configuration.
+          launch_text = Path('.vscode/launch.json').read_text(encoding='utf-8')
+          launch_json = '\n'.join(
+              line for line in launch_text.splitlines()
+              if not line.lstrip().startswith('//')
+          )
+          launch = json.loads(launch_json)
+          assert launch['version'] == '0.2.0', 'Unexpected launch schema version'
+          configs = launch['configurations']
+          assert isinstance(configs, list) and configs, 'Missing debug configurations'
+          names = [config['name'] for config in configs]
+          assert len(names) == len(set(names)), 'Duplicate debug configuration name'
+          assert names.count('Attach to Chrome') == 1, 'Chrome attach duplicated or absent'
+
+          snapshots = json.loads(Path('.snapshots/config.json').read_text(encoding='utf-8'))
+          included = snapshots['included_patterns']
+          excluded = snapshots['excluded_patterns']
+          assert isinstance(included, list) and isinstance(excluded, list)
+          assert len(included) == len(set(included)), 'Duplicate include pattern'
+          assert len(excluded) == len(set(excluded)), 'Duplicate exclude pattern'
+          assert not set(included).intersection(excluded), 'Include/exclude conflict'
+          assert '.npmrc' in excluded and '.npmrc' not in included, '.npmrc could enter snapshots'
+          assert '.env' in excluded and '.env.*' in excluded, 'Environment files are not excluded'
+          print('PASS: launch JSONC parses, debug names are unique, snapshot patterns are consistent.')
+          print('LIMIT: static checks only; VS Code debugging and generated snapshot content not exercised.')
+          PY

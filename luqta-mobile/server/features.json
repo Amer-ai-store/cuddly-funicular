@@ -1,0 +1,1720 @@
+{
+ "version": 1,
+ "total": 125,
+ "areas": [
+  {
+   "id": "accounts",
+   "title": "الحسابات والخصوصية",
+   "titleEn": "Accounts & privacy"
+  },
+  {
+   "id": "catalog",
+   "title": "الكتالوج والبحث",
+   "titleEn": "Catalog & search"
+  },
+  {
+   "id": "shopping",
+   "title": "التسوق والدفع",
+   "titleEn": "Shopping & checkout"
+  },
+  {
+   "id": "orders",
+   "title": "الطلبات",
+   "titleEn": "Orders"
+  },
+  {
+   "id": "loyalty",
+   "title": "الولاء والعروض",
+   "titleEn": "Loyalty & offers"
+  },
+  {
+   "id": "ai",
+   "title": "المساعد الذكي",
+   "titleEn": "Smart assistant"
+  },
+  {
+   "id": "robot",
+   "title": "الشخصية المتحركة",
+   "titleEn": "Animated character"
+  },
+  {
+   "id": "experience",
+   "title": "التجربة ثلاثية الأبعاد والطازج",
+   "titleEn": "3D, AR & freshness"
+  },
+  {
+   "id": "delivery",
+   "title": "التوصيل",
+   "titleEn": "Delivery"
+  },
+  {
+   "id": "support",
+   "title": "الدعم",
+   "titleEn": "Support"
+  },
+  {
+   "id": "admin",
+   "title": "الإدارة والتاجر",
+   "titleEn": "Admin & merchant"
+  },
+  {
+   "id": "sync",
+   "title": "المزامنة المركزية",
+   "titleEn": "Central sync"
+  },
+  {
+   "id": "platform",
+   "title": "المنصة",
+   "titleEn": "Platform"
+  }
+ ],
+ "features": [
+  {
+   "id": "L001",
+   "area": "accounts",
+   "title": "التسجيل والدخول والخروج",
+   "titleEn": "Register, sign in and sign out",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/login",
+   "api": "POST /api/auth/login",
+   "dashboard": "users"
+  },
+  {
+   "id": "L002",
+   "area": "accounts",
+   "title": "جلسة آمنة مشفرة على الجهاز",
+   "titleEn": "Secure on-device session",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/profile",
+   "api": "GET /api/auth/me",
+   "dashboard": null
+  },
+  {
+   "id": "L003",
+   "area": "accounts",
+   "title": "رمز استرداد الحساب",
+   "titleEn": "Account recovery code",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/recover-account",
+   "api": "POST /api/auth/recover",
+   "dashboard": null
+  },
+  {
+   "id": "L004",
+   "area": "accounts",
+   "title": "تغيير كلمة المرور من التطبيق",
+   "titleEn": "Change password in the app",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/privacy",
+   "api": "POST /api/auth/change-password",
+   "dashboard": null
+  },
+  {
+   "id": "L005",
+   "area": "accounts",
+   "title": "حذف الحساب مع حماية السجلات المالية",
+   "titleEn": "Delete account, keep financial records",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/delete-account",
+   "api": "DELETE /api/auth/me",
+   "dashboard": null
+  },
+  {
+   "id": "L006",
+   "area": "accounts",
+   "title": "تصدير بياناتي",
+   "titleEn": "Export my data",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/privacy",
+   "api": "GET /api/me/export",
+   "dashboard": null
+  },
+  {
+   "id": "L007",
+   "area": "accounts",
+   "title": "الأجهزة والجلسات وإنهاؤها",
+   "titleEn": "Signed-in devices and revoking them",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/privacy",
+   "api": "GET /api/me/sessions",
+   "dashboard": null
+  },
+  {
+   "id": "L008",
+   "area": "accounts",
+   "title": "تفضيلات الخصوصية",
+   "titleEn": "Privacy preferences",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/privacy",
+   "api": "PATCH /api/me/preferences",
+   "dashboard": null
+  },
+  {
+   "id": "L009",
+   "area": "accounts",
+   "title": "الملف الشخصي (الهاتف والصورة)",
+   "titleEn": "Profile (phone, avatar)",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/account",
+   "api": "PATCH /api/me/profile",
+   "dashboard": null
+  },
+  {
+   "id": "L010",
+   "area": "accounts",
+   "title": "عناوين متعددة مع الخريطة والحي والمبنى",
+   "titleEn": "Multiple addresses with map, district and building",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/addresses",
+   "api": "POST /api/addresses",
+   "dashboard": null
+  },
+  {
+   "id": "L011",
+   "area": "accounts",
+   "title": "حسابات التجار (البائعون)",
+   "titleEn": "Merchant (vendor) accounts",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/vendor",
+   "api": "GET /api/vendor/me",
+   "dashboard": "vendors"
+  },
+  {
+   "id": "L012",
+   "area": "accounts",
+   "title": "حماية الدخول من المحاولات المتكررة",
+   "titleEn": "Sign-in rate limiting",
+   "surfaces": [
+    "server"
+   ],
+   "app": null,
+   "api": "POST /api/auth/login",
+   "dashboard": null
+  },
+  {
+   "id": "L013",
+   "area": "catalog",
+   "title": "كتالوج من قاعدة بيانات المتجر",
+   "titleEn": "Catalog from the store database",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/explore",
+   "api": "GET /api/products",
+   "dashboard": "products"
+  },
+  {
+   "id": "L014",
+   "area": "catalog",
+   "title": "بحث عربي ذكي مع تصحيح الأخطاء",
+   "titleEn": "Arabic-aware search with typo tolerance",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/explore",
+   "api": "GET /api/search",
+   "dashboard": null
+  },
+  {
+   "id": "L015",
+   "area": "catalog",
+   "title": "تصفية بالسعر والتقييم والتوفر",
+   "titleEn": "Filters by price, rating and availability",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/explore",
+   "api": "GET /api/search",
+   "dashboard": null
+  },
+  {
+   "id": "L016",
+   "area": "catalog",
+   "title": "ترتيب بالسعر والتقييم والأحدث والأكثر طلبًا",
+   "titleEn": "Sort by price, rating, newest, popular",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/explore",
+   "api": "GET /api/search",
+   "dashboard": null
+  },
+  {
+   "id": "L017",
+   "area": "catalog",
+   "title": "أقسام الكتالوج وإدارتها",
+   "titleEn": "Catalog categories and their management",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/",
+   "api": "GET /api/categories",
+   "dashboard": "categories"
+  },
+  {
+   "id": "L018",
+   "area": "catalog",
+   "title": "معرض صور وفيديو للمنتج",
+   "titleEn": "Product gallery and video",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/product/[id]",
+   "api": "GET /api/products/:id",
+   "dashboard": "products"
+  },
+  {
+   "id": "L019",
+   "area": "catalog",
+   "title": "المقاسات والألوان (المتغيرات)",
+   "titleEn": "Sizes and colours (variants)",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/product/[id]",
+   "api": "GET /api/products/:id",
+   "dashboard": "products"
+  },
+  {
+   "id": "L020",
+   "area": "catalog",
+   "title": "جدول المواصفات",
+   "titleEn": "Specifications table",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/product/[id]",
+   "api": "GET /api/products/:id",
+   "dashboard": "products"
+  },
+  {
+   "id": "L021",
+   "area": "catalog",
+   "title": "مخزون لكل فرع واختيار الفرع",
+   "titleEn": "Per-branch stock and branch picker",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/explore",
+   "api": "GET /api/branches/:id/stock",
+   "dashboard": "branches"
+  },
+  {
+   "id": "L022",
+   "area": "catalog",
+   "title": "سجل البحث والاقتراحات",
+   "titleEn": "Search history and suggestions",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/explore",
+   "api": "GET /api/search/suggest",
+   "dashboard": null
+  },
+  {
+   "id": "L023",
+   "area": "catalog",
+   "title": "البحث الصوتي",
+   "titleEn": "Voice search",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/explore",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L024",
+   "area": "catalog",
+   "title": "البحث بالباركود",
+   "titleEn": "Barcode search",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/explore",
+   "api": "GET /api/products/barcode/:code",
+   "dashboard": null
+  },
+  {
+   "id": "L025",
+   "area": "catalog",
+   "title": "البحث بالصورة (اللون الغالب)",
+   "titleEn": "Image search by dominant colour",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/explore",
+   "api": "POST /api/search/image",
+   "dashboard": null
+  },
+  {
+   "id": "L026",
+   "area": "catalog",
+   "title": "مشاركة المنتج",
+   "titleEn": "Share a product",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/product/[id]",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L027",
+   "area": "catalog",
+   "title": "المنتجات التي شاهدتها مؤخرًا",
+   "titleEn": "Recently viewed",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L028",
+   "area": "catalog",
+   "title": "تقييمات موثقة بعد الشراء",
+   "titleEn": "Verified reviews after purchase",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/product/[id]",
+   "api": "POST /api/products/:id/reviews",
+   "dashboard": null
+  },
+  {
+   "id": "L029",
+   "area": "catalog",
+   "title": "أسئلة وأجوبة المنتج",
+   "titleEn": "Product questions and answers",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/product/[id]",
+   "api": "GET /api/products/:id/questions",
+   "dashboard": "questions"
+  },
+  {
+   "id": "L030",
+   "area": "catalog",
+   "title": "تنبيهات انخفاض السعر وعودة المخزون",
+   "titleEn": "Price-drop and back-in-stock alerts",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/product/[id]",
+   "api": "POST /api/products/:id/alerts",
+   "dashboard": null
+  },
+  {
+   "id": "L031",
+   "area": "shopping",
+   "title": "مفضلة متزامنة مع الحساب",
+   "titleEn": "Favourites synced with the account",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/favorites",
+   "api": "PUT /api/wishlist",
+   "dashboard": null
+  },
+  {
+   "id": "L032",
+   "area": "shopping",
+   "title": "مقارنة المنتجات",
+   "titleEn": "Compare products",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/favorites",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L033",
+   "area": "shopping",
+   "title": "قوائم تسوق مخصصة",
+   "titleEn": "Custom shopping lists",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/lists",
+   "api": "POST /api/lists",
+   "dashboard": null
+  },
+  {
+   "id": "L034",
+   "area": "shopping",
+   "title": "قائمة عائلية مشتركة برمز",
+   "titleEn": "Shared family list with a code",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/lists",
+   "api": "POST /api/lists/join",
+   "dashboard": null
+  },
+  {
+   "id": "L035",
+   "area": "shopping",
+   "title": "سلة المشتريات",
+   "titleEn": "Shopping cart",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/cart",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L036",
+   "area": "shopping",
+   "title": "إعادة الطلب بنقرة",
+   "titleEn": "One-tap reorder",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/orders",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L037",
+   "area": "shopping",
+   "title": "حفظ لوقت لاحق",
+   "titleEn": "Save for later",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/cart",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L038",
+   "area": "shopping",
+   "title": "تسعير من الخادم لا من الجهاز",
+   "titleEn": "Server-side pricing",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/checkout/quote",
+   "dashboard": null
+  },
+  {
+   "id": "L039",
+   "area": "shopping",
+   "title": "رموز الخصم",
+   "titleEn": "Discount codes",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/cart",
+   "api": "POST /api/coupons/validate",
+   "dashboard": "coupons"
+  },
+  {
+   "id": "L040",
+   "area": "shopping",
+   "title": "رسوم توصيل حسب المنطقة",
+   "titleEn": "Delivery fee by zone",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/checkout",
+   "api": "GET /api/delivery/zones",
+   "dashboard": "zones"
+  },
+  {
+   "id": "L041",
+   "area": "shopping",
+   "title": "مواعيد توصيل بسعة محددة",
+   "titleEn": "Delivery time slots with capacity",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/checkout",
+   "api": "GET /api/delivery/slots",
+   "dashboard": "zones"
+  },
+  {
+   "id": "L042",
+   "area": "shopping",
+   "title": "ملاحظات التوصيل",
+   "titleEn": "Delivery notes",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/orders",
+   "dashboard": null
+  },
+  {
+   "id": "L043",
+   "area": "shopping",
+   "title": "مراجعة الطلب والموافقة على الشروط",
+   "titleEn": "Order review with terms",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/orders",
+   "dashboard": null
+  },
+  {
+   "id": "L044",
+   "area": "shopping",
+   "title": "الدفع عند الاستلام",
+   "titleEn": "Cash on delivery",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/orders",
+   "dashboard": null
+  },
+  {
+   "id": "L045",
+   "area": "shopping",
+   "title": "الدفع من المحفظة",
+   "titleEn": "Wallet payment",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/orders",
+   "dashboard": null
+  },
+  {
+   "id": "L046",
+   "area": "shopping",
+   "title": "الدفع بالبطاقة (وضع تجريبي آمن)",
+   "titleEn": "Card payment (safe sandbox)",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/payments/card/tokenize",
+   "dashboard": null
+  },
+  {
+   "id": "L047",
+   "area": "shopping",
+   "title": "تغليف الهدية ورسالة",
+   "titleEn": "Gift wrap and message",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/orders",
+   "dashboard": null
+  },
+  {
+   "id": "L048",
+   "area": "shopping",
+   "title": "بطاقات الهدايا وشحن المحفظة",
+   "titleEn": "Gift cards topping up the wallet",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/wallet",
+   "api": "POST /api/gift-cards/redeem",
+   "dashboard": "giftcards"
+  },
+  {
+   "id": "L049",
+   "area": "shopping",
+   "title": "منع تكرار الطلب",
+   "titleEn": "Duplicate-order protection",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/checkout",
+   "api": "POST /api/orders",
+   "dashboard": null
+  },
+  {
+   "id": "L050",
+   "area": "shopping",
+   "title": "اشترِ الآن",
+   "titleEn": "Buy now",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/product/[id]",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L051",
+   "area": "orders",
+   "title": "سجل الطلبات",
+   "titleEn": "Order history",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/orders",
+   "api": "GET /api/orders",
+   "dashboard": null
+  },
+  {
+   "id": "L052",
+   "area": "orders",
+   "title": "تبويبات الحالية والسابقة والمرتجعات",
+   "titleEn": "Current, previous and returns tabs",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/orders",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L053",
+   "area": "orders",
+   "title": "الخط الزمني لمراحل الطلب",
+   "titleEn": "Order timeline",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/tracking/[id]",
+   "api": "GET /api/orders/:id/tracking",
+   "dashboard": null
+  },
+  {
+   "id": "L054",
+   "area": "orders",
+   "title": "خريطة حية مع الوقت المتوقع",
+   "titleEn": "Live map with ETA",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/tracking/[id]",
+   "api": "GET /api/orders/:id/tracking",
+   "dashboard": null
+  },
+  {
+   "id": "L055",
+   "area": "orders",
+   "title": "إلغاء الطلب",
+   "titleEn": "Cancel an order",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/order/[id]",
+   "api": "POST /api/orders/:id/cancel",
+   "dashboard": null
+  },
+  {
+   "id": "L056",
+   "area": "orders",
+   "title": "إرجاع منتجات محددة مع صورة",
+   "titleEn": "Return selected items with a photo",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/returns",
+   "api": "POST /api/orders/:id/return-request",
+   "dashboard": "returns"
+  },
+  {
+   "id": "L057",
+   "area": "orders",
+   "title": "استرداد المرتجع إلى المحفظة",
+   "titleEn": "Refund returns to the wallet",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/wallet",
+   "api": "PATCH /api/admin/returns/:id",
+   "dashboard": "returns"
+  },
+  {
+   "id": "L058",
+   "area": "orders",
+   "title": "الفاتورة",
+   "titleEn": "Invoice",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/invoice/[id]",
+   "api": "GET /api/orders/:id/invoice",
+   "dashboard": "orders"
+  },
+  {
+   "id": "L059",
+   "area": "orders",
+   "title": "تقييم الطلب والسائق",
+   "titleEn": "Rate the order and the driver",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/order/[id]",
+   "api": "POST /api/orders/:id/rating",
+   "dashboard": "reports"
+  },
+  {
+   "id": "L060",
+   "area": "orders",
+   "title": "رمز التسليم لإثبات الاستلام",
+   "titleEn": "Delivery code as proof of delivery",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/order/[id]",
+   "api": "GET /api/orders/:id/delivery-code",
+   "dashboard": null
+  },
+  {
+   "id": "L061",
+   "area": "loyalty",
+   "title": "كسب النقاط بعد الاستلام",
+   "titleEn": "Earn points after delivery",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/rewards",
+   "api": "GET /api/rewards",
+   "dashboard": null
+  },
+  {
+   "id": "L062",
+   "area": "loyalty",
+   "title": "استبدال النقاط برصيد",
+   "titleEn": "Redeem points for credit",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/rewards",
+   "api": "POST /api/rewards/redeem",
+   "dashboard": null
+  },
+  {
+   "id": "L063",
+   "area": "loyalty",
+   "title": "تسجيل الحضور اليومي",
+   "titleEn": "Daily check-in",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/rewards",
+   "api": "POST /api/rewards/check-in",
+   "dashboard": null
+  },
+  {
+   "id": "L064",
+   "area": "loyalty",
+   "title": "الشارات والإنجازات",
+   "titleEn": "Badges and achievements",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/rewards",
+   "api": "GET /api/me/badges",
+   "dashboard": null
+  },
+  {
+   "id": "L065",
+   "area": "loyalty",
+   "title": "دعوة الأصدقاء",
+   "titleEn": "Referrals",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/rewards",
+   "api": "POST /api/referrals/apply",
+   "dashboard": null
+  },
+  {
+   "id": "L066",
+   "area": "loyalty",
+   "title": "مستويات العضوية ومزاياها",
+   "titleEn": "Membership tiers and benefits",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/rewards",
+   "api": "GET /api/rewards/tier",
+   "dashboard": null
+  },
+  {
+   "id": "L067",
+   "area": "loyalty",
+   "title": "العروض والخصومات",
+   "titleEn": "Offers and discounts",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/offers",
+   "api": "GET /api/admin/offers",
+   "dashboard": "offers"
+  },
+  {
+   "id": "L068",
+   "area": "loyalty",
+   "title": "عروض خاطفة بعدّاد تنازلي",
+   "titleEn": "Flash deals with countdown",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/offers",
+   "api": "GET /api/flash-deals",
+   "dashboard": "flash"
+  },
+  {
+   "id": "L069",
+   "area": "loyalty",
+   "title": "الحملات واللافتات",
+   "titleEn": "Campaigns and banners",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/",
+   "api": "GET /api/campaigns",
+   "dashboard": "campaigns"
+  },
+  {
+   "id": "L070",
+   "area": "loyalty",
+   "title": "الإشعارات وإعداداتها",
+   "titleEn": "Notifications and their settings",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/notifications",
+   "api": "GET /api/notifications",
+   "dashboard": null
+  },
+  {
+   "id": "L071",
+   "area": "ai",
+   "title": "التسوق بالمحادثة",
+   "titleEn": "Conversational shopping",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/assistant",
+   "api": "POST /api/ai/chat",
+   "dashboard": null
+  },
+  {
+   "id": "L072",
+   "area": "ai",
+   "title": "سلة بميزانية محددة",
+   "titleEn": "Budget basket",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/assistant",
+   "api": "POST /api/ai/basket",
+   "dashboard": null
+  },
+  {
+   "id": "L073",
+   "area": "ai",
+   "title": "مخطط الميزانية الأسبوعية",
+   "titleEn": "Weekly budget planner",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/budget",
+   "api": "GET /api/me/budget",
+   "dashboard": null
+  },
+  {
+   "id": "L074",
+   "area": "ai",
+   "title": "ملخص ذكي للمنتج",
+   "titleEn": "Smart product summary",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/product/[id]",
+   "api": "GET /api/products/:id/summary",
+   "dashboard": null
+  },
+  {
+   "id": "L075",
+   "area": "ai",
+   "title": "بدائل عند نفاد المنتج",
+   "titleEn": "Substitutes when out of stock",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/product/[id]",
+   "api": "GET /api/products/:id/substitutes",
+   "dashboard": null
+  },
+  {
+   "id": "L076",
+   "area": "ai",
+   "title": "أوامر صوتية ونصية",
+   "titleEn": "Voice and text commands",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/assistant",
+   "api": "POST /api/ai/command",
+   "dashboard": null
+  },
+  {
+   "id": "L077",
+   "area": "ai",
+   "title": "من الوصفة إلى قائمة التسوق",
+   "titleEn": "Recipe to shopping list",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/assistant",
+   "api": "POST /api/ai/recipe",
+   "dashboard": null
+  },
+  {
+   "id": "L078",
+   "area": "ai",
+   "title": "من نص الفاتورة إلى قائمة",
+   "titleEn": "Receipt text to list",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/lists",
+   "api": "POST /api/ai/parse-list",
+   "dashboard": null
+  },
+  {
+   "id": "L079",
+   "area": "ai",
+   "title": "توصيات حسب الاهتمامات وبداية مخصصة",
+   "titleEn": "Interest-based recommendations and onboarding",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/",
+   "api": "GET /api/recommendations",
+   "dashboard": null
+  },
+  {
+   "id": "L080",
+   "area": "ai",
+   "title": "ردود بوت الدعم",
+   "titleEn": "Support bot replies",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/support",
+   "api": "POST /api/support/chats",
+   "dashboard": null
+  },
+  {
+   "id": "L081",
+   "area": "robot",
+   "title": "شخصية متحركة جذابة ثلاثية الأبعاد",
+   "titleEn": "Animated 3D character mascot",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L082",
+   "area": "robot",
+   "title": "حركات امشِ واقفز وتعال وتوقف",
+   "titleEn": "Walk, jump, come here and stop",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/robot",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L083",
+   "area": "robot",
+   "title": "الحجم وتقليل الحركة",
+   "titleEn": "Size and reduced motion",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/robot",
+   "api": "PATCH /api/me/preferences",
+   "dashboard": null
+  },
+  {
+   "id": "L084",
+   "area": "robot",
+   "title": "الألوان والملابس والإكسسوارات",
+   "titleEn": "Colours, outfits and accessories",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/robot",
+   "api": "PATCH /api/me/preferences",
+   "dashboard": null
+  },
+  {
+   "id": "L085",
+   "area": "robot",
+   "title": "صوت الشخصية",
+   "titleEn": "Character voice",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/robot",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L086",
+   "area": "robot",
+   "title": "تفاعل الشخصية مع الأحداث",
+   "titleEn": "Reactions to events",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/cart",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L087",
+   "area": "robot",
+   "title": "صورتك على وجه الشخصية بموافقة وحذف",
+   "titleEn": "Your photo on the character's face, with consent and delete",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/robot-create",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L088",
+   "area": "experience",
+   "title": "عرض المنتج ثلاثي الأبعاد",
+   "titleEn": "3D product viewer",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/try/[id]",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L089",
+   "area": "experience",
+   "title": "جرّبه في غرفتي (واقع معزز)",
+   "titleEn": "Try it in my room (AR)",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/try/[id]",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L090",
+   "area": "experience",
+   "title": "مخزن البيت: الصلاحية وتوفير الكربون",
+   "titleEn": "Home pantry: expiry and carbon savings",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/pantry",
+   "api": "GET /api/pantry",
+   "dashboard": null
+  },
+  {
+   "id": "L091",
+   "area": "delivery",
+   "title": "تعيين السائق",
+   "titleEn": "Driver assignment",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/driver",
+   "api": "PATCH /api/admin/orders/:id",
+   "dashboard": "orders"
+  },
+  {
+   "id": "L092",
+   "area": "delivery",
+   "title": "موقع السائق",
+   "titleEn": "Driver location",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/driver",
+   "api": "POST /api/driver/orders/:id/location",
+   "dashboard": null
+  },
+  {
+   "id": "L093",
+   "area": "delivery",
+   "title": "الوقت المتوقع عبر مسار القيادة",
+   "titleEn": "ETA from the driving route",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/tracking/[id]",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L094",
+   "area": "delivery",
+   "title": "إدارة سعة المواعيد",
+   "titleEn": "Slot capacity management",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin",
+   "api": "PUT /api/admin/slots",
+   "dashboard": "zones"
+  },
+  {
+   "id": "L095",
+   "area": "delivery",
+   "title": "«استخدم موقعي» ودبوس الخريطة",
+   "titleEn": "\"Use my location\" and map pin",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/addresses",
+   "api": "GET /api/delivery/nearest",
+   "dashboard": null
+  },
+  {
+   "id": "L096",
+   "area": "support",
+   "title": "تذاكر الدعم",
+   "titleEn": "Support tickets",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/support",
+   "api": "POST /api/tickets",
+   "dashboard": "tickets"
+  },
+  {
+   "id": "L097",
+   "area": "support",
+   "title": "محادثة مرتبطة بالطلب",
+   "titleEn": "Order-linked chat",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/support",
+   "api": "POST /api/support/chats",
+   "dashboard": "chats"
+  },
+  {
+   "id": "L098",
+   "area": "support",
+   "title": "طلب موظف",
+   "titleEn": "Request a human",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/support",
+   "api": "POST /api/support/chats/:id/escalate",
+   "dashboard": "chats"
+  },
+  {
+   "id": "L099",
+   "area": "support",
+   "title": "إرفاق صورة",
+   "titleEn": "Image attachment",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/support",
+   "api": "POST /api/uploads",
+   "dashboard": null
+  },
+  {
+   "id": "L100",
+   "area": "support",
+   "title": "مركز المساعدة والأسئلة الشائعة",
+   "titleEn": "Help center and FAQ",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/help",
+   "api": "GET /api/faqs",
+   "dashboard": "faqs"
+  },
+  {
+   "id": "L101",
+   "area": "admin",
+   "title": "مؤشرات الأداء",
+   "titleEn": "KPIs",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin",
+   "api": "GET /api/admin/kpis",
+   "dashboard": "overview"
+  },
+  {
+   "id": "L102",
+   "area": "admin",
+   "title": "إدارة المنتجات",
+   "titleEn": "Product management",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin",
+   "api": "POST /api/admin/products",
+   "dashboard": "products"
+  },
+  {
+   "id": "L103",
+   "area": "admin",
+   "title": "إدارة الأقسام",
+   "titleEn": "Category management",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "POST /api/admin/categories",
+   "dashboard": "categories"
+  },
+  {
+   "id": "L104",
+   "area": "admin",
+   "title": "معاينة الاستيراد قبل التطبيق",
+   "titleEn": "Import preview before applying",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/sync",
+   "api": "POST /api/admin/inventory-preview",
+   "dashboard": "inventory"
+  },
+  {
+   "id": "L105",
+   "area": "admin",
+   "title": "التراجع عن الاستيراد",
+   "titleEn": "Undo an import",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "POST /api/admin/inventory/undo",
+   "dashboard": "inventory"
+  },
+  {
+   "id": "L106",
+   "area": "admin",
+   "title": "تصدير CSV وJSON",
+   "titleEn": "CSV and JSON export",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "GET /api/admin/export/:entity",
+   "dashboard": "exports"
+  },
+  {
+   "id": "L107",
+   "area": "admin",
+   "title": "الطلبات والسائقون",
+   "titleEn": "Orders and drivers",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin",
+   "api": "GET /api/admin/orders",
+   "dashboard": "orders"
+  },
+  {
+   "id": "L108",
+   "area": "admin",
+   "title": "المرتجعات",
+   "titleEn": "Returns",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "GET /api/admin/returns",
+   "dashboard": "returns"
+  },
+  {
+   "id": "L109",
+   "area": "admin",
+   "title": "رموز الخصم",
+   "titleEn": "Coupons",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "POST /api/admin/coupons",
+   "dashboard": "coupons"
+  },
+  {
+   "id": "L110",
+   "area": "admin",
+   "title": "العملاء والمحفظة",
+   "titleEn": "Customers and wallet",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "POST /api/admin/wallet/adjust",
+   "dashboard": "users"
+  },
+  {
+   "id": "L111",
+   "area": "admin",
+   "title": "التقارير",
+   "titleEn": "Reports",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin",
+   "api": "GET /api/admin/reports",
+   "dashboard": "reports"
+  },
+  {
+   "id": "L112",
+   "area": "admin",
+   "title": "البائعون",
+   "titleEn": "Vendors",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/project",
+   "api": "GET /api/admin/vendors",
+   "dashboard": "vendors"
+  },
+  {
+   "id": "L113",
+   "area": "admin",
+   "title": "الفروع",
+   "titleEn": "Branches",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/sync",
+   "api": "GET /api/admin/branches",
+   "dashboard": "branches"
+  },
+  {
+   "id": "L114",
+   "area": "admin",
+   "title": "المخزون المنخفض واقتراحات إعادة الطلب",
+   "titleEn": "Low stock and reorder suggestions",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin",
+   "api": "GET /api/admin/reorder",
+   "dashboard": "reorder"
+  },
+  {
+   "id": "L115",
+   "area": "admin",
+   "title": "سجل التدقيق",
+   "titleEn": "Audit log",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "GET /api/admin/audit",
+   "dashboard": "audit"
+  },
+  {
+   "id": "L116",
+   "area": "admin",
+   "title": "مفاتيح الوكلاء ومهامهم",
+   "titleEn": "Agent keys and jobs",
+   "surfaces": [
+    "server",
+    "dashboard"
+   ],
+   "app": null,
+   "api": "GET /api/admin/agent-keys",
+   "dashboard": "agents"
+  },
+  {
+   "id": "L117",
+   "area": "admin",
+   "title": "إدارة المشروع وسجل التطوير",
+   "titleEn": "Project management and dev log",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/project",
+   "api": "GET /api/admin/features",
+   "dashboard": "features"
+  },
+  {
+   "id": "L118",
+   "area": "sync",
+   "title": "الربط بلوحة القيادة المركزية",
+   "titleEn": "Central command center link (app/sync)",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/sync",
+   "api": "POST /api/admin/sync/export",
+   "dashboard": "sync"
+  },
+  {
+   "id": "L119",
+   "area": "sync",
+   "title": "لقطة قاعدة البيانات للجسر",
+   "titleEn": "Bridge database snapshot",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/sync",
+   "api": "POST /api/admin/sync/snapshot",
+   "dashboard": "sync"
+  },
+  {
+   "id": "L120",
+   "area": "sync",
+   "title": "تنفيذ العمليات المعلّقة بإيصالات",
+   "titleEn": "Pending operations runner with receipts",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/sync",
+   "api": "POST /api/admin/sync/run",
+   "dashboard": "sync"
+  },
+  {
+   "id": "L121",
+   "area": "sync",
+   "title": "استيراد خارجي مع عرض الفروقات",
+   "titleEn": "External import with diff view",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/sync",
+   "api": "POST /api/admin/sync/pull",
+   "dashboard": "sync"
+  },
+  {
+   "id": "L122",
+   "area": "sync",
+   "title": "إيصالات المزامنة وإعادة المحاولة وتنزيل السجل",
+   "titleEn": "Sync receipts, retry and log download",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/admin/sync",
+   "api": "GET /api/admin/sync/receipts",
+   "dashboard": "sync"
+  },
+  {
+   "id": "L123",
+   "area": "platform",
+   "title": "الوضع النهاري والليلي",
+   "titleEn": "Day and night modes",
+   "surfaces": [
+    "app"
+   ],
+   "app": "/appearance",
+   "api": null,
+   "dashboard": null
+  },
+  {
+   "id": "L124",
+   "area": "platform",
+   "title": "العربية والإنجليزية مع اتجاه الصفحة",
+   "titleEn": "Arabic and English with page direction",
+   "surfaces": [
+    "server",
+    "app"
+   ],
+   "app": "/appearance",
+   "api": "PATCH /api/me/preferences",
+   "dashboard": null
+  },
+  {
+   "id": "L125",
+   "area": "platform",
+   "title": "عرض الأسعار بعملات متعددة",
+   "titleEn": "Multi-currency price display",
+   "surfaces": [
+    "server",
+    "app",
+    "dashboard"
+   ],
+   "app": "/appearance",
+   "api": "PUT /api/admin/currency-rates",
+   "dashboard": "settings"
+  }
+ ]
+}

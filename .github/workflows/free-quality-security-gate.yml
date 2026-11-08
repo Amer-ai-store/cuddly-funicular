@@ -1,0 +1,93 @@
+# Zero paid-API review gate for public PRs. Not an LLM review or a substitute for independent acceptance.
+# Reuses the repository's existing CodeQL default setup and independent security-scan workflow.
+name: Free quality and security checks
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: free-pr-review-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Free static quality and unit tests
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: luqta-mobile
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: luqta-mobile/package-lock.json
+      - name: Restore exact lockfile dependencies
+        run: npm ci
+      - name: TypeScript type safety
+        run: npm run typecheck
+      - name: ESLint
+        run: npm run lint
+      - name: Unit and regression tests
+        run: npm test
+      - name: Dashboard JavaScript syntax and roster regression
+        run: |
+          node --check ../dashboard/luqta-integration.js
+          node --check ../dashboard/luqta-api.js
+          node --test ../dashboard/tests/aas-roster.test.cjs
+
+  security:
+    name: Free Semgrep security analysis
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Install pinned open-source scanner
+        run: python -m pip install semgrep==1.182.0
+      - name: Fail when configured security rules find issues
+        run: semgrep scan --config p/ci --metrics=off --error --json-output=semgrep-results.json .
+      - name: Upload auditable findings, including on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: free-pr-semgrep-${{ github.run_id }}
+          path: semgrep-results.json
+          if-no-files-found: warn
+          retention-days: 14
+
+  gate:
+    name: free-pr-gate
+    needs: [quality, security]
+    if: ${{ always() && (github.event_name != 'pull_request' || github.event.pull_request.draft == false) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Require both independent jobs to have passed
+        env:
+          QUALITY: ${{ needs.quality.result }}
+          SECURITY: ${{ needs.security.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Quality job: $QUALITY"
+          echo "Security job: $SECURITY"
+          test "$QUALITY" = success
+          test "$SECURITY" = success
+          echo "Free PR checks passed. This is NOT an AI review or production/security acceptance."

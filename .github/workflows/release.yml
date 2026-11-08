@@ -1,0 +1,141 @@
+name: Release Android app
+# Builds the merged Luqta app (luqta-mobile, Expo + React Native) as a signed release APK and keeps it as a build
+# artifact. Publishing it as a GitHub Release is gated (Issue #102): the publish job runs only on main, when the
+# repository variables RELEASE_PUBLISHING_ENABLED is 'true' and RELEASE_APPROVED_SHA names this exact commit, the APK
+# was signed with the stable upload key, and the protected `production` environment approves. Pull requests never
+# publish and never receive the real signing key. See docs/release-setup.md.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'luqta-mobile/**'
+      - '.github/workflows/release.yml'
+  # A PR that changes the native configuration or this pipeline builds the release APK too, without publishing it.
+  pull_request:
+    paths:
+      - 'luqta-mobile/app.json'
+      - 'luqta-mobile/app.config.js'
+      - 'luqta-mobile/package.json'
+      - 'luqta-mobile/package-lock.json'
+      - 'luqta-mobile/plugins/**'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: android-release-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  # Read by app.config.js; a rising versionCode lets each APK install over the previous one.
+  VERSION_CODE: ${{ github.run_number }}
+  VERSION_NAME: 2.0.${{ github.run_number }}
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    outputs:
+      signing_mode: ${{ steps.signing.outputs.mode }}
+    timeout-minutes: 75
+    defaults:
+      run:
+        working-directory: luqta-mobile
+    env:
+      # Optional public store server baked into the app; without it shoppers enter the server on the connection screen.
+      EXPO_PUBLIC_API_URL: ${{ vars.LUQTA_API_URL }}
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: luqta-mobile/package-lock.json
+      - uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@651bceb6f9ca583f16b8d75b62c36ded2ae6fc9c # v4.0.0
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0 ndk;27.1.12297006'
+      - uses: gradle/actions/setup-gradle@4d9f0ba0025fe599b4ebab900eb7f3a1d93ef4c2 # v5.0.0
+      - name: Install and check the app
+        run: |
+          npm ci
+          npm run typecheck
+          npm run lint
+          npm test
+      - name: Generate the native Android project
+        run: |
+          npx expo prebuild --platform android --no-install
+          sed -i 's/^org.gradle.jvmargs=.*/org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g/' android/gradle.properties
+      # The upload key keeps updates installable over each other (alias "upload"). Pull requests get a one-off key.
+      - name: Prepare the signing key
+        id: signing
+        env:
+          # Only main can read the stable signing key, including on manual runs.
+          SIGNING_KEYSTORE_BASE64: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && secrets.SIGNING_KEYSTORE_BASE64 || '' }}
+          SIGNING_STORE_PASSWORD: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && secrets.SIGNING_STORE_PASSWORD || '' }}
+          SIGNING_KEY_PASSWORD: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && secrets.SIGNING_KEY_PASSWORD || '' }}
+        run: |
+          keystore="$RUNNER_TEMP/upload-key.jks"
+          if [ -n "$SIGNING_KEYSTORE_BASE64" ]; then
+            printf '%s' "$SIGNING_KEYSTORE_BASE64" | base64 -d > "$keystore"
+            store_password="$SIGNING_STORE_PASSWORD"
+            key_password="${SIGNING_KEY_PASSWORD:-$SIGNING_STORE_PASSWORD}"
+            echo "mode=upload" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::No upload key for this run, so the APK is signed with a one-off key. Phones must uninstall the previous version before installing it. See docs/release-setup.md."
+            store_password="$(openssl rand -hex 16)"
+            key_password="$store_password"
+            echo "mode=ephemeral" >> "$GITHUB_OUTPUT"
+            keytool -genkeypair -keystore "$keystore" -storetype PKCS12 -alias upload -keyalg RSA -keysize 2048 \
+              -validity 10000 -storepass "$store_password" -keypass "$key_password" -dname "CN=Amer Store CI" -noprompt
+          fi
+          echo "::add-mask::$store_password"
+          echo "::add-mask::$key_password"
+          {
+            echo "KEYSTORE_PATH=$keystore"
+            echo "STORE_PASSWORD=$store_password"
+            echo "KEY_PASSWORD=$key_password"
+          } >> "$GITHUB_ENV"
+      - name: Build, sign and verify the release APK
+        run: |
+          (cd android && ./gradlew :app:assembleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a,armeabi-v7a)
+          apksigner="$ANDROID_HOME/build-tools/36.0.0/apksigner"
+          "$apksigner" sign --ks "$KEYSTORE_PATH" --ks-key-alias upload --ks-pass env:STORE_PASSWORD --key-pass env:KEY_PASSWORD \
+            --out "$RUNNER_TEMP/amer-store.apk" android/app/build/outputs/apk/release/app-release.apk
+          "$apksigner" verify --print-certs "$RUNNER_TEMP/amer-store.apk" | grep -v -i 'digest' | head -5
+          rm -f "$KEYSTORE_PATH"
+          ls -lh "$RUNNER_TEMP/amer-store.apk"
+      - name: Keep the APK as a build artifact
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: luqta-release-apk
+          path: ${{ runner.temp }}/amer-store.apk
+          if-no-files-found: error
+          retention-days: 14
+
+  # Fail-closed publication (Issue #102): skipped unless every gate above holds; the `production` environment's
+  # required reviewers then approve each release.
+  publish:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.RELEASE_PUBLISHING_ENABLED == 'true' && vars.RELEASE_APPROVED_SHA == github.sha && needs.build.outputs.signing_mode == 'upload'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: production
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: luqta-release-apk
+          path: ${{ runner.temp }}/apk
+      - name: Publish the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          gh release create "v$VERSION_NAME" "$RUNNER_TEMP/apk/amer-store.apk" \
+            --repo "$REPO" --target "$SHA" \
+            --title "لُقطة — Amer AI Store $VERSION_NAME" --generate-notes --latest

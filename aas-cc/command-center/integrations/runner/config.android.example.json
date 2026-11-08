@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "repository": "YOUR_OWNER/YOUR_ANDROID_REPOSITORY",
+  "steps": [
+    {
+      "stepIndex": 0,
+      "commands": [
+        {
+          "name": "Compile Kotlin and run Android unit tests",
+          "argv": ["gradle", ":app:compileDebugKotlin", ":app:testDebugUnitTest", "--no-daemon"],
+          "timeoutMs": 1200000
+        }
+      ]
+    }
+  ]
+}

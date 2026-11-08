@@ -1,0 +1,300 @@
+{
+  "schema": "jawafa-investigation-reports-v1",
+  "classification": "PUBLIC_STATUS_ONLY__PRIVATE_LINKS_REDACTED",
+  "version": "2026-11-03-staging-public-safe-2",
+  "data_cutoff": "2026-11-02",
+  "published_to_production": false,
+  "release_gate": "BLOCKED_ISSUE_102",
+  "financial_data_origin": "Evidence-backed 2025–2026 historical exports and read-only restored SQL; original document links are access-controlled Google Drive.",
+  "canonical_casebook": null,
+  "primary_source_export": {
+    "cutoff": "2026-10-31",
+    "mode": "HYBRID_FULL_DELTA_NOT_SQL_SNAPSHOT",
+    "access": "PRIVATE_DRIVE",
+    "href": null
+  },
+  "authentication_note": "Historical status only. Private evidence requires independent authenticated access; links and document identifiers are deliberately withheld from this public build.",
+  "summary": [
+    {
+      "id": "gl",
+      "label": "سندات الأستاذ التاريخية",
+      "value": "28/54",
+      "detail": "استُعيدت رؤوس 28 سندًا من نسخ SQL تاريخية. بقي 26 سندًا بلا أصل مستعاد.",
+      "status": "partial"
+    },
+    {
+      "id": "arp",
+      "label": "سندات الذمم التاريخية",
+      "value": "6/9",
+      "detail": "عُثر على ستة أصول تاريخية. ثلاثة ما زالت غير مستعادة.",
+      "status": "partial"
+    },
+    {
+      "id": "cheque",
+      "label": "ربط سندات الشيكات",
+      "value": "25/28",
+      "detail": "ارتباطات محاسبية بنظام الشيكات. 3 حالات غير محسومة؛ ولا تعني المطابقة اعتماد الصرف البنكي.",
+      "status": "partial"
+    },
+    {
+      "id": "returns",
+      "label": "مردودات المشتريات",
+      "value": "90/90",
+      "detail": "مطابقة رأس المحاسبة والمخزون والتفاصيل والضريبة ضمن هامش قرش؛ أثر فترة الترحيل مفتوح.",
+      "status": "verified_scope"
+    },
+    {
+      "id": "post",
+      "label": "دفعة الترحيل الجماعي",
+      "value": "157 + 90",
+      "detail": "تطابق أرقام سندات الذمم ومردوداتها مع أحداث تطبيق TrustSoft. صحة التفويض والفترة غير محسومة.",
+      "status": "verified_scope"
+    },
+    {
+      "id": "audit",
+      "label": "تتبّع تدقيق المشتريات",
+      "value": "3 حالات",
+      "detail": "حالة Verified تغيرت دون حدث مراجعة مطابق في السجلات المختبرة؛ لا إثبات حذف SQL أو تجاوز صلاحية.",
+      "status": "open"
+    },
+    {
+      "id": "f91",
+      "label": "مطابقة فواتير الشكوى",
+      "value": "6/6",
+      "detail": "الفواتير وقيدها المالي متطابقان في أرشيف 31 أكتوبر؛ تاريخ أي فك/إعادة ترحيل سابق مفتوح.",
+      "status": "verified_scope"
+    },
+    {
+      "id": "bank",
+      "label": "أثر فك الترحيل على الشيكات",
+      "value": "6 روابط",
+      "detail": "ربط تاريخي مع كشف بنك مستورد؛ كشف البنك الأصلي غير متحقق في هذه الجولة.",
+      "status": "open"
+    }
+  ],
+  "investigations": [
+    {
+      "id": "ledger-missing",
+      "label": "السندات المحذوفة والمفقودة",
+      "state": "open",
+      "confidence": "historical-backup-evidence",
+      "reports": [
+        "F53",
+        "F91",
+        "CASEBOOK"
+      ],
+      "next": "استعادة الأصول المتبقية وفحص القيود البديلة"
+    },
+    {
+      "id": "bank-reconciliation",
+      "label": "الشيكات والتسوية البنكية",
+      "state": "open",
+      "confidence": "erp-and-imported-bank-sheet",
+      "reports": [
+        "F63",
+        "F66",
+        "F87",
+        "F91"
+      ],
+      "next": "مطابقة الشيكات مع كشف البنك الأصلي والصور"
+    },
+    {
+      "id": "cash",
+      "label": "الكاش والسيولة والعهدة",
+      "state": "open",
+      "confidence": "cash-formula-only",
+      "reports": [
+        "F63",
+        "F75"
+      ],
+      "next": "جرد الصندوق والإيداعات ومطابقة الكاشير"
+    },
+    {
+      "id": "purchase-audit",
+      "label": "فواتير وتدقيق المشتريات",
+      "state": "open",
+      "confidence": "application-history-limited",
+      "reports": [
+        "F75",
+        "F85",
+        "F91"
+      ],
+      "next": "تحديد وظيفة Verified وTadkeek والصلاحيات"
+    },
+    {
+      "id": "returns-periods",
+      "label": "المردودات والمخزون والضريبة",
+      "state": "open",
+      "confidence": "90-of-90-document-crossmatch",
+      "reports": [
+        "F75",
+        "F85"
+      ],
+      "next": "حسم تاريخ الاعتراف المحاسبي ومطابقة الإقرار الضريبي"
+    },
+    {
+      "id": "intercompany",
+      "label": "مطابقة الأسواق والمطعم والمخبز",
+      "state": "open",
+      "confidence": "not-reverified-in-this-batch",
+      "reports": [
+        "CASEBOOK"
+      ],
+      "next": "تثبيت كشوف الجهات وفترات المطابقة"
+    },
+    {
+      "id": "pos-sales",
+      "label": "نقاط البيع وأصناف الفواتير",
+      "state": "open",
+      "confidence": "investigation-pending",
+      "reports": [
+        "CASEBOOK"
+      ],
+      "next": "تطابق POS مع حركة الأصناف وسجل المستخدمين"
+    },
+    {
+      "id": "purchase-sales-stock",
+      "label": "المشتريات والمبيعات وحاجة المخزون",
+      "state": "open",
+      "confidence": "analysis-not-accepted",
+      "reports": [
+        "CASEBOOK",
+        "F85"
+      ],
+      "next": "حساب دوران المخزون من بيانات أصناف موحدة"
+    }
+  ],
+  "reports": [
+    {
+      "id": "CASEBOOK",
+      "title": "السجل الموحد للتحقيق المالي",
+      "kind": "سجل رئيسي",
+      "date": "2026-11-02",
+      "category": "all",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA_AND_CONTENT",
+      "note": "ملخصات الحالة والتحديثات التراكمية."
+    },
+    {
+      "id": "F53",
+      "title": "استعادة سندات الأستاذ والذمم من النسخ التاريخية",
+      "kind": "تقرير أدلة",
+      "date": "2026-10-30",
+      "category": "gl",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA",
+      "note": "استعادة 28 سند GL و6 سندات ARP؛ لا إثبات خسارة."
+    },
+    {
+      "id": "F63",
+      "title": "الشيكات التاريخية والكاش والمطابقة الأولية",
+      "kind": "تقرير تدقيق",
+      "date": "2026-10-31",
+      "category": "bank",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA",
+      "note": "ربط الشيكات وتفسير حقل الفرق النقدي."
+    },
+    {
+      "id": "F66",
+      "title": "تحقيق حركات ترحيل الشيكات في TrustSoft",
+      "kind": "سجل عمليات",
+      "date": "2026-10-31",
+      "category": "bank",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA",
+      "note": "تحليل أحداث التطبيق للمستندات التي اختفت روابطها."
+    },
+    {
+      "id": "F75",
+      "title": "التقرير المالي التفصيلي حتى تصدير 2 نوفمبر",
+      "kind": "تقرير شامل",
+      "date": "2026-11-02",
+      "category": "all",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA_AND_CONTENT",
+      "note": "الترحيل الجماعي، المشتريات، سندات الذمم، والشيكات."
+    },
+    {
+      "id": "F85",
+      "title": "المردودات والضريبة والمخزون وفجوة تدقيق المشتريات",
+      "kind": "تحقيق محاسبي",
+      "date": "2026-11-02",
+      "category": "returns",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA_AND_CONTENT",
+      "note": "ربط 90 مستندًا وتأخيرات ترحيلها وملحق F86."
+    },
+    {
+      "id": "F87",
+      "title": "فك ترحيل السندات والارتباط التاريخي بشيكات البنك",
+      "kind": "تحقيق تاريخي",
+      "date": "2026-11-02",
+      "category": "bank",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA_AND_CONTENT",
+      "note": "حركات فك الترحيل وقرائن الربط البنكي المستورد."
+    },
+    {
+      "id": "F91",
+      "title": "فحص مستقل للسندات والشيكات وفواتير الشكوى",
+      "kind": "مطابقة مستقلة",
+      "date": "2026-11-02",
+      "category": "gl",
+      "href": null,
+      "access": "RESTRICTED_NO_PUBLIC_LINK",
+      "verified": "DRIVE_METADATA_AND_CONTENT",
+      "note": "فحص النسخة المؤرشفة وفواتير المشتريات الست."
+    }
+  ],
+  "private_evidence": [
+    {
+      "id": "ARCHIVE_V5",
+      "label": "نسخة التصدير V5 المؤرشفة (ليست Snapshot متزامنة)",
+      "href": null,
+      "verified": "DRIVE_METADATA"
+    },
+    {
+      "id": "PRIVATE_FOLDER",
+      "label": "مجلد الأدلة الخاصة والتقرير النهائي",
+      "href": null,
+      "verified": "DRIVE_FOLDER"
+    },
+    {
+      "id": "F63_RAW",
+      "label": "حزمة الأدلة الخام F63",
+      "href": null,
+      "verified": "PRIOR_DRIVE_EVIDENCE"
+    }
+  ],
+  "pending_artifacts": [
+    {
+      "id": "F91_XLSX",
+      "kind": "Excel",
+      "state": "LOCAL_ARTIFACT_NOT_VERIFIED_ON_DRIVE",
+      "note": "مصنف Excel التحقيقي موجود كمرفق في المحادثة، وليس كرابط ملف موثق على Drive."
+    },
+    {
+      "id": "F77",
+      "kind": "Appendix",
+      "state": "LOCAL_SERVER_RESULT_NOT_VERIFIED_ON_DRIVE",
+      "note": "ملحق توازن القيود موجود بنتائج سابقة؛ لا رابط سحابي مستقل مثبت."
+    }
+  ],
+  "acceptance": {
+    "report_links_metadata_checked": true,
+    "ledger_primary_modified": false,
+    "publicly_visible_document_rows": false,
+    "direct_database_read_live": false,
+    "bank_statement_original_confirmed": false,
+    "publication_requires_issue102_acceptance": true,
+    "source_reconciliation_gates_open": true
+  }
+}

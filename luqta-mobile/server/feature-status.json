@@ -1,0 +1,6555 @@
+{
+ "generatedAt": "2026-11-05T13:46:34.420Z",
+ "summary": {
+  "total": 241,
+  "passed": 241,
+  "failed": 0
+ },
+ "suites": {
+  "server": {
+   "generatedAt": "2026-11-05T13:43:30.574Z",
+   "tests": [
+    {
+     "name": "one-time recovery codes reset passwords and revoke every prior session",
+     "passed": true,
+     "features": [],
+     "file": "server/accountRewards.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "deletion blocks obligations, anonymizes private data and invalidates sessions",
+     "passed": true,
+     "features": [],
+     "file": "server/accountRewards.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "last administrator and a driver with an active delivery cannot delete their accounts",
+     "passed": true,
+     "features": [],
+     "file": "server/accountRewards.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "delivery rewards redeem atomically and returns claw back redeemed value once",
+     "passed": true,
+     "features": [],
+     "file": "server/accountRewards.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "all central dashboard and mobile admin read screens resolve with owner authorization",
+     "passed": true,
+     "features": [],
+     "file": "server/adminScreens.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "health exposes only credential configuration; a missing key gives a safe 503",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "health never contacts the provider or reveals a configured credential",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "input validation rejects oversized messages, role injection, long histories and malformed JSON before any API call",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "body and content type limits reject client payloads",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "CORS allows exact configured origins and rejects other origins with no wildcard",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "Arabic/Persian budget parsing handles thousands, ranges and rejects unrelated model/year numbers",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "recommendations use server catalog prices, exclude over-budget and out-of-stock IDs, and request strict JSON",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "budget remains in force from recent user history, never from assistant history",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "strict budgets exclude a product exactly at the cap and ranges enforce the lower bound",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "rejects invented or over-budget provider IDs and raw provider errors cannot reach the client",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "budgets below every product avoid an unnecessary provider request",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "timeouts abort the provider request and return a safe timeout error",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "rate limiting ignores spoofed proxy headers and expires its bounded entries",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "limits concurrent provider work and recovers capacity after completion",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "streamed bodies cannot bypass the byte limit with no content-length header",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "catalog validation refuses duplicate IDs and invalid prices",
+     "passed": true,
+     "features": [],
+     "file": "server/assistant.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "unified homepage contains six functional zones without discarding existing operational screens",
+     "passed": true,
+     "features": [],
+     "file": "server/commandDashboard.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "application bridge links to actual same-page Luqta workbench route",
+     "passed": true,
+     "features": [],
+     "file": "server/commandDashboard.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "workbench has authenticated real APIs, code review links and an explicit nondeployment warning",
+     "passed": true,
+     "features": [],
+     "file": "server/commandDashboard.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "custom home preferences cannot modify authenticated backend",
+     "passed": true,
+     "features": [],
+     "file": "server/commandDashboard.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "home scripts are correctly loaded before authenticated client scripts",
+     "passed": true,
+     "features": [],
+     "file": "server/commandDashboard.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "auth sessions are real, expire on logout, and never grant public admin privileges",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "address ownership, defaults, nullable map pins, wishlist and notification read state persist",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "server-priced checkout is transactional and idempotent; cancellation restores inventory once",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "concurrent final-stock checkout cannot oversell and decimal wallet/coupon totals are exact",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "admin inventory CSV/JSON imports validate all rows before commit; scoped agents are revocable and audited",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "actual driver assignment/GPS, delivery, verified review and return refund work together",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "support conversations enforce ownership and admin replies create real notifications",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "agent maintenance jobs require evidence and optional Facebook explicitly fails without credentials",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "CORS rejects unapproved browser origins; static SPA fallback and persistence restart work",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "SQLite survives server restart with order history and session identity intact",
+     "passed": true,
+     "features": [],
+     "file": "server/commerce.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "P1: vendor cannot attach a variant to store-owned or foreign vendor products",
+     "passed": true,
+     "features": [],
+     "file": "server/critical-regressions.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "P2: a flash deal rejects an order exceeding the remaining allocation",
+     "passed": true,
+     "features": [],
+     "file": "server/critical-regressions.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "P2: approved partial return restores the originating branch stock",
+     "passed": true,
+     "features": [],
+     "file": "server/critical-regressions.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "P2: deleting an account removes delivery notes and gift recipient data",
+     "passed": true,
+     "features": [],
+     "file": "server/critical-regressions.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L001 L002 L012 register, sign in, hashed session, sign out and sign-in rate limit",
+     "passed": true,
+     "features": [
+      "L001",
+      "L002",
+      "L012"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L003 L004 recovery code resets the password and change-password signs out other devices",
+     "passed": true,
+     "features": [
+      "L003",
+      "L004"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L005 L006 data export covers module data and account deletion removes it",
+     "passed": true,
+     "features": [
+      "L005",
+      "L006"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L007 signed-in devices are listed with names and other sessions can be ended",
+     "passed": true,
+     "features": [
+      "L007"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L008 privacy preferences are validated and turning off search history stops recording",
+     "passed": true,
+     "features": [
+      "L008"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L009 profile keeps phone, avatar and birthday and rejects invalid values",
+     "passed": true,
+     "features": [
+      "L009"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L010 multiple addresses keep district, building, details and map pin",
+     "passed": true,
+     "features": [
+      "L010"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L011 merchant accounts manage only their own products, orders and payouts",
+     "passed": true,
+     "features": [
+      "L011"
+     ],
+     "file": "server/features.accounts.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L101 L111 KPIs and sales reports summarise real orders",
+     "passed": true,
+     "features": [
+      "L101",
+      "L111"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L102 L103 products and categories are managed with validation and audit",
+     "passed": true,
+     "features": [
+      "L102",
+      "L103"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L104 L105 import preview shows the difference before applying and the import can be undone",
+     "passed": true,
+     "features": [
+      "L104",
+      "L105"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L106 exports products, orders, customers, inventory and branch stock as CSV or JSON",
+     "passed": true,
+     "features": [
+      "L106"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L107 L108 L109 L110 orders with drivers, returns, coupons and customer wallets",
+     "passed": true,
+     "features": [
+      "L107",
+      "L108",
+      "L109",
+      "L110"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L112 L113 vendors and branches are created and administered",
+     "passed": true,
+     "features": [
+      "L112",
+      "L113"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L114 reorder suggestions use the last 30 days of sales",
+     "passed": true,
+     "features": [
+      "L114"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L115 L116 audit log and agent keys with scoped jobs",
+     "passed": true,
+     "features": [
+      "L115",
+      "L116"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L117 project management lists all 125 features with evidence and keeps a development log",
+     "passed": true,
+     "features": [
+      "L117"
+     ],
+     "file": "server/features.admin.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L071 conversational shopping answers with products, store info or actions",
+     "passed": true,
+     "features": [
+      "L071"
+     ],
+     "file": "server/features.ai.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L072 budget basket stays within the budget and favours useful staples",
+     "passed": true,
+     "features": [
+      "L072"
+     ],
+     "file": "server/features.ai.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L073 weekly budget planner tracks this week’s spending",
+     "passed": true,
+     "features": [
+      "L073"
+     ],
+     "file": "server/features.ai.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L076 voice and text commands become structured actions",
+     "passed": true,
+     "features": [
+      "L076"
+     ],
+     "file": "server/features.ai.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L077 recipes become a costed shopping list scaled to the number of people",
+     "passed": true,
+     "features": [
+      "L077"
+     ],
+     "file": "server/features.ai.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L078 pasted receipts or notes are matched to products with quantities",
+     "passed": true,
+     "features": [
+      "L078"
+     ],
+     "file": "server/features.ai.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L079 recommendations use interests and history unless personalisation is switched off",
+     "passed": true,
+     "features": [
+      "L079"
+     ],
+     "file": "server/features.ai.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L013 L017 catalog comes from the database with managed categories",
+     "passed": true,
+     "features": [
+      "L013",
+      "L017"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L014 Arabic search ignores diacritics, hamza and articles and tolerates typos",
+     "passed": true,
+     "features": [
+      "L014"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L015 L016 filters by price, rating and availability and sorts results",
+     "passed": true,
+     "features": [
+      "L015",
+      "L016"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L018 L019 L020 gallery, video, variants and specifications are validated and served",
+     "passed": true,
+     "features": [
+      "L018",
+      "L019",
+      "L020"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L021 per-branch stock limits orders, follows them and detects version conflicts",
+     "passed": true,
+     "features": [
+      "L021"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L022 search history is personal and suggestions mix products, categories and trends",
+     "passed": true,
+     "features": [
+      "L022"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L024 barcode lookup finds products by EAN, SKU or id",
+     "passed": true,
+     "features": [
+      "L024"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L025 image search decodes a PNG, finds its dominant colour and matches products",
+     "passed": true,
+     "features": [
+      "L025"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L028 reviews are accepted only after the product was delivered",
+     "passed": true,
+     "features": [
+      "L028"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L029 product questions get answers and store answers are marked official",
+     "passed": true,
+     "features": [
+      "L029"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L030 price-drop and back-in-stock alerts notify once when the condition is met",
+     "passed": true,
+     "features": [
+      "L030"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L074 L075 smart summary and in-stock substitutes for a sold-out product",
+     "passed": true,
+     "features": [
+      "L074",
+      "L075"
+     ],
+     "file": "server/features.catalog.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "the published catalog matches its source and lists 125 features",
+     "passed": true,
+     "features": [],
+     "file": "server/features.coverage.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "every server-side feature is cited by a server test",
+     "passed": true,
+     "features": [],
+     "file": "server/features.coverage.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "every app feature is driven by an end-to-end browser test",
+     "passed": true,
+     "features": [],
+     "file": "server/features.coverage.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "every dashboard feature is driven by an end-to-end dashboard test",
+     "passed": true,
+     "features": [],
+     "file": "server/features.coverage.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "every app feature points at a screen that exists",
+     "passed": true,
+     "features": [],
+     "file": "server/features.coverage.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "every dashboard feature points at a section the dashboard can draw and deep-link to",
+     "passed": true,
+     "features": [],
+     "file": "server/features.coverage.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L061 L062 points are earned on delivery and redeemed for wallet credit",
+     "passed": true,
+     "features": [
+      "L061",
+      "L062"
+     ],
+     "file": "server/features.loyalty.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L063 daily check-in awards once per day and tracks the streak",
+     "passed": true,
+     "features": [
+      "L063"
+     ],
+     "file": "server/features.loyalty.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L064 L065 badges reflect activity and referrals reward both friends after the first delivery",
+     "passed": true,
+     "features": [
+      "L064",
+      "L065"
+     ],
+     "file": "server/features.loyalty.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L066 tiers follow lifetime points and change the delivery fee",
+     "passed": true,
+     "features": [
+      "L066"
+     ],
+     "file": "server/features.loyalty.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L067 L068 offers and flash deals price orders until they end or sell out",
+     "passed": true,
+     "features": [
+      "L067",
+      "L068"
+     ],
+     "file": "server/features.loyalty.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L069 campaigns are shown only while active and validate their links",
+     "passed": true,
+     "features": [
+      "L069"
+     ],
+     "file": "server/features.loyalty.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L070 notifications can be read and their categories switched off",
+     "passed": true,
+     "features": [
+      "L070"
+     ],
+     "file": "server/features.loyalty.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L051 L053 L054 L055 history, timeline with live tracking and cancellation",
+     "passed": true,
+     "features": [
+      "L051",
+      "L053",
+      "L054",
+      "L055"
+     ],
+     "file": "server/features.orders.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L060 L091 L092 drivers are assigned, share location and need the customer code to deliver",
+     "passed": true,
+     "features": [
+      "L060",
+      "L091",
+      "L092"
+     ],
+     "file": "server/features.orders.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L060 five wrong delivery codes lock the confirmation",
+     "passed": true,
+     "features": [
+      "L060"
+     ],
+     "file": "server/features.orders.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L056 L057 returning selected items with a photo refunds only their share to the wallet",
+     "passed": true,
+     "features": [
+      "L056",
+      "L057"
+     ],
+     "file": "server/features.orders.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L058 L059 invoice and a single rating per delivered order",
+     "passed": true,
+     "features": [
+      "L058",
+      "L059"
+     ],
+     "file": "server/features.orders.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L094 L095 slot capacity is managed by staff and the nearest branch is found from a map pin",
+     "passed": true,
+     "features": [
+      "L094",
+      "L095"
+     ],
+     "file": "server/features.orders.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L031 favourites sync with the account across devices",
+     "passed": true,
+     "features": [
+      "L031"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L033 L034 personal lists and a shared family list with join codes and notifications",
+     "passed": true,
+     "features": [
+      "L033",
+      "L034"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L038 L039 L040 server-side quote with coupons and delivery fees by zone",
+     "passed": true,
+     "features": [
+      "L038",
+      "L039",
+      "L040"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L041 L042 L043 delivery slots with capacity, delivery notes and terms acceptance",
+     "passed": true,
+     "features": [
+      "L041",
+      "L042",
+      "L043"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L043 stores can require accepting the terms before an order is placed",
+     "passed": true,
+     "features": [
+      "L043"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L044 L045 L049 cash on delivery, wallet payment and duplicate-order protection",
+     "passed": true,
+     "features": [
+      "L044",
+      "L045",
+      "L049"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L046 sandbox card payments accept only test cards, never store card numbers, and handle declines",
+     "passed": true,
+     "features": [
+      "L046"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L047 gift wrapping adds its fee and keeps the message on the order",
+     "passed": true,
+     "features": [
+      "L047"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L048 gift cards are issued once, redeemed into the wallet and cannot be reused",
+     "passed": true,
+     "features": [
+      "L048"
+     ],
+     "file": "server/features.shopping.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L080 L097 order-linked chat is answered by the bot using the order and the FAQ",
+     "passed": true,
+     "features": [
+      "L080",
+      "L097"
+     ],
+     "file": "server/features.support.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L098 L099 asking for a human hands over the chat, notifies staff and keeps image attachments",
+     "passed": true,
+     "features": [
+      "L098",
+      "L099"
+     ],
+     "file": "server/features.support.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L096 L100 tickets and the searchable help center",
+     "passed": true,
+     "features": [
+      "L096",
+      "L100"
+     ],
+     "file": "server/features.support.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L083 L084 L124 character and language preferences are saved and validated",
+     "passed": true,
+     "features": [
+      "L083",
+      "L084",
+      "L124"
+     ],
+     "file": "server/features.support.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L090 pantry tracks expiry from delivered groceries, warns once and counts carbon savings",
+     "passed": true,
+     "features": [
+      "L090"
+     ],
+     "file": "server/features.support.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L125 display currency rates are managed by staff and published with the settings",
+     "passed": true,
+     "features": [
+      "L125"
+     ],
+     "file": "server/features.support.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L118 exporting to the command center maps fields, uses the API key and retries revision conflicts",
+     "passed": true,
+     "features": [
+      "L118"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L118 AAS accepts exported order lines with stable numeric product IDs and no customer PII",
+     "passed": true,
+     "features": [
+      "L118"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L118 rejects incomplete AAS receipts rather than reporting a false successful export",
+     "passed": true,
+     "features": [
+      "L118"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L121 resolves actual AAS numeric catalog IDs for preview without inserting duplicates",
+     "passed": true,
+     "features": [
+      "L121"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L119 the bridge snapshot respects limits and never contains sensitive columns",
+     "passed": true,
+     "features": [
+      "L119"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L120 pending operations are applied with backups, unsafe ones rejected, and each gets a receipt",
+     "passed": true,
+     "features": [
+      "L120"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L121 importing from the command center shows the diff first and rejects invalid rows",
+     "passed": true,
+     "features": [
+      "L121"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L122 receipts are listed, logs download as CSV or JSON and failed runs can be retried",
+     "passed": true,
+     "features": [
+      "L122"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L118 L120 service-key routes for external schedulers compare keys in constant time",
+     "passed": true,
+     "features": [
+      "L118",
+      "L120"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L118 sync explains what is missing when the command center is not configured",
+     "passed": true,
+     "features": [
+      "L118"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L118 a connection set by the server environment cannot be overwritten from the dashboard",
+     "passed": true,
+     "features": [
+      "L118"
+     ],
+     "file": "server/features.sync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "the dashboard at https://amer-ai-store.github.io can call the commerce API with Bearer auth",
+     "passed": true,
+     "features": [],
+     "file": "server/githubPagesCors.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "the dashboard at https://amer-ai-command-center.eagerlark64.chatgpt.site can call the commerce API with Bearer auth",
+     "passed": true,
+     "features": [],
+     "file": "server/githubPagesCors.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "a configured inventory connector imports remote quantities without exposing its token",
+     "passed": true,
+     "features": [],
+     "file": "server/inventoryConnector.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "undo restores existing product exactly, removes new product, and is single use",
+     "passed": true,
+     "features": [],
+     "file": "server/inventoryUndo.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "undo refuses to overwrite a purchase or a later product edit",
+     "passed": true,
+     "features": [],
+     "file": "server/inventoryUndo.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "only loopback forensic source is allowed",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaBridge.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "live local bridge status is redacted and stock remains unverified",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaBridge.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "catalog preview omits costs and unrelated private fields",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaBridge.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "incorrect bridge mode is refused",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaBridge.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "real API protects Jawafa source, returns only read-only metadata, and starts with no fake sales catalog",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaBridgeIntegration.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "Jawafa actual stock, offers, appearance and permissions work only in Luqta commerce",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaIntegration.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "subtracts unposted sales exactly once",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaInventory.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "rejects inconsistent actual",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaInventory.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "rejects unposted greater than ready",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaInventory.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "rejects stale snapshots",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaInventory.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "does not silently accept decimals when commerce schema is integer",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaInventory.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "rejects duplicates",
+     "passed": true,
+     "features": [],
+     "file": "server/jawafaInventory.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "admin discount prices persist and can be cleared without invalid offers",
+     "passed": true,
+     "features": [],
+     "file": "server/offers.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "SKU variants have independent stock and parent cannot be purchased",
+     "passed": true,
+     "features": [],
+     "file": "server/variants.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "favorites synchronize between separate sign-ins and remain private",
+     "passed": true,
+     "features": [],
+     "file": "server/wishlistSync.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "Arabic query, category, stock and hidden SKU filtering combine",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/catalog-search.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "price bounds and all sort orders use current prices",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/catalog-search.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "custom JOD limit accepts Arabic and Persian digits to three decimals",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/catalog-search.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "owner config only accepts the exact dashboard origin and disabled automatic sync",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/commandCenter.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "snapshot preserves real products and order lines while stripping customer and payment data",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/commandCenter.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "authenticated health and sync require the matching server receipt",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/commandCenter.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "requests driving coordinates in longitude-latitude order",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/deliveryRoute.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "parses and draws an actual route response without swapping coordinates",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/deliveryRoute.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "rejects missing routes and invalid geometry rather than inventing an ETA",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/deliveryRoute.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "fetches route data and rejects failed providers",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/deliveryRoute.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "every bundled design image exists and is a real PNG or JPEG",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/designAssets.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L018 product images and extra gallery views map to products the catalog sells",
+     "passed": true,
+     "features": [
+      "L018"
+     ],
+     "file": "src/lib/designAssets.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L017 the home screen departments from the mockups are real categories, each with its illustration",
+     "passed": true,
+     "features": [
+      "L017"
+     ],
+     "file": "src/lib/designAssets.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "mockup cut-outs are RGBA PNGs, so they sit cleanly on the white product base",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/designAssets.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L124 every customer-facing string sent through the translator has an English version",
+     "passed": true,
+     "features": [
+      "L124"
+     ],
+     "file": "src/lib/i18n.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L124 every staff-screen string (admin, merchant, driver, command center) has an English version",
+     "passed": true,
+     "features": [
+      "L124"
+     ],
+     "file": "src/lib/i18n.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L124 English translations keep the same placeholders and are never empty",
+     "passed": true,
+     "features": [
+      "L124"
+     ],
+     "file": "src/lib/i18n.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "normalizes Arabic forms, tashkeel, and Arabic and Persian numbers",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/recommendations.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "respects Arabic and Persian digit budgets and strict caps",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/recommendations.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "returns empty recommendations when intent or budget has no matches",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/recommendations.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "selects appropriate products for named intents",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/recommendations.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "uses product facts for comparisons and explicitly labels demo suggestions",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/recommendations.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "keeps all choices within an explicit budget range",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/recommendations.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "uses the configured currency and understands a Jordanian dinar budget",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/recommendations.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "reordering uses current prices and stock, skipping removed products and parents with SKUs",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/reorder.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "reordering coalesces duplicate entries and rejects invalid quantities",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/reorder.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L088 the 3D viewer page cannot be broken out of by model data",
+     "passed": true,
+     "features": [
+      "L088"
+     ],
+     "file": "src/lib/viewer3d.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "L079 L088 the packed 3D engines are byte-for-byte the sources in web-engines/",
+     "passed": true,
+     "features": [
+      "L079",
+      "L088"
+     ],
+     "file": "src/lib/webEngines.test.mjs",
+     "suite": "server"
+    },
+    {
+     "name": "the avatar engine only runs its own actions, never inherited properties such as __proto__",
+     "passed": true,
+     "features": [],
+     "file": "src/lib/webEngines.test.mjs",
+     "suite": "server"
+    }
+   ]
+  },
+  "app-e2e": {
+   "generatedAt": "2026-11-05T13:46:34.420Z",
+   "tests": [
+    {
+     "name": "L001 L002 register in the app, keep the session across reloads, sign out and sign in again",
+     "passed": true,
+     "features": [
+      "L001",
+      "L002"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L003 reset a forgotten password with the account recovery code",
+     "passed": true,
+     "features": [
+      "L003"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L004 L007 see signed-in devices, end one, end the others, then change the password",
+     "passed": true,
+     "features": [
+      "L004",
+      "L007"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L006 L008 change privacy preferences and download a copy of my data",
+     "passed": true,
+     "features": [
+      "L006",
+      "L008"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L009 L010 L095 edit the profile, then add an address with \"use my location\", the map pin and the nearest branch",
+     "passed": true,
+     "features": [
+      "L009",
+      "L010",
+      "L095"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L005 delete the account while the delivered order stays in the financial records",
+     "passed": true,
+     "features": [
+      "L005"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L011 a merchant account sees its sales and adds a product from the vendor screen",
+     "passed": true,
+     "features": [
+      "L011"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed",
+     "passed": true,
+     "features": [
+      "L013",
+      "L017",
+      "L069",
+      "L079",
+      "L081",
+      "L027"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L014 L015 L016 L022 Arabic search with typos, filters, sorting and the search history",
+     "passed": true,
+     "features": [
+      "L014",
+      "L015",
+      "L016",
+      "L022"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L021 pick a branch and see its own stock on the product cards",
+     "passed": true,
+     "features": [
+      "L021"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L023 search by voice",
+     "passed": true,
+     "features": [
+      "L023"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L024 search by barcode",
+     "passed": true,
+     "features": [
+      "L024"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L025 search by photo: the dominant colour finds matching products",
+     "passed": true,
+     "features": [
+      "L025"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L018 L019 L020 L026 product gallery with video, sizes with their own stock, the specifications table and sharing",
+     "passed": true,
+     "features": [
+      "L018",
+      "L019",
+      "L020",
+      "L026"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L028 only buyers who received the product can publish a review",
+     "passed": true,
+     "features": [
+      "L028"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L029 ask about a product and see the official answer",
+     "passed": true,
+     "features": [
+      "L029"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L030 L070 price-drop and back-in-stock alerts reach the notification inbox, with notification settings",
+     "passed": true,
+     "features": [
+      "L030",
+      "L070"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L031 L032 favourites sync with the account, and products are compared side by side",
+     "passed": true,
+     "features": [
+      "L031",
+      "L032"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L033 L034 L078 a family list shared with a code, filled from pasted receipt text, then sent to the cart",
+     "passed": true,
+     "features": [
+      "L033",
+      "L034",
+      "L078"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L035 L037 L039 L086 the cart: quantities, save for later, a discount code and the character reacting",
+     "passed": true,
+     "features": [
+      "L035",
+      "L037",
+      "L039",
+      "L086"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once",
+     "passed": true,
+     "features": [
+      "L038",
+      "L040",
+      "L041",
+      "L042",
+      "L043",
+      "L044",
+      "L047",
+      "L049"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L045 pay with the wallet balance",
+     "passed": true,
+     "features": [
+      "L045"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L046 pay by card in the sandbox: a declined test card is refused, the 4242 card is charged",
+     "passed": true,
+     "features": [
+      "L046"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L048 redeem a gift card into the wallet",
+     "passed": true,
+     "features": [
+      "L048"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L050 buy now checks out one product without touching the cart",
+     "passed": true,
+     "features": [
+      "L050"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L036 reorder a previous order with one tap",
+     "passed": true,
+     "features": [
+      "L036"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L051 L052 L053 L055 order history tabs, the order timeline and cancelling an order",
+     "passed": true,
+     "features": [
+      "L051",
+      "L052",
+      "L053",
+      "L055"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L091 L092 L054 L093 L060 the driver shares location, the shopper sees the live map, the driving ETA and the delivery code",
+     "passed": true,
+     "features": [
+      "L091",
+      "L092",
+      "L054",
+      "L093",
+      "L060"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L056 L057 L058 L059 invoice, rating the order and driver, and returning one item with a photo refunded to the wallet",
+     "passed": true,
+     "features": [
+      "L056",
+      "L057",
+      "L058",
+      "L059"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points",
+     "passed": true,
+     "features": [
+      "L061",
+      "L062",
+      "L063",
+      "L064",
+      "L065",
+      "L066"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L067 L068 the offers screen: flash deals with a live countdown and discounted products",
+     "passed": true,
+     "features": [
+      "L067",
+      "L068"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L071 L072 L076 L077 L085 conversational shopping: a budget basket, a recipe, text and voice commands, with the character speaking",
+     "passed": true,
+     "features": [
+      "L071",
+      "L072",
+      "L076",
+      "L077",
+      "L085"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L073 the weekly budget planner tracks spending and warns before going over",
+     "passed": true,
+     "features": [
+      "L073"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L074 L075 a smart product summary, and substitutes when a product is out of stock",
+     "passed": true,
+     "features": [
+      "L074",
+      "L075"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L080 L096 L097 L098 L099 an order-linked chat with bot replies, a photo, a human hand-off and a support ticket",
+     "passed": true,
+     "features": [
+      "L080",
+      "L096",
+      "L097",
+      "L098",
+      "L099"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L100 the help centre searches the FAQ and records helpful answers",
+     "passed": true,
+     "features": [
+      "L100"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L082 L083 L084 L085 commands, size, reduced motion, colours, outfits, accessories and voice are saved to the account",
+     "passed": true,
+     "features": [
+      "L082",
+      "L083",
+      "L084",
+      "L085"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L084 the still character in small spots shows the shopper's own colours",
+     "passed": true,
+     "features": [
+      "L084"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L087 put my photo on the character's face with consent, kept on the device only, and delete it",
+     "passed": true,
+     "features": [
+      "L087"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L088 L089 a 3D viewer that rotates and zooms, and \"try it in my room\" over the camera",
+     "passed": true,
+     "features": [
+      "L088",
+      "L089"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L090 the home pantry: fresh items arrive after delivery, consuming saves carbon, manual items and waste history",
+     "passed": true,
+     "features": [
+      "L090"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+     "passed": true,
+     "features": [
+      "L101",
+      "L102",
+      "L107",
+      "L111",
+      "L114",
+      "L094"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L112 L117 project management: the 125-feature list with evidence, vendors, campaigns and the development log",
+     "passed": true,
+     "features": [
+      "L112",
+      "L117"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+     "passed": true,
+     "features": [
+      "L118",
+      "L119",
+      "L120",
+      "L121",
+      "L122",
+      "L113",
+      "L104"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L123 L124 L125 day and night modes, English with the page direction flipped, and prices in a second currency",
+     "passed": true,
+     "features": [
+      "L123",
+      "L124",
+      "L125"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    },
+    {
+     "name": "L124 the staff screens in English: admin dashboard, project, sync, merchant and driver",
+     "passed": true,
+     "features": [
+      "L124"
+     ],
+     "file": "e2e/app.e2e.mjs",
+     "suite": "app-e2e"
+    }
+   ]
+  },
+  "dashboard-e2e": {
+   "generatedAt": "2026-11-05T13:46:34.420Z",
+   "tests": [
+    {
+     "name": "L001 L101 the admin signs in to the dashboard, sees live KPIs and the latest orders, signs out and back in",
+     "passed": true,
+     "features": [
+      "L001",
+      "L101"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L013 L018 L019 L020 L102 products: create one with a gallery, video, specifications and barcode, add a size variant, edit and archive",
+     "passed": true,
+     "features": [
+      "L013",
+      "L018",
+      "L019",
+      "L020",
+      "L102"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L017 L103 categories: add, hide and delete a catalog section",
+     "passed": true,
+     "features": [
+      "L017",
+      "L103"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L104 L105 inventory: preview the differences, import, then undo the import",
+     "passed": true,
+     "features": [
+      "L104",
+      "L105"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L021 L113 branches: open a branch and change its stock with version checks",
+     "passed": true,
+     "features": [
+      "L021",
+      "L113"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L040 L041 L094 delivery zones, fees and the capacity of time slots",
+     "passed": true,
+     "features": [
+      "L040",
+      "L041",
+      "L094"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L067 L068 L069 offers, a flash deal with a quantity limit, and a home-screen campaign",
+     "passed": true,
+     "features": [
+      "L067",
+      "L068",
+      "L069"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L029 answer a customer question officially from the dashboard",
+     "passed": true,
+     "features": [
+      "L029"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L039 L109 coupons: create a fixed discount, see it applied in checkout, then disable it",
+     "passed": true,
+     "features": [
+      "L039",
+      "L109"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L048 issue a gift card that a customer redeems into the wallet",
+     "passed": true,
+     "features": [
+      "L048"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L058 L091 L107 orders: assign a driver, advance the status, download the invoice and check tracking",
+     "passed": true,
+     "features": [
+      "L058",
+      "L091",
+      "L107"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L056 L057 L108 returns: see the chosen items and photo, approve and refund to the wallet",
+     "passed": true,
+     "features": [
+      "L056",
+      "L057",
+      "L108"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L001 L110 customers and wallet: balances, an audited wallet adjustment and a role change",
+     "passed": true,
+     "features": [
+      "L001",
+      "L110"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L096 support tickets: reply and close",
+     "passed": true,
+     "features": [
+      "L096"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L097 L098 support chats: an order-linked chat handed to a human, answered by staff and closed",
+     "passed": true,
+     "features": [
+      "L097",
+      "L098"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L100 the help centre: add a FAQ the app and the bot can use, then hide it",
+     "passed": true,
+     "features": [
+      "L100"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L059 L111 reports: revenue, best sellers and the order and driver ratings for 7, 30 and 90 days",
+     "passed": true,
+     "features": [
+      "L059",
+      "L111"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L114 low stock and reorder suggestions",
+     "passed": true,
+     "features": [
+      "L114"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L011 L112 vendors: add a merchant with an owner, add staff and suspend",
+     "passed": true,
+     "features": [
+      "L011",
+      "L112"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L106 export products, orders, customers and stock as CSV for Excel and as JSON",
+     "passed": true,
+     "features": [
+      "L106"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L115 the audit log records dashboard changes",
+     "passed": true,
+     "features": [
+      "L115"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L116 agent keys with limited scopes and agent jobs",
+     "passed": true,
+     "features": [
+      "L116"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L117 project management: the 125 features with test evidence and the development log",
+     "passed": true,
+     "features": [
+      "L117"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L118 L119 L120 L121 L122 central sync: export, snapshot, operations with receipts and retry, diff before import, JSON import and log download",
+     "passed": true,
+     "features": [
+      "L118",
+      "L119",
+      "L120",
+      "L121",
+      "L122"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    },
+    {
+     "name": "L125 display currencies: set exchange rates the app shows next to store prices",
+     "passed": true,
+     "features": [
+      "L125"
+     ],
+     "file": "e2e/dashboard.e2e.mjs",
+     "suite": "dashboard-e2e"
+    }
+   ]
+  }
+ },
+ "tests": [
+  {
+   "name": "one-time recovery codes reset passwords and revoke every prior session",
+   "passed": true,
+   "features": [],
+   "file": "server/accountRewards.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "deletion blocks obligations, anonymizes private data and invalidates sessions",
+   "passed": true,
+   "features": [],
+   "file": "server/accountRewards.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "last administrator and a driver with an active delivery cannot delete their accounts",
+   "passed": true,
+   "features": [],
+   "file": "server/accountRewards.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "delivery rewards redeem atomically and returns claw back redeemed value once",
+   "passed": true,
+   "features": [],
+   "file": "server/accountRewards.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "all central dashboard and mobile admin read screens resolve with owner authorization",
+   "passed": true,
+   "features": [],
+   "file": "server/adminScreens.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "health exposes only credential configuration; a missing key gives a safe 503",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "health never contacts the provider or reveals a configured credential",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "input validation rejects oversized messages, role injection, long histories and malformed JSON before any API call",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "body and content type limits reject client payloads",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "CORS allows exact configured origins and rejects other origins with no wildcard",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "Arabic/Persian budget parsing handles thousands, ranges and rejects unrelated model/year numbers",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "recommendations use server catalog prices, exclude over-budget and out-of-stock IDs, and request strict JSON",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "budget remains in force from recent user history, never from assistant history",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "strict budgets exclude a product exactly at the cap and ranges enforce the lower bound",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "rejects invented or over-budget provider IDs and raw provider errors cannot reach the client",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "budgets below every product avoid an unnecessary provider request",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "timeouts abort the provider request and return a safe timeout error",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "rate limiting ignores spoofed proxy headers and expires its bounded entries",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "limits concurrent provider work and recovers capacity after completion",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "streamed bodies cannot bypass the byte limit with no content-length header",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "catalog validation refuses duplicate IDs and invalid prices",
+   "passed": true,
+   "features": [],
+   "file": "server/assistant.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "unified homepage contains six functional zones without discarding existing operational screens",
+   "passed": true,
+   "features": [],
+   "file": "server/commandDashboard.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "application bridge links to actual same-page Luqta workbench route",
+   "passed": true,
+   "features": [],
+   "file": "server/commandDashboard.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "workbench has authenticated real APIs, code review links and an explicit nondeployment warning",
+   "passed": true,
+   "features": [],
+   "file": "server/commandDashboard.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "custom home preferences cannot modify authenticated backend",
+   "passed": true,
+   "features": [],
+   "file": "server/commandDashboard.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "home scripts are correctly loaded before authenticated client scripts",
+   "passed": true,
+   "features": [],
+   "file": "server/commandDashboard.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "auth sessions are real, expire on logout, and never grant public admin privileges",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "address ownership, defaults, nullable map pins, wishlist and notification read state persist",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "server-priced checkout is transactional and idempotent; cancellation restores inventory once",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "concurrent final-stock checkout cannot oversell and decimal wallet/coupon totals are exact",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "admin inventory CSV/JSON imports validate all rows before commit; scoped agents are revocable and audited",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "actual driver assignment/GPS, delivery, verified review and return refund work together",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "support conversations enforce ownership and admin replies create real notifications",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "agent maintenance jobs require evidence and optional Facebook explicitly fails without credentials",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "CORS rejects unapproved browser origins; static SPA fallback and persistence restart work",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "SQLite survives server restart with order history and session identity intact",
+   "passed": true,
+   "features": [],
+   "file": "server/commerce.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "P1: vendor cannot attach a variant to store-owned or foreign vendor products",
+   "passed": true,
+   "features": [],
+   "file": "server/critical-regressions.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "P2: a flash deal rejects an order exceeding the remaining allocation",
+   "passed": true,
+   "features": [],
+   "file": "server/critical-regressions.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "P2: approved partial return restores the originating branch stock",
+   "passed": true,
+   "features": [],
+   "file": "server/critical-regressions.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "P2: deleting an account removes delivery notes and gift recipient data",
+   "passed": true,
+   "features": [],
+   "file": "server/critical-regressions.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L001 L002 L012 register, sign in, hashed session, sign out and sign-in rate limit",
+   "passed": true,
+   "features": [
+    "L001",
+    "L002",
+    "L012"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L003 L004 recovery code resets the password and change-password signs out other devices",
+   "passed": true,
+   "features": [
+    "L003",
+    "L004"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L005 L006 data export covers module data and account deletion removes it",
+   "passed": true,
+   "features": [
+    "L005",
+    "L006"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L007 signed-in devices are listed with names and other sessions can be ended",
+   "passed": true,
+   "features": [
+    "L007"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L008 privacy preferences are validated and turning off search history stops recording",
+   "passed": true,
+   "features": [
+    "L008"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L009 profile keeps phone, avatar and birthday and rejects invalid values",
+   "passed": true,
+   "features": [
+    "L009"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L010 multiple addresses keep district, building, details and map pin",
+   "passed": true,
+   "features": [
+    "L010"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L011 merchant accounts manage only their own products, orders and payouts",
+   "passed": true,
+   "features": [
+    "L011"
+   ],
+   "file": "server/features.accounts.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L101 L111 KPIs and sales reports summarise real orders",
+   "passed": true,
+   "features": [
+    "L101",
+    "L111"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L102 L103 products and categories are managed with validation and audit",
+   "passed": true,
+   "features": [
+    "L102",
+    "L103"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L104 L105 import preview shows the difference before applying and the import can be undone",
+   "passed": true,
+   "features": [
+    "L104",
+    "L105"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L106 exports products, orders, customers, inventory and branch stock as CSV or JSON",
+   "passed": true,
+   "features": [
+    "L106"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L107 L108 L109 L110 orders with drivers, returns, coupons and customer wallets",
+   "passed": true,
+   "features": [
+    "L107",
+    "L108",
+    "L109",
+    "L110"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L112 L113 vendors and branches are created and administered",
+   "passed": true,
+   "features": [
+    "L112",
+    "L113"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L114 reorder suggestions use the last 30 days of sales",
+   "passed": true,
+   "features": [
+    "L114"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L115 L116 audit log and agent keys with scoped jobs",
+   "passed": true,
+   "features": [
+    "L115",
+    "L116"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L117 project management lists all 125 features with evidence and keeps a development log",
+   "passed": true,
+   "features": [
+    "L117"
+   ],
+   "file": "server/features.admin.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L071 conversational shopping answers with products, store info or actions",
+   "passed": true,
+   "features": [
+    "L071"
+   ],
+   "file": "server/features.ai.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L072 budget basket stays within the budget and favours useful staples",
+   "passed": true,
+   "features": [
+    "L072"
+   ],
+   "file": "server/features.ai.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L073 weekly budget planner tracks this week’s spending",
+   "passed": true,
+   "features": [
+    "L073"
+   ],
+   "file": "server/features.ai.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L076 voice and text commands become structured actions",
+   "passed": true,
+   "features": [
+    "L076"
+   ],
+   "file": "server/features.ai.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L077 recipes become a costed shopping list scaled to the number of people",
+   "passed": true,
+   "features": [
+    "L077"
+   ],
+   "file": "server/features.ai.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L078 pasted receipts or notes are matched to products with quantities",
+   "passed": true,
+   "features": [
+    "L078"
+   ],
+   "file": "server/features.ai.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L079 recommendations use interests and history unless personalisation is switched off",
+   "passed": true,
+   "features": [
+    "L079"
+   ],
+   "file": "server/features.ai.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L013 L017 catalog comes from the database with managed categories",
+   "passed": true,
+   "features": [
+    "L013",
+    "L017"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L014 Arabic search ignores diacritics, hamza and articles and tolerates typos",
+   "passed": true,
+   "features": [
+    "L014"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L015 L016 filters by price, rating and availability and sorts results",
+   "passed": true,
+   "features": [
+    "L015",
+    "L016"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L018 L019 L020 gallery, video, variants and specifications are validated and served",
+   "passed": true,
+   "features": [
+    "L018",
+    "L019",
+    "L020"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L021 per-branch stock limits orders, follows them and detects version conflicts",
+   "passed": true,
+   "features": [
+    "L021"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L022 search history is personal and suggestions mix products, categories and trends",
+   "passed": true,
+   "features": [
+    "L022"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L024 barcode lookup finds products by EAN, SKU or id",
+   "passed": true,
+   "features": [
+    "L024"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L025 image search decodes a PNG, finds its dominant colour and matches products",
+   "passed": true,
+   "features": [
+    "L025"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L028 reviews are accepted only after the product was delivered",
+   "passed": true,
+   "features": [
+    "L028"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L029 product questions get answers and store answers are marked official",
+   "passed": true,
+   "features": [
+    "L029"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L030 price-drop and back-in-stock alerts notify once when the condition is met",
+   "passed": true,
+   "features": [
+    "L030"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L074 L075 smart summary and in-stock substitutes for a sold-out product",
+   "passed": true,
+   "features": [
+    "L074",
+    "L075"
+   ],
+   "file": "server/features.catalog.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "the published catalog matches its source and lists 125 features",
+   "passed": true,
+   "features": [],
+   "file": "server/features.coverage.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "every server-side feature is cited by a server test",
+   "passed": true,
+   "features": [],
+   "file": "server/features.coverage.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "every app feature is driven by an end-to-end browser test",
+   "passed": true,
+   "features": [],
+   "file": "server/features.coverage.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "every dashboard feature is driven by an end-to-end dashboard test",
+   "passed": true,
+   "features": [],
+   "file": "server/features.coverage.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "every app feature points at a screen that exists",
+   "passed": true,
+   "features": [],
+   "file": "server/features.coverage.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "every dashboard feature points at a section the dashboard can draw and deep-link to",
+   "passed": true,
+   "features": [],
+   "file": "server/features.coverage.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L061 L062 points are earned on delivery and redeemed for wallet credit",
+   "passed": true,
+   "features": [
+    "L061",
+    "L062"
+   ],
+   "file": "server/features.loyalty.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L063 daily check-in awards once per day and tracks the streak",
+   "passed": true,
+   "features": [
+    "L063"
+   ],
+   "file": "server/features.loyalty.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L064 L065 badges reflect activity and referrals reward both friends after the first delivery",
+   "passed": true,
+   "features": [
+    "L064",
+    "L065"
+   ],
+   "file": "server/features.loyalty.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L066 tiers follow lifetime points and change the delivery fee",
+   "passed": true,
+   "features": [
+    "L066"
+   ],
+   "file": "server/features.loyalty.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L067 L068 offers and flash deals price orders until they end or sell out",
+   "passed": true,
+   "features": [
+    "L067",
+    "L068"
+   ],
+   "file": "server/features.loyalty.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L069 campaigns are shown only while active and validate their links",
+   "passed": true,
+   "features": [
+    "L069"
+   ],
+   "file": "server/features.loyalty.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L070 notifications can be read and their categories switched off",
+   "passed": true,
+   "features": [
+    "L070"
+   ],
+   "file": "server/features.loyalty.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L051 L053 L054 L055 history, timeline with live tracking and cancellation",
+   "passed": true,
+   "features": [
+    "L051",
+    "L053",
+    "L054",
+    "L055"
+   ],
+   "file": "server/features.orders.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L060 L091 L092 drivers are assigned, share location and need the customer code to deliver",
+   "passed": true,
+   "features": [
+    "L060",
+    "L091",
+    "L092"
+   ],
+   "file": "server/features.orders.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L060 five wrong delivery codes lock the confirmation",
+   "passed": true,
+   "features": [
+    "L060"
+   ],
+   "file": "server/features.orders.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L056 L057 returning selected items with a photo refunds only their share to the wallet",
+   "passed": true,
+   "features": [
+    "L056",
+    "L057"
+   ],
+   "file": "server/features.orders.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L058 L059 invoice and a single rating per delivered order",
+   "passed": true,
+   "features": [
+    "L058",
+    "L059"
+   ],
+   "file": "server/features.orders.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L094 L095 slot capacity is managed by staff and the nearest branch is found from a map pin",
+   "passed": true,
+   "features": [
+    "L094",
+    "L095"
+   ],
+   "file": "server/features.orders.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L031 favourites sync with the account across devices",
+   "passed": true,
+   "features": [
+    "L031"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L033 L034 personal lists and a shared family list with join codes and notifications",
+   "passed": true,
+   "features": [
+    "L033",
+    "L034"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L038 L039 L040 server-side quote with coupons and delivery fees by zone",
+   "passed": true,
+   "features": [
+    "L038",
+    "L039",
+    "L040"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L041 L042 L043 delivery slots with capacity, delivery notes and terms acceptance",
+   "passed": true,
+   "features": [
+    "L041",
+    "L042",
+    "L043"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L043 stores can require accepting the terms before an order is placed",
+   "passed": true,
+   "features": [
+    "L043"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L044 L045 L049 cash on delivery, wallet payment and duplicate-order protection",
+   "passed": true,
+   "features": [
+    "L044",
+    "L045",
+    "L049"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L046 sandbox card payments accept only test cards, never store card numbers, and handle declines",
+   "passed": true,
+   "features": [
+    "L046"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L047 gift wrapping adds its fee and keeps the message on the order",
+   "passed": true,
+   "features": [
+    "L047"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L048 gift cards are issued once, redeemed into the wallet and cannot be reused",
+   "passed": true,
+   "features": [
+    "L048"
+   ],
+   "file": "server/features.shopping.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L080 L097 order-linked chat is answered by the bot using the order and the FAQ",
+   "passed": true,
+   "features": [
+    "L080",
+    "L097"
+   ],
+   "file": "server/features.support.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L098 L099 asking for a human hands over the chat, notifies staff and keeps image attachments",
+   "passed": true,
+   "features": [
+    "L098",
+    "L099"
+   ],
+   "file": "server/features.support.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L096 L100 tickets and the searchable help center",
+   "passed": true,
+   "features": [
+    "L096",
+    "L100"
+   ],
+   "file": "server/features.support.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L083 L084 L124 character and language preferences are saved and validated",
+   "passed": true,
+   "features": [
+    "L083",
+    "L084",
+    "L124"
+   ],
+   "file": "server/features.support.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L090 pantry tracks expiry from delivered groceries, warns once and counts carbon savings",
+   "passed": true,
+   "features": [
+    "L090"
+   ],
+   "file": "server/features.support.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L125 display currency rates are managed by staff and published with the settings",
+   "passed": true,
+   "features": [
+    "L125"
+   ],
+   "file": "server/features.support.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L118 exporting to the command center maps fields, uses the API key and retries revision conflicts",
+   "passed": true,
+   "features": [
+    "L118"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L118 AAS accepts exported order lines with stable numeric product IDs and no customer PII",
+   "passed": true,
+   "features": [
+    "L118"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L118 rejects incomplete AAS receipts rather than reporting a false successful export",
+   "passed": true,
+   "features": [
+    "L118"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L121 resolves actual AAS numeric catalog IDs for preview without inserting duplicates",
+   "passed": true,
+   "features": [
+    "L121"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L119 the bridge snapshot respects limits and never contains sensitive columns",
+   "passed": true,
+   "features": [
+    "L119"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L120 pending operations are applied with backups, unsafe ones rejected, and each gets a receipt",
+   "passed": true,
+   "features": [
+    "L120"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L121 importing from the command center shows the diff first and rejects invalid rows",
+   "passed": true,
+   "features": [
+    "L121"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L122 receipts are listed, logs download as CSV or JSON and failed runs can be retried",
+   "passed": true,
+   "features": [
+    "L122"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L118 L120 service-key routes for external schedulers compare keys in constant time",
+   "passed": true,
+   "features": [
+    "L118",
+    "L120"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L118 sync explains what is missing when the command center is not configured",
+   "passed": true,
+   "features": [
+    "L118"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L118 a connection set by the server environment cannot be overwritten from the dashboard",
+   "passed": true,
+   "features": [
+    "L118"
+   ],
+   "file": "server/features.sync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "the dashboard at https://amer-ai-store.github.io can call the commerce API with Bearer auth",
+   "passed": true,
+   "features": [],
+   "file": "server/githubPagesCors.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "the dashboard at https://amer-ai-command-center.eagerlark64.chatgpt.site can call the commerce API with Bearer auth",
+   "passed": true,
+   "features": [],
+   "file": "server/githubPagesCors.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "a configured inventory connector imports remote quantities without exposing its token",
+   "passed": true,
+   "features": [],
+   "file": "server/inventoryConnector.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "undo restores existing product exactly, removes new product, and is single use",
+   "passed": true,
+   "features": [],
+   "file": "server/inventoryUndo.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "undo refuses to overwrite a purchase or a later product edit",
+   "passed": true,
+   "features": [],
+   "file": "server/inventoryUndo.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "only loopback forensic source is allowed",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaBridge.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "live local bridge status is redacted and stock remains unverified",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaBridge.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "catalog preview omits costs and unrelated private fields",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaBridge.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "incorrect bridge mode is refused",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaBridge.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "real API protects Jawafa source, returns only read-only metadata, and starts with no fake sales catalog",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaBridgeIntegration.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "Jawafa actual stock, offers, appearance and permissions work only in Luqta commerce",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaIntegration.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "subtracts unposted sales exactly once",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaInventory.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "rejects inconsistent actual",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaInventory.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "rejects unposted greater than ready",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaInventory.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "rejects stale snapshots",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaInventory.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "does not silently accept decimals when commerce schema is integer",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaInventory.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "rejects duplicates",
+   "passed": true,
+   "features": [],
+   "file": "server/jawafaInventory.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "admin discount prices persist and can be cleared without invalid offers",
+   "passed": true,
+   "features": [],
+   "file": "server/offers.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "SKU variants have independent stock and parent cannot be purchased",
+   "passed": true,
+   "features": [],
+   "file": "server/variants.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "favorites synchronize between separate sign-ins and remain private",
+   "passed": true,
+   "features": [],
+   "file": "server/wishlistSync.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "Arabic query, category, stock and hidden SKU filtering combine",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/catalog-search.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "price bounds and all sort orders use current prices",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/catalog-search.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "custom JOD limit accepts Arabic and Persian digits to three decimals",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/catalog-search.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "owner config only accepts the exact dashboard origin and disabled automatic sync",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/commandCenter.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "snapshot preserves real products and order lines while stripping customer and payment data",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/commandCenter.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "authenticated health and sync require the matching server receipt",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/commandCenter.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "requests driving coordinates in longitude-latitude order",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/deliveryRoute.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "parses and draws an actual route response without swapping coordinates",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/deliveryRoute.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "rejects missing routes and invalid geometry rather than inventing an ETA",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/deliveryRoute.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "fetches route data and rejects failed providers",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/deliveryRoute.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "every bundled design image exists and is a real PNG or JPEG",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/designAssets.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L018 product images and extra gallery views map to products the catalog sells",
+   "passed": true,
+   "features": [
+    "L018"
+   ],
+   "file": "src/lib/designAssets.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L017 the home screen departments from the mockups are real categories, each with its illustration",
+   "passed": true,
+   "features": [
+    "L017"
+   ],
+   "file": "src/lib/designAssets.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "mockup cut-outs are RGBA PNGs, so they sit cleanly on the white product base",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/designAssets.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L124 every customer-facing string sent through the translator has an English version",
+   "passed": true,
+   "features": [
+    "L124"
+   ],
+   "file": "src/lib/i18n.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L124 every staff-screen string (admin, merchant, driver, command center) has an English version",
+   "passed": true,
+   "features": [
+    "L124"
+   ],
+   "file": "src/lib/i18n.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L124 English translations keep the same placeholders and are never empty",
+   "passed": true,
+   "features": [
+    "L124"
+   ],
+   "file": "src/lib/i18n.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "normalizes Arabic forms, tashkeel, and Arabic and Persian numbers",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/recommendations.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "respects Arabic and Persian digit budgets and strict caps",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/recommendations.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "returns empty recommendations when intent or budget has no matches",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/recommendations.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "selects appropriate products for named intents",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/recommendations.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "uses product facts for comparisons and explicitly labels demo suggestions",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/recommendations.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "keeps all choices within an explicit budget range",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/recommendations.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "uses the configured currency and understands a Jordanian dinar budget",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/recommendations.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "reordering uses current prices and stock, skipping removed products and parents with SKUs",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/reorder.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "reordering coalesces duplicate entries and rejects invalid quantities",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/reorder.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L088 the 3D viewer page cannot be broken out of by model data",
+   "passed": true,
+   "features": [
+    "L088"
+   ],
+   "file": "src/lib/viewer3d.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L079 L088 the packed 3D engines are byte-for-byte the sources in web-engines/",
+   "passed": true,
+   "features": [
+    "L079",
+    "L088"
+   ],
+   "file": "src/lib/webEngines.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "the avatar engine only runs its own actions, never inherited properties such as __proto__",
+   "passed": true,
+   "features": [],
+   "file": "src/lib/webEngines.test.mjs",
+   "suite": "server"
+  },
+  {
+   "name": "L001 L002 register in the app, keep the session across reloads, sign out and sign in again",
+   "passed": true,
+   "features": [
+    "L001",
+    "L002"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L003 reset a forgotten password with the account recovery code",
+   "passed": true,
+   "features": [
+    "L003"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L004 L007 see signed-in devices, end one, end the others, then change the password",
+   "passed": true,
+   "features": [
+    "L004",
+    "L007"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L006 L008 change privacy preferences and download a copy of my data",
+   "passed": true,
+   "features": [
+    "L006",
+    "L008"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L009 L010 L095 edit the profile, then add an address with \"use my location\", the map pin and the nearest branch",
+   "passed": true,
+   "features": [
+    "L009",
+    "L010",
+    "L095"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L005 delete the account while the delivered order stays in the financial records",
+   "passed": true,
+   "features": [
+    "L005"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L011 a merchant account sees its sales and adds a product from the vendor screen",
+   "passed": true,
+   "features": [
+    "L011"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed",
+   "passed": true,
+   "features": [
+    "L013",
+    "L017",
+    "L069",
+    "L079",
+    "L081",
+    "L027"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L014 L015 L016 L022 Arabic search with typos, filters, sorting and the search history",
+   "passed": true,
+   "features": [
+    "L014",
+    "L015",
+    "L016",
+    "L022"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L021 pick a branch and see its own stock on the product cards",
+   "passed": true,
+   "features": [
+    "L021"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L023 search by voice",
+   "passed": true,
+   "features": [
+    "L023"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L024 search by barcode",
+   "passed": true,
+   "features": [
+    "L024"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L025 search by photo: the dominant colour finds matching products",
+   "passed": true,
+   "features": [
+    "L025"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L018 L019 L020 L026 product gallery with video, sizes with their own stock, the specifications table and sharing",
+   "passed": true,
+   "features": [
+    "L018",
+    "L019",
+    "L020",
+    "L026"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L028 only buyers who received the product can publish a review",
+   "passed": true,
+   "features": [
+    "L028"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L029 ask about a product and see the official answer",
+   "passed": true,
+   "features": [
+    "L029"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L030 L070 price-drop and back-in-stock alerts reach the notification inbox, with notification settings",
+   "passed": true,
+   "features": [
+    "L030",
+    "L070"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L031 L032 favourites sync with the account, and products are compared side by side",
+   "passed": true,
+   "features": [
+    "L031",
+    "L032"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L033 L034 L078 a family list shared with a code, filled from pasted receipt text, then sent to the cart",
+   "passed": true,
+   "features": [
+    "L033",
+    "L034",
+    "L078"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L035 L037 L039 L086 the cart: quantities, save for later, a discount code and the character reacting",
+   "passed": true,
+   "features": [
+    "L035",
+    "L037",
+    "L039",
+    "L086"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once",
+   "passed": true,
+   "features": [
+    "L038",
+    "L040",
+    "L041",
+    "L042",
+    "L043",
+    "L044",
+    "L047",
+    "L049"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L045 pay with the wallet balance",
+   "passed": true,
+   "features": [
+    "L045"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L046 pay by card in the sandbox: a declined test card is refused, the 4242 card is charged",
+   "passed": true,
+   "features": [
+    "L046"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L048 redeem a gift card into the wallet",
+   "passed": true,
+   "features": [
+    "L048"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L050 buy now checks out one product without touching the cart",
+   "passed": true,
+   "features": [
+    "L050"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L036 reorder a previous order with one tap",
+   "passed": true,
+   "features": [
+    "L036"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L051 L052 L053 L055 order history tabs, the order timeline and cancelling an order",
+   "passed": true,
+   "features": [
+    "L051",
+    "L052",
+    "L053",
+    "L055"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L091 L092 L054 L093 L060 the driver shares location, the shopper sees the live map, the driving ETA and the delivery code",
+   "passed": true,
+   "features": [
+    "L091",
+    "L092",
+    "L054",
+    "L093",
+    "L060"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L056 L057 L058 L059 invoice, rating the order and driver, and returning one item with a photo refunded to the wallet",
+   "passed": true,
+   "features": [
+    "L056",
+    "L057",
+    "L058",
+    "L059"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points",
+   "passed": true,
+   "features": [
+    "L061",
+    "L062",
+    "L063",
+    "L064",
+    "L065",
+    "L066"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L067 L068 the offers screen: flash deals with a live countdown and discounted products",
+   "passed": true,
+   "features": [
+    "L067",
+    "L068"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L071 L072 L076 L077 L085 conversational shopping: a budget basket, a recipe, text and voice commands, with the character speaking",
+   "passed": true,
+   "features": [
+    "L071",
+    "L072",
+    "L076",
+    "L077",
+    "L085"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L073 the weekly budget planner tracks spending and warns before going over",
+   "passed": true,
+   "features": [
+    "L073"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L074 L075 a smart product summary, and substitutes when a product is out of stock",
+   "passed": true,
+   "features": [
+    "L074",
+    "L075"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L080 L096 L097 L098 L099 an order-linked chat with bot replies, a photo, a human hand-off and a support ticket",
+   "passed": true,
+   "features": [
+    "L080",
+    "L096",
+    "L097",
+    "L098",
+    "L099"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L100 the help centre searches the FAQ and records helpful answers",
+   "passed": true,
+   "features": [
+    "L100"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L082 L083 L084 L085 commands, size, reduced motion, colours, outfits, accessories and voice are saved to the account",
+   "passed": true,
+   "features": [
+    "L082",
+    "L083",
+    "L084",
+    "L085"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L084 the still character in small spots shows the shopper's own colours",
+   "passed": true,
+   "features": [
+    "L084"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L087 put my photo on the character's face with consent, kept on the device only, and delete it",
+   "passed": true,
+   "features": [
+    "L087"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L088 L089 a 3D viewer that rotates and zooms, and \"try it in my room\" over the camera",
+   "passed": true,
+   "features": [
+    "L088",
+    "L089"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L090 the home pantry: fresh items arrive after delivery, consuming saves carbon, manual items and waste history",
+   "passed": true,
+   "features": [
+    "L090"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+   "passed": true,
+   "features": [
+    "L101",
+    "L102",
+    "L107",
+    "L111",
+    "L114",
+    "L094"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L112 L117 project management: the 125-feature list with evidence, vendors, campaigns and the development log",
+   "passed": true,
+   "features": [
+    "L112",
+    "L117"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+   "passed": true,
+   "features": [
+    "L118",
+    "L119",
+    "L120",
+    "L121",
+    "L122",
+    "L113",
+    "L104"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L123 L124 L125 day and night modes, English with the page direction flipped, and prices in a second currency",
+   "passed": true,
+   "features": [
+    "L123",
+    "L124",
+    "L125"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L124 the staff screens in English: admin dashboard, project, sync, merchant and driver",
+   "passed": true,
+   "features": [
+    "L124"
+   ],
+   "file": "e2e/app.e2e.mjs",
+   "suite": "app-e2e"
+  },
+  {
+   "name": "L001 L101 the admin signs in to the dashboard, sees live KPIs and the latest orders, signs out and back in",
+   "passed": true,
+   "features": [
+    "L001",
+    "L101"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L013 L018 L019 L020 L102 products: create one with a gallery, video, specifications and barcode, add a size variant, edit and archive",
+   "passed": true,
+   "features": [
+    "L013",
+    "L018",
+    "L019",
+    "L020",
+    "L102"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L017 L103 categories: add, hide and delete a catalog section",
+   "passed": true,
+   "features": [
+    "L017",
+    "L103"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L104 L105 inventory: preview the differences, import, then undo the import",
+   "passed": true,
+   "features": [
+    "L104",
+    "L105"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L021 L113 branches: open a branch and change its stock with version checks",
+   "passed": true,
+   "features": [
+    "L021",
+    "L113"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L040 L041 L094 delivery zones, fees and the capacity of time slots",
+   "passed": true,
+   "features": [
+    "L040",
+    "L041",
+    "L094"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L067 L068 L069 offers, a flash deal with a quantity limit, and a home-screen campaign",
+   "passed": true,
+   "features": [
+    "L067",
+    "L068",
+    "L069"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L029 answer a customer question officially from the dashboard",
+   "passed": true,
+   "features": [
+    "L029"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L039 L109 coupons: create a fixed discount, see it applied in checkout, then disable it",
+   "passed": true,
+   "features": [
+    "L039",
+    "L109"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L048 issue a gift card that a customer redeems into the wallet",
+   "passed": true,
+   "features": [
+    "L048"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L058 L091 L107 orders: assign a driver, advance the status, download the invoice and check tracking",
+   "passed": true,
+   "features": [
+    "L058",
+    "L091",
+    "L107"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L056 L057 L108 returns: see the chosen items and photo, approve and refund to the wallet",
+   "passed": true,
+   "features": [
+    "L056",
+    "L057",
+    "L108"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L001 L110 customers and wallet: balances, an audited wallet adjustment and a role change",
+   "passed": true,
+   "features": [
+    "L001",
+    "L110"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L096 support tickets: reply and close",
+   "passed": true,
+   "features": [
+    "L096"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L097 L098 support chats: an order-linked chat handed to a human, answered by staff and closed",
+   "passed": true,
+   "features": [
+    "L097",
+    "L098"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L100 the help centre: add a FAQ the app and the bot can use, then hide it",
+   "passed": true,
+   "features": [
+    "L100"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L059 L111 reports: revenue, best sellers and the order and driver ratings for 7, 30 and 90 days",
+   "passed": true,
+   "features": [
+    "L059",
+    "L111"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L114 low stock and reorder suggestions",
+   "passed": true,
+   "features": [
+    "L114"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L011 L112 vendors: add a merchant with an owner, add staff and suspend",
+   "passed": true,
+   "features": [
+    "L011",
+    "L112"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L106 export products, orders, customers and stock as CSV for Excel and as JSON",
+   "passed": true,
+   "features": [
+    "L106"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L115 the audit log records dashboard changes",
+   "passed": true,
+   "features": [
+    "L115"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L116 agent keys with limited scopes and agent jobs",
+   "passed": true,
+   "features": [
+    "L116"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L117 project management: the 125 features with test evidence and the development log",
+   "passed": true,
+   "features": [
+    "L117"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L118 L119 L120 L121 L122 central sync: export, snapshot, operations with receipts and retry, diff before import, JSON import and log download",
+   "passed": true,
+   "features": [
+    "L118",
+    "L119",
+    "L120",
+    "L121",
+    "L122"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  },
+  {
+   "name": "L125 display currencies: set exchange rates the app shows next to store prices",
+   "passed": true,
+   "features": [
+    "L125"
+   ],
+   "file": "e2e/dashboard.e2e.mjs",
+   "suite": "dashboard-e2e"
+  }
+ ],
+ "features": {
+  "L001": {
+   "tests": [
+    "L001 L002 L012 register, sign in, hashed session, sign out and sign-in rate limit",
+    "L001 L002 register in the app, keep the session across reloads, sign out and sign in again",
+    "L001 L101 the admin signs in to the dashboard, sees live KPIs and the latest orders, signs out and back in",
+    "L001 L110 customers and wallet: balances, an audited wallet adjustment and a role change"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 2,
+     "failed": 0
+    }
+   }
+  },
+  "L002": {
+   "tests": [
+    "L001 L002 L012 register, sign in, hashed session, sign out and sign-in rate limit",
+    "L001 L002 register in the app, keep the session across reloads, sign out and sign in again"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L012": {
+   "tests": [
+    "L001 L002 L012 register, sign in, hashed session, sign out and sign-in rate limit"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L003": {
+   "tests": [
+    "L003 L004 recovery code resets the password and change-password signs out other devices",
+    "L003 reset a forgotten password with the account recovery code"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L004": {
+   "tests": [
+    "L003 L004 recovery code resets the password and change-password signs out other devices",
+    "L004 L007 see signed-in devices, end one, end the others, then change the password"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L005": {
+   "tests": [
+    "L005 L006 data export covers module data and account deletion removes it",
+    "L005 delete the account while the delivered order stays in the financial records"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L006": {
+   "tests": [
+    "L005 L006 data export covers module data and account deletion removes it",
+    "L006 L008 change privacy preferences and download a copy of my data"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L007": {
+   "tests": [
+    "L007 signed-in devices are listed with names and other sessions can be ended",
+    "L004 L007 see signed-in devices, end one, end the others, then change the password"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L008": {
+   "tests": [
+    "L008 privacy preferences are validated and turning off search history stops recording",
+    "L006 L008 change privacy preferences and download a copy of my data"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L009": {
+   "tests": [
+    "L009 profile keeps phone, avatar and birthday and rejects invalid values",
+    "L009 L010 L095 edit the profile, then add an address with \"use my location\", the map pin and the nearest branch"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L010": {
+   "tests": [
+    "L010 multiple addresses keep district, building, details and map pin",
+    "L009 L010 L095 edit the profile, then add an address with \"use my location\", the map pin and the nearest branch"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L011": {
+   "tests": [
+    "L011 merchant accounts manage only their own products, orders and payouts",
+    "L011 a merchant account sees its sales and adds a product from the vendor screen",
+    "L011 L112 vendors: add a merchant with an owner, add staff and suspend"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L101": {
+   "tests": [
+    "L101 L111 KPIs and sales reports summarise real orders",
+    "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+    "L001 L101 the admin signs in to the dashboard, sees live KPIs and the latest orders, signs out and back in"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L111": {
+   "tests": [
+    "L101 L111 KPIs and sales reports summarise real orders",
+    "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+    "L059 L111 reports: revenue, best sellers and the order and driver ratings for 7, 30 and 90 days"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L102": {
+   "tests": [
+    "L102 L103 products and categories are managed with validation and audit",
+    "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+    "L013 L018 L019 L020 L102 products: create one with a gallery, video, specifications and barcode, add a size variant, edit and archive"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L103": {
+   "tests": [
+    "L102 L103 products and categories are managed with validation and audit",
+    "L017 L103 categories: add, hide and delete a catalog section"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L104": {
+   "tests": [
+    "L104 L105 import preview shows the difference before applying and the import can be undone",
+    "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+    "L104 L105 inventory: preview the differences, import, then undo the import"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L105": {
+   "tests": [
+    "L104 L105 import preview shows the difference before applying and the import can be undone",
+    "L104 L105 inventory: preview the differences, import, then undo the import"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L106": {
+   "tests": [
+    "L106 exports products, orders, customers, inventory and branch stock as CSV or JSON",
+    "L106 export products, orders, customers and stock as CSV for Excel and as JSON"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L107": {
+   "tests": [
+    "L107 L108 L109 L110 orders with drivers, returns, coupons and customer wallets",
+    "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+    "L058 L091 L107 orders: assign a driver, advance the status, download the invoice and check tracking"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L108": {
+   "tests": [
+    "L107 L108 L109 L110 orders with drivers, returns, coupons and customer wallets",
+    "L056 L057 L108 returns: see the chosen items and photo, approve and refund to the wallet"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L109": {
+   "tests": [
+    "L107 L108 L109 L110 orders with drivers, returns, coupons and customer wallets",
+    "L039 L109 coupons: create a fixed discount, see it applied in checkout, then disable it"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L110": {
+   "tests": [
+    "L107 L108 L109 L110 orders with drivers, returns, coupons and customer wallets",
+    "L001 L110 customers and wallet: balances, an audited wallet adjustment and a role change"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L112": {
+   "tests": [
+    "L112 L113 vendors and branches are created and administered",
+    "L112 L117 project management: the 125-feature list with evidence, vendors, campaigns and the development log",
+    "L011 L112 vendors: add a merchant with an owner, add staff and suspend"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L113": {
+   "tests": [
+    "L112 L113 vendors and branches are created and administered",
+    "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+    "L021 L113 branches: open a branch and change its stock with version checks"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L114": {
+   "tests": [
+    "L114 reorder suggestions use the last 30 days of sales",
+    "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+    "L114 low stock and reorder suggestions"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L115": {
+   "tests": [
+    "L115 L116 audit log and agent keys with scoped jobs",
+    "L115 the audit log records dashboard changes"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L116": {
+   "tests": [
+    "L115 L116 audit log and agent keys with scoped jobs",
+    "L116 agent keys with limited scopes and agent jobs"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L117": {
+   "tests": [
+    "L117 project management lists all 125 features with evidence and keeps a development log",
+    "L112 L117 project management: the 125-feature list with evidence, vendors, campaigns and the development log",
+    "L117 project management: the 125 features with test evidence and the development log"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L071": {
+   "tests": [
+    "L071 conversational shopping answers with products, store info or actions",
+    "L071 L072 L076 L077 L085 conversational shopping: a budget basket, a recipe, text and voice commands, with the character speaking"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L072": {
+   "tests": [
+    "L072 budget basket stays within the budget and favours useful staples",
+    "L071 L072 L076 L077 L085 conversational shopping: a budget basket, a recipe, text and voice commands, with the character speaking"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L073": {
+   "tests": [
+    "L073 weekly budget planner tracks this week’s spending",
+    "L073 the weekly budget planner tracks spending and warns before going over"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L076": {
+   "tests": [
+    "L076 voice and text commands become structured actions",
+    "L071 L072 L076 L077 L085 conversational shopping: a budget basket, a recipe, text and voice commands, with the character speaking"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L077": {
+   "tests": [
+    "L077 recipes become a costed shopping list scaled to the number of people",
+    "L071 L072 L076 L077 L085 conversational shopping: a budget basket, a recipe, text and voice commands, with the character speaking"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L078": {
+   "tests": [
+    "L078 pasted receipts or notes are matched to products with quantities",
+    "L033 L034 L078 a family list shared with a code, filled from pasted receipt text, then sent to the cart"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L079": {
+   "tests": [
+    "L079 recommendations use interests and history unless personalisation is switched off",
+    "L079 L088 the packed 3D engines are byte-for-byte the sources in web-engines/",
+    "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L013": {
+   "tests": [
+    "L013 L017 catalog comes from the database with managed categories",
+    "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed",
+    "L013 L018 L019 L020 L102 products: create one with a gallery, video, specifications and barcode, add a size variant, edit and archive"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L017": {
+   "tests": [
+    "L013 L017 catalog comes from the database with managed categories",
+    "L017 the home screen departments from the mockups are real categories, each with its illustration",
+    "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed",
+    "L017 L103 categories: add, hide and delete a catalog section"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L014": {
+   "tests": [
+    "L014 Arabic search ignores diacritics, hamza and articles and tolerates typos",
+    "L014 L015 L016 L022 Arabic search with typos, filters, sorting and the search history"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L015": {
+   "tests": [
+    "L015 L016 filters by price, rating and availability and sorts results",
+    "L014 L015 L016 L022 Arabic search with typos, filters, sorting and the search history"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L016": {
+   "tests": [
+    "L015 L016 filters by price, rating and availability and sorts results",
+    "L014 L015 L016 L022 Arabic search with typos, filters, sorting and the search history"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L018": {
+   "tests": [
+    "L018 L019 L020 gallery, video, variants and specifications are validated and served",
+    "L018 product images and extra gallery views map to products the catalog sells",
+    "L018 L019 L020 L026 product gallery with video, sizes with their own stock, the specifications table and sharing",
+    "L013 L018 L019 L020 L102 products: create one with a gallery, video, specifications and barcode, add a size variant, edit and archive"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L019": {
+   "tests": [
+    "L018 L019 L020 gallery, video, variants and specifications are validated and served",
+    "L018 L019 L020 L026 product gallery with video, sizes with their own stock, the specifications table and sharing",
+    "L013 L018 L019 L020 L102 products: create one with a gallery, video, specifications and barcode, add a size variant, edit and archive"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L020": {
+   "tests": [
+    "L018 L019 L020 gallery, video, variants and specifications are validated and served",
+    "L018 L019 L020 L026 product gallery with video, sizes with their own stock, the specifications table and sharing",
+    "L013 L018 L019 L020 L102 products: create one with a gallery, video, specifications and barcode, add a size variant, edit and archive"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L021": {
+   "tests": [
+    "L021 per-branch stock limits orders, follows them and detects version conflicts",
+    "L021 pick a branch and see its own stock on the product cards",
+    "L021 L113 branches: open a branch and change its stock with version checks"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L022": {
+   "tests": [
+    "L022 search history is personal and suggestions mix products, categories and trends",
+    "L014 L015 L016 L022 Arabic search with typos, filters, sorting and the search history"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L024": {
+   "tests": [
+    "L024 barcode lookup finds products by EAN, SKU or id",
+    "L024 search by barcode"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L025": {
+   "tests": [
+    "L025 image search decodes a PNG, finds its dominant colour and matches products",
+    "L025 search by photo: the dominant colour finds matching products"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L028": {
+   "tests": [
+    "L028 reviews are accepted only after the product was delivered",
+    "L028 only buyers who received the product can publish a review"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L029": {
+   "tests": [
+    "L029 product questions get answers and store answers are marked official",
+    "L029 ask about a product and see the official answer",
+    "L029 answer a customer question officially from the dashboard"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L030": {
+   "tests": [
+    "L030 price-drop and back-in-stock alerts notify once when the condition is met",
+    "L030 L070 price-drop and back-in-stock alerts reach the notification inbox, with notification settings"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L074": {
+   "tests": [
+    "L074 L075 smart summary and in-stock substitutes for a sold-out product",
+    "L074 L075 a smart product summary, and substitutes when a product is out of stock"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L075": {
+   "tests": [
+    "L074 L075 smart summary and in-stock substitutes for a sold-out product",
+    "L074 L075 a smart product summary, and substitutes when a product is out of stock"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L061": {
+   "tests": [
+    "L061 L062 points are earned on delivery and redeemed for wallet credit",
+    "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L062": {
+   "tests": [
+    "L061 L062 points are earned on delivery and redeemed for wallet credit",
+    "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L063": {
+   "tests": [
+    "L063 daily check-in awards once per day and tracks the streak",
+    "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L064": {
+   "tests": [
+    "L064 L065 badges reflect activity and referrals reward both friends after the first delivery",
+    "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L065": {
+   "tests": [
+    "L064 L065 badges reflect activity and referrals reward both friends after the first delivery",
+    "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L066": {
+   "tests": [
+    "L066 tiers follow lifetime points and change the delivery fee",
+    "L061 L062 L063 L064 L065 L066 points after delivery, daily check-in, badges, tiers, referrals and redeeming points"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L067": {
+   "tests": [
+    "L067 L068 offers and flash deals price orders until they end or sell out",
+    "L067 L068 the offers screen: flash deals with a live countdown and discounted products",
+    "L067 L068 L069 offers, a flash deal with a quantity limit, and a home-screen campaign"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L068": {
+   "tests": [
+    "L067 L068 offers and flash deals price orders until they end or sell out",
+    "L067 L068 the offers screen: flash deals with a live countdown and discounted products",
+    "L067 L068 L069 offers, a flash deal with a quantity limit, and a home-screen campaign"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L069": {
+   "tests": [
+    "L069 campaigns are shown only while active and validate their links",
+    "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed",
+    "L067 L068 L069 offers, a flash deal with a quantity limit, and a home-screen campaign"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L070": {
+   "tests": [
+    "L070 notifications can be read and their categories switched off",
+    "L030 L070 price-drop and back-in-stock alerts reach the notification inbox, with notification settings"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L051": {
+   "tests": [
+    "L051 L053 L054 L055 history, timeline with live tracking and cancellation",
+    "L051 L052 L053 L055 order history tabs, the order timeline and cancelling an order"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L053": {
+   "tests": [
+    "L051 L053 L054 L055 history, timeline with live tracking and cancellation",
+    "L051 L052 L053 L055 order history tabs, the order timeline and cancelling an order"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L054": {
+   "tests": [
+    "L051 L053 L054 L055 history, timeline with live tracking and cancellation",
+    "L091 L092 L054 L093 L060 the driver shares location, the shopper sees the live map, the driving ETA and the delivery code"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L055": {
+   "tests": [
+    "L051 L053 L054 L055 history, timeline with live tracking and cancellation",
+    "L051 L052 L053 L055 order history tabs, the order timeline and cancelling an order"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L060": {
+   "tests": [
+    "L060 L091 L092 drivers are assigned, share location and need the customer code to deliver",
+    "L060 five wrong delivery codes lock the confirmation",
+    "L091 L092 L054 L093 L060 the driver shares location, the shopper sees the live map, the driving ETA and the delivery code"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L091": {
+   "tests": [
+    "L060 L091 L092 drivers are assigned, share location and need the customer code to deliver",
+    "L091 L092 L054 L093 L060 the driver shares location, the shopper sees the live map, the driving ETA and the delivery code",
+    "L058 L091 L107 orders: assign a driver, advance the status, download the invoice and check tracking"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L092": {
+   "tests": [
+    "L060 L091 L092 drivers are assigned, share location and need the customer code to deliver",
+    "L091 L092 L054 L093 L060 the driver shares location, the shopper sees the live map, the driving ETA and the delivery code"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L056": {
+   "tests": [
+    "L056 L057 returning selected items with a photo refunds only their share to the wallet",
+    "L056 L057 L058 L059 invoice, rating the order and driver, and returning one item with a photo refunded to the wallet",
+    "L056 L057 L108 returns: see the chosen items and photo, approve and refund to the wallet"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L057": {
+   "tests": [
+    "L056 L057 returning selected items with a photo refunds only their share to the wallet",
+    "L056 L057 L058 L059 invoice, rating the order and driver, and returning one item with a photo refunded to the wallet",
+    "L056 L057 L108 returns: see the chosen items and photo, approve and refund to the wallet"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L058": {
+   "tests": [
+    "L058 L059 invoice and a single rating per delivered order",
+    "L056 L057 L058 L059 invoice, rating the order and driver, and returning one item with a photo refunded to the wallet",
+    "L058 L091 L107 orders: assign a driver, advance the status, download the invoice and check tracking"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L059": {
+   "tests": [
+    "L058 L059 invoice and a single rating per delivered order",
+    "L056 L057 L058 L059 invoice, rating the order and driver, and returning one item with a photo refunded to the wallet",
+    "L059 L111 reports: revenue, best sellers and the order and driver ratings for 7, 30 and 90 days"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L094": {
+   "tests": [
+    "L094 L095 slot capacity is managed by staff and the nearest branch is found from a map pin",
+    "L101 L102 L107 L111 L114 L094 in-app admin: KPIs, reports, reorder suggestions, slot capacity, products and order management",
+    "L040 L041 L094 delivery zones, fees and the capacity of time slots"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L095": {
+   "tests": [
+    "L094 L095 slot capacity is managed by staff and the nearest branch is found from a map pin",
+    "L009 L010 L095 edit the profile, then add an address with \"use my location\", the map pin and the nearest branch"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L031": {
+   "tests": [
+    "L031 favourites sync with the account across devices",
+    "L031 L032 favourites sync with the account, and products are compared side by side"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L033": {
+   "tests": [
+    "L033 L034 personal lists and a shared family list with join codes and notifications",
+    "L033 L034 L078 a family list shared with a code, filled from pasted receipt text, then sent to the cart"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L034": {
+   "tests": [
+    "L033 L034 personal lists and a shared family list with join codes and notifications",
+    "L033 L034 L078 a family list shared with a code, filled from pasted receipt text, then sent to the cart"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L038": {
+   "tests": [
+    "L038 L039 L040 server-side quote with coupons and delivery fees by zone",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L039": {
+   "tests": [
+    "L038 L039 L040 server-side quote with coupons and delivery fees by zone",
+    "L035 L037 L039 L086 the cart: quantities, save for later, a discount code and the character reacting",
+    "L039 L109 coupons: create a fixed discount, see it applied in checkout, then disable it"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L040": {
+   "tests": [
+    "L038 L039 L040 server-side quote with coupons and delivery fees by zone",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once",
+    "L040 L041 L094 delivery zones, fees and the capacity of time slots"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L041": {
+   "tests": [
+    "L041 L042 L043 delivery slots with capacity, delivery notes and terms acceptance",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once",
+    "L040 L041 L094 delivery zones, fees and the capacity of time slots"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L042": {
+   "tests": [
+    "L041 L042 L043 delivery slots with capacity, delivery notes and terms acceptance",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L043": {
+   "tests": [
+    "L041 L042 L043 delivery slots with capacity, delivery notes and terms acceptance",
+    "L043 stores can require accepting the terms before an order is placed",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L044": {
+   "tests": [
+    "L044 L045 L049 cash on delivery, wallet payment and duplicate-order protection",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L045": {
+   "tests": [
+    "L044 L045 L049 cash on delivery, wallet payment and duplicate-order protection",
+    "L045 pay with the wallet balance"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L049": {
+   "tests": [
+    "L044 L045 L049 cash on delivery, wallet payment and duplicate-order protection",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L046": {
+   "tests": [
+    "L046 sandbox card payments accept only test cards, never store card numbers, and handle declines",
+    "L046 pay by card in the sandbox: a declined test card is refused, the 4242 card is charged"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L047": {
+   "tests": [
+    "L047 gift wrapping adds its fee and keeps the message on the order",
+    "L038 L040 L041 L042 L043 L044 L047 L049 checkout: saved address, zone fee, a time slot, notes, gift wrap, terms and cash on delivery — placed once"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L048": {
+   "tests": [
+    "L048 gift cards are issued once, redeemed into the wallet and cannot be reused",
+    "L048 redeem a gift card into the wallet",
+    "L048 issue a gift card that a customer redeems into the wallet"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L080": {
+   "tests": [
+    "L080 L097 order-linked chat is answered by the bot using the order and the FAQ",
+    "L080 L096 L097 L098 L099 an order-linked chat with bot replies, a photo, a human hand-off and a support ticket"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L097": {
+   "tests": [
+    "L080 L097 order-linked chat is answered by the bot using the order and the FAQ",
+    "L080 L096 L097 L098 L099 an order-linked chat with bot replies, a photo, a human hand-off and a support ticket",
+    "L097 L098 support chats: an order-linked chat handed to a human, answered by staff and closed"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L098": {
+   "tests": [
+    "L098 L099 asking for a human hands over the chat, notifies staff and keeps image attachments",
+    "L080 L096 L097 L098 L099 an order-linked chat with bot replies, a photo, a human hand-off and a support ticket",
+    "L097 L098 support chats: an order-linked chat handed to a human, answered by staff and closed"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L099": {
+   "tests": [
+    "L098 L099 asking for a human hands over the chat, notifies staff and keeps image attachments",
+    "L080 L096 L097 L098 L099 an order-linked chat with bot replies, a photo, a human hand-off and a support ticket"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L096": {
+   "tests": [
+    "L096 L100 tickets and the searchable help center",
+    "L080 L096 L097 L098 L099 an order-linked chat with bot replies, a photo, a human hand-off and a support ticket",
+    "L096 support tickets: reply and close"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L100": {
+   "tests": [
+    "L096 L100 tickets and the searchable help center",
+    "L100 the help centre searches the FAQ and records helpful answers",
+    "L100 the help centre: add a FAQ the app and the bot can use, then hide it"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L083": {
+   "tests": [
+    "L083 L084 L124 character and language preferences are saved and validated",
+    "L082 L083 L084 L085 commands, size, reduced motion, colours, outfits, accessories and voice are saved to the account"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L084": {
+   "tests": [
+    "L083 L084 L124 character and language preferences are saved and validated",
+    "L082 L083 L084 L085 commands, size, reduced motion, colours, outfits, accessories and voice are saved to the account",
+    "L084 the still character in small spots shows the shopper's own colours"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 2,
+     "failed": 0
+    }
+   }
+  },
+  "L124": {
+   "tests": [
+    "L083 L084 L124 character and language preferences are saved and validated",
+    "L124 every customer-facing string sent through the translator has an English version",
+    "L124 every staff-screen string (admin, merchant, driver, command center) has an English version",
+    "L124 English translations keep the same placeholders and are never empty",
+    "L123 L124 L125 day and night modes, English with the page direction flipped, and prices in a second currency",
+    "L124 the staff screens in English: admin dashboard, project, sync, merchant and driver"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 4,
+     "failed": 0
+    },
+    "app": {
+     "passed": 2,
+     "failed": 0
+    }
+   }
+  },
+  "L090": {
+   "tests": [
+    "L090 pantry tracks expiry from delivered groceries, warns once and counts carbon savings",
+    "L090 the home pantry: fresh items arrive after delivery, consuming saves carbon, manual items and waste history"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L125": {
+   "tests": [
+    "L125 display currency rates are managed by staff and published with the settings",
+    "L123 L124 L125 day and night modes, English with the page direction flipped, and prices in a second currency",
+    "L125 display currencies: set exchange rates the app shows next to store prices"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L118": {
+   "tests": [
+    "L118 exporting to the command center maps fields, uses the API key and retries revision conflicts",
+    "L118 AAS accepts exported order lines with stable numeric product IDs and no customer PII",
+    "L118 rejects incomplete AAS receipts rather than reporting a false successful export",
+    "L118 L120 service-key routes for external schedulers compare keys in constant time",
+    "L118 sync explains what is missing when the command center is not configured",
+    "L118 a connection set by the server environment cannot be overwritten from the dashboard",
+    "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+    "L118 L119 L120 L121 L122 central sync: export, snapshot, operations with receipts and retry, diff before import, JSON import and log download"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 6,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L121": {
+   "tests": [
+    "L121 resolves actual AAS numeric catalog IDs for preview without inserting duplicates",
+    "L121 importing from the command center shows the diff first and rejects invalid rows",
+    "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+    "L118 L119 L120 L121 L122 central sync: export, snapshot, operations with receipts and retry, diff before import, JSON import and log download"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L119": {
+   "tests": [
+    "L119 the bridge snapshot respects limits and never contains sensitive columns",
+    "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+    "L118 L119 L120 L121 L122 central sync: export, snapshot, operations with receipts and retry, diff before import, JSON import and log download"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L120": {
+   "tests": [
+    "L120 pending operations are applied with backups, unsafe ones rejected, and each gets a receipt",
+    "L118 L120 service-key routes for external schedulers compare keys in constant time",
+    "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+    "L118 L119 L120 L121 L122 central sync: export, snapshot, operations with receipts and retry, diff before import, JSON import and log download"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L122": {
+   "tests": [
+    "L122 receipts are listed, logs download as CSV or JSON and failed runs can be retried",
+    "L118 L119 L120 L121 L122 L113 L104 central sync from the app: refresh now, receipts with retry and log download, diff before import, branch stock and CSV preview",
+    "L118 L119 L120 L121 L122 central sync: export, snapshot, operations with receipts and retry, diff before import, JSON import and log download"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 1,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    },
+    "dashboard": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L088": {
+   "tests": [
+    "L088 the 3D viewer page cannot be broken out of by model data",
+    "L079 L088 the packed 3D engines are byte-for-byte the sources in web-engines/",
+    "L088 L089 a 3D viewer that rotates and zooms, and \"try it in my room\" over the camera"
+   ],
+   "failed": false,
+   "surfaces": {
+    "server": {
+     "passed": 2,
+     "failed": 0
+    },
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L081": {
+   "tests": [
+    "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L027": {
+   "tests": [
+    "L013 L017 L069 L079 L081 L027 the home screen shows server categories, campaigns, an animated 3D character, onboarding and recently viewed"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L023": {
+   "tests": [
+    "L023 search by voice"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L026": {
+   "tests": [
+    "L018 L019 L020 L026 product gallery with video, sizes with their own stock, the specifications table and sharing"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L032": {
+   "tests": [
+    "L031 L032 favourites sync with the account, and products are compared side by side"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L035": {
+   "tests": [
+    "L035 L037 L039 L086 the cart: quantities, save for later, a discount code and the character reacting"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L037": {
+   "tests": [
+    "L035 L037 L039 L086 the cart: quantities, save for later, a discount code and the character reacting"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L086": {
+   "tests": [
+    "L035 L037 L039 L086 the cart: quantities, save for later, a discount code and the character reacting"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L050": {
+   "tests": [
+    "L050 buy now checks out one product without touching the cart"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L036": {
+   "tests": [
+    "L036 reorder a previous order with one tap"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L052": {
+   "tests": [
+    "L051 L052 L053 L055 order history tabs, the order timeline and cancelling an order"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L093": {
+   "tests": [
+    "L091 L092 L054 L093 L060 the driver shares location, the shopper sees the live map, the driving ETA and the delivery code"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L085": {
+   "tests": [
+    "L071 L072 L076 L077 L085 conversational shopping: a budget basket, a recipe, text and voice commands, with the character speaking",
+    "L082 L083 L084 L085 commands, size, reduced motion, colours, outfits, accessories and voice are saved to the account"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 2,
+     "failed": 0
+    }
+   }
+  },
+  "L082": {
+   "tests": [
+    "L082 L083 L084 L085 commands, size, reduced motion, colours, outfits, accessories and voice are saved to the account"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L087": {
+   "tests": [
+    "L087 put my photo on the character's face with consent, kept on the device only, and delete it"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L089": {
+   "tests": [
+    "L088 L089 a 3D viewer that rotates and zooms, and \"try it in my room\" over the camera"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  },
+  "L123": {
+   "tests": [
+    "L123 L124 L125 day and night modes, English with the page direction flipped, and prices in a second currency"
+   ],
+   "failed": false,
+   "surfaces": {
+    "app": {
+     "passed": 1,
+     "failed": 0
+    }
+   }
+  }
+ }
+}

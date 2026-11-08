@@ -1,0 +1,83 @@
+name: Release signing key setup (one time)
+# Creates the stable upload key for the Android app on a GitHub runner and saves it as this repository's signing
+# secrets (SIGNING_KEYSTORE_BASE64, SIGNING_STORE_PASSWORD, SIGNING_KEY_PASSWORD), for an owner who cannot run
+# keytool on a computer. See docs/release-setup.md.
+#
+# - The workflow's own token cannot write secrets, so it uses a short-lived fine-grained token that the owner creates
+#   with only the "Secrets: read and write" permission on this repository and saves as the RELEASE_SETUP_TOKEN secret.
+#   Delete that secret and revoke the token right after the run.
+# - It refuses to replace a saved key: a new key would stop installed apps from updating.
+# - The random password is masked, and the key file is deleted when the job ends. The only copy of the key is the
+#   repository secret, which GitHub never shows again.
+# - It does not touch RELEASE_PUBLISHING_ENABLED, RELEASE_APPROVED_SHA or the production environment: approving a
+#   release stays the owner's decision (Issue #102).
+on:
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: release-signing-setup
+  cancel-in-progress: false
+jobs:
+  create-key:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Check the setup token and refuse to replace any saved signing secret
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_SETUP_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "::error::Save a fine-grained token with only 'Secrets: read and write' on this repository as the RELEASE_SETUP_TOKEN secret first (docs/release-setup.md)."
+            exit 1
+          fi
+          names="$(gh secret list -R "$REPO" --json name --jq '.[].name')"
+          for name in SIGNING_KEYSTORE_BASE64 SIGNING_STORE_PASSWORD SIGNING_KEY_PASSWORD; do
+            if grep -Fxq "$name" <<<"$names"; then
+              echo "::error::Signing secret $name already exists. Refusing to overwrite any part of the existing signing configuration."
+              exit 1
+            fi
+          done
+      - name: Create the upload key and save it as the signing secrets
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_SETUP_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          # Fail closed if a secret appeared after the first check. GitHub's secret writes are
+          # not atomic across three values; independently back up signing material before production.
+          names="$(gh secret list -R "$REPO" --json name --jq '.[].name')"
+          for name in SIGNING_KEYSTORE_BASE64 SIGNING_STORE_PASSWORD SIGNING_KEY_PASSWORD; do
+            if grep -Fxq "$name" <<<"$names"; then
+              echo "::error::Signing secret $name appeared during setup; no signing material was written."
+              exit 1
+            fi
+          done
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          password="$(openssl rand -hex 24)"
+          echo "::add-mask::$password"
+          keytool -genkeypair -keystore "$work/upload-key.jks" -storetype PKCS12 -alias upload -keyalg RSA -keysize 2048 \
+            -validity 10000 -dname "CN=Amer AI Store, O=Amer AI Store, C=JO" -storepass "$password" -keypass "$password" >/dev/null 2>&1
+          keytool -list -keystore "$work/upload-key.jks" -storepass "$password" -alias upload >/dev/null
+          base64 -w0 "$work/upload-key.jks" | gh secret set SIGNING_KEYSTORE_BASE64 -R "$REPO"
+          printf '%s' "$password" | gh secret set SIGNING_STORE_PASSWORD -R "$REPO"
+          printf '%s' "$password" | gh secret set SIGNING_KEY_PASSWORD -R "$REPO"
+          names="$(gh secret list -R "$REPO" --json name --jq '.[].name')"
+          for name in SIGNING_KEYSTORE_BASE64 SIGNING_STORE_PASSWORD SIGNING_KEY_PASSWORD; do
+            grep -qx "$name" <<<"$names" || { echo "::error::$name was not saved."; exit 1; }
+          done
+          {
+            echo "### Release signing key saved"
+            echo "The secrets SIGNING_KEYSTORE_BASE64, SIGNING_STORE_PASSWORD and SIGNING_KEY_PASSWORD now hold the stable upload key."
+            echo "Delete the RELEASE_SETUP_TOKEN secret and revoke that token now."
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,32 @@
+name: Issue 61 sub-issue hierarchy QA (read only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/qa/issue-61-subissue-check.mjs'
+      - '.github/workflows/issue-61-subissue-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  check-hierarchy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout without persisted credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Configure Node 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Validate assertions offline
+        run: node tools/qa/issue-61-subissue-check.mjs --self-test
+      - name: Verify current issue hierarchy through GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/qa/issue-61-subissue-check.mjs

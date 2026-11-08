@@ -1,0 +1,39 @@
+/* Jawafa 2026 forensic evidence index – mounted natively in the unified command panel.
+   Display only publication-safe counts, statuses and links to access-controlled Drive docs. */
+#jf-investigation{direction:rtl;color:var(--fg,#e3eee6);border:1px solid var(--line,#24392b);background:var(--surface,#121e17);padding:18px;margin:18px 0;border-radius:16px}
+#jf-investigation *{box-sizing:border-box}
+#jf-investigation .jf-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;margin-bottom:14px}
+#jf-investigation .jf-kicker{font:700 11px/1.6 var(--font-mono,monospace);letter-spacing:.1em;color:var(--accent,#b9e769)}
+#jf-investigation h2{margin:4px 0 7px;font-size:clamp(19px,2vw,24px);line-height:1.6}
+#jf-investigation .jf-desc{margin:0;max-width:870px;color:var(--muted,#93a99a);font-size:13px;line-height:1.9}
+#jf-investigation .jf-status{font-size:12px;border:1px solid var(--line,#24392b);border-radius:9px;padding:9px 12px;color:var(--amber,#eaa53c);white-space:normal;max-width:320px;line-height:1.7}
+#jf-investigation .jf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px;margin:15px 0 20px}
+#jf-investigation .jf-card{background:var(--surface-2,#182a1f);border:1px solid var(--line,#24392b);padding:14px;border-radius:12px;min-height:120px}
+#jf-investigation .jf-card strong{display:block;font:700 23px/1.5 var(--font-mono,monospace);margin:4px 0;color:var(--fg,#e3eee6);direction:ltr;text-align:right}
+#jf-investigation .jf-card .jf-card-title{font-weight:700;font-size:12px;color:var(--muted,#93a99a)}
+#jf-investigation .jf-card p{font-size:11px;color:var(--muted,#93a99a);line-height:1.7;margin:3px 0 0}
+#jf-investigation .jf-subheading{font-weight:700;font-size:17px;margin:22px 0 9px}
+#jf-investigation .jf-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:13px 0}
+#jf-investigation .jf-filter{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+#jf-investigation button,#jf-investigation .jf-link{font:inherit;font-size:12px;border:1px solid var(--line,#24392b);background:var(--surface-2,#182a1f);color:var(--fg,#e3eee6);border-radius:8px;padding:7px 10px;cursor:pointer;text-decoration:none;line-height:1.7}
+#jf-investigation button:hover,#jf-investigation .jf-link:hover{border-color:var(--accent,#b9e769)}
+#jf-investigation button:focus-visible,#jf-investigation a:focus-visible{outline:2px solid var(--accent,#b9e769);outline-offset:3px}
+#jf-investigation button[aria-pressed="true"]{background:var(--accent-soft,#25371a);border-color:var(--accent,#b9e769);font-weight:700}
+#jf-investigation .jf-table-scroll{overflow-x:auto;border:1px solid var(--line,#24392b);border-radius:11px}
+#jf-investigation table{width:100%;border-collapse:collapse;text-align:right;min-width:610px}
+#jf-investigation th,#jf-investigation td{padding:12px 10px;vertical-align:top;border-bottom:1px solid var(--line,#24392b);line-height:1.75;font-size:12px}
+#jf-investigation th{color:var(--muted,#93a99a);background:var(--surface-2,#182a1f);font-weight:600}
+#jf-investigation tbody tr:last-child td{border-bottom:none}
+#jf-investigation .jf-evid{font:700 12px var(--font-mono,monospace);direction:ltr;display:inline-block;color:var(--info,#82b8ff)}
+#jf-investigation .jf-pill{display:inline-block;border:1px solid var(--line,#24392b);border-radius:30px;padding:3px 9px;font-size:11px}
+#jf-investigation .jf-pill[data-status="open"],#jf-investigation .jf-pill[data-status="partial"]{color:var(--amber,#eaa53c)}
+#jf-investigation .jf-pill[data-status="verified_scope"]{color:var(--ok,#6fd39a)}
+#jf-investigation .jf-track{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:10px;margin:12px 0}
+#jf-investigation .jf-track article{border:1px solid var(--line,#24392b);border-radius:11px;padding:12px;background:var(--surface-2,#182a1f)}
+#jf-investigation .jf-track h4{margin:0 0 8px;font-size:13px}
+#jf-investigation .jf-track p{margin:4px 0;font-size:12px;line-height:1.8}
+#jf-investigation .jf-label{font-size:11px;color:var(--muted,#93a99a)}
+#jf-investigation .jf-warning{border-inline-start:3px solid var(--amber,#eaa53c);padding:12px;background:var(--surface-2,#182a1f);font-size:12px;line-height:1.9;border-radius:8px;margin:14px 0}
+#jf-investigation .jf-foot{margin-top:12px;color:var(--muted,#93a99a);font-size:11px;line-height:1.8}
+#jf-investigation [hidden]{display:none!important}
+@media(max-width:640px){#jf-investigation{padding:13px}#jf-investigation .jf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#jf-investigation .jf-card{padding:10px;min-height:125px}#jf-investigation .jf-card strong{font-size:20px}}

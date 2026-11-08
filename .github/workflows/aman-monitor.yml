@@ -1,0 +1,35 @@
+name: Aman access monitor checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dashboard/aman-monitor/**'
+      - 'dashboard/index.html'
+      - 'access-monitor-service/**'
+      - '.github/workflows/aman-monitor.yml'
+  pull_request:
+    paths:
+      - 'dashboard/aman-monitor/**'
+      - 'dashboard/index.html'
+      - 'access-monitor-service/**'
+      - '.github/workflows/aman-monitor.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Validate monitor modules and data contracts
+        run: |
+          node --check dashboard/aman-monitor/app.mjs
+          node --check dashboard/aman-monitor/host-integration.js
+          node --test dashboard/aman-monitor/tests/*.test.mjs
+      - name: Verify private API authorization and bounded storage with synthetic records
+        run: python3 -m unittest discover -s access-monitor-service/tests -p 'test_*.py'
+      - name: Preserve command dashboard and its existing authorization guards
+        run: node --test dashboard/tests/jawafa-native-integration.test.cjs dashboard/tests/jawafa-auth-guard.test.cjs dashboard/tests/jawafa-export-monitor.test.cjs

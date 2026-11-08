@@ -1,0 +1,90 @@
+/* Unified command centre: responsive sectional landing, accessible keyboard reordering. */
+.command-home { --command-gap: 1rem; gap: var(--command-gap); }
+.command-home .command-hero {
+  position:relative; overflow:hidden; display:grid; grid-template-columns:minmax(0,1.7fr) minmax(240px,.8fr);
+  gap:1.5rem; padding:1.7rem; border:1px solid var(--line); border-radius:18px;
+  background:radial-gradient(circle at 88% 10%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 35%),linear-gradient(120deg,var(--surface-2),var(--surface));
+}
+.command-home .command-hero::before {
+  content:""; position:absolute; inset:0 auto auto 0; width:180px; height:180px;
+  pointer-events:none; border:1px solid color-mix(in srgb,var(--accent) 23%,transparent); border-radius:50%; transform:translate(-40%,-45%);
+}
+.command-kicker { display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;color:var(--accent);font-size:.73rem;letter-spacing:.035em;font-weight:700; }
+.command-home h1 { font-size:clamp(1.4rem,2.3vw,2.1rem);line-height:1.45;margin:.45rem 0 .55rem; }
+.command-home .command-lede { color:var(--muted);max-width:56ch;font-size:.9rem;line-height:1.9; }
+.command-hero-actions { display:flex;align-items:end;justify-content:center;flex-direction:column;gap:.6rem;z-index:1; }
+.command-hero-actions .btn,.command-hero-actions button{min-width:210px;justify-content:center}
+.command-section-heading {display:flex;align-items:end;justify-content:space-between;flex-wrap:wrap;gap:.45rem;margin-top:.3rem}
+.command-section-heading h2 {font-size:1.12rem}
+.command-section-heading p {font-size:.8rem;color:var(--muted)}
+.command-zones {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.command-zone {
+  position:relative;display:flex;flex-direction:column;gap:.55rem;min-height:180px;padding:1.1rem 1.15rem;
+  background:var(--surface);border:1px solid var(--line);border-radius:15px;
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.command-zone:hover{border-color:color-mix(in srgb,var(--accent) 46%,var(--line));transform:translateY(-2px);box-shadow:0 12px 32px rgb(0 0 0 / .12)}
+.command-zone:focus-within{border-color:var(--accent)}
+.command-zone[data-zone="workbench"]{background:linear-gradient(145deg,var(--accent-soft),var(--surface) 75%);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.command-zone-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.command-zone-symbol{display:grid;place-items:center;height:2.25rem;width:2.25rem;flex:none;font-size:1rem;font-weight:800;border-radius:10px;background:var(--surface-2);color:var(--accent);border:1px solid var(--line)}
+.command-zone-label{font-size:.7rem;color:var(--muted);font-weight:700;letter-spacing:.02em}
+.command-zone h3{font-size:1rem;line-height:1.6}
+.command-zone p{font-size:.81rem;line-height:1.7;color:var(--muted);flex:1}
+.command-zone-links{display:flex;flex-wrap:wrap;gap:.4rem}
+.command-zone-links a{font-size:.78rem;color:var(--fg);text-decoration:none;padding:.3rem .6rem;border:1px solid var(--line);background:var(--surface-2);border-radius:8px}
+.command-zone-links a:first-child{color:var(--accent);font-weight:700}
+.command-zone-links a:hover{border-color:var(--accent)}
+.command-zone-moves{display:none;gap:.25rem;align-items:center}
+.command-home[data-edit-layout="true"] .command-zone-moves{display:flex}
+.command-zone-moves button{width:2rem;height:2rem;padding:0;justify-content:center;font-size:.8rem}
+.command-zone-moves button:disabled{opacity:.25}
+.command-home .command-bridge{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.6fr);gap:1rem;
+  border:1px solid var(--line);border-radius:15px;background:var(--surface);padding:1.2rem;
+}
+.command-bridge .bridge-chain{display:flex;align-items:stretch;gap:.45rem;flex-wrap:wrap;margin-top:.75rem}
+.bridge-link{display:flex;align-items:center;gap:.5rem;flex:1;min-width:120px}
+.bridge-endpoint{border:1px solid var(--line);background:var(--surface-2);padding:.7rem .8rem;border-radius:10px;min-width:110px;flex:1}
+.bridge-endpoint strong{display:block;font-size:.83rem}
+.bridge-endpoint small{display:block;font-size:.72rem;color:var(--muted)}
+.bridge-arrow{color:var(--muted);font-weight:700}
+.bridge-status{display:flex;flex-direction:column;gap:.6rem;justify-content:center;padding-inline-start:.65rem;border-inline-start:1px solid var(--line)}
+.bridge-status [data-state="connected"]{color:var(--ok)}
+.bridge-status [data-state="disconnected"]{color:var(--amber)}
+.command-workspace-actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem}
+.command-home .command-layout-tools{display:flex;flex-wrap:wrap;align-items:end;gap:.65rem}
+.command-home .command-layout-tools select{width:auto;min-width:145px}
+.command-home .command-layout-tools label{color:var(--muted);font-size:.78rem;display:flex;flex-direction:column;gap:.25rem}
+.command-home[data-density="compact"] .command-zone{min-height:120px;padding:.75rem;gap:.25rem}
+.command-home[data-density="compact"] .command-zone p{display:none}
+.command-home[data-density="compact"] .command-zone-symbol{height:1.8rem;width:1.8rem}
+.command-home .command-secondary-summary{display:flex;flex-direction:column;gap:.75rem}
+.command-home .command-secondary-summary>summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:.5rem}
+.command-home .command-secondary-summary>summary::-webkit-details-marker{display:none}
+.command-workbench-warning{font-size:.78rem;color:var(--muted);line-height:1.8}
+.command-home .bridge-badge{border-radius:999px;border:1px solid var(--line);display:inline-block;padding:.18rem .6rem;font-size:.76rem;width:fit-content}
+.command-home .bridge-badge[data-state="connected"]{color:var(--ok);border-color:var(--ok)}
+.command-home .bridge-badge[data-state="disconnected"]{color:var(--amber);border-color:var(--amber)}
+@media (max-width:1120px){.command-zones{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){
+ .command-home .command-hero,.command-home .command-bridge{grid-template-columns:minmax(0,1fr)}
+ .command-hero-actions{align-items:stretch}
+ .command-hero-actions .btn,.command-hero-actions button{min-width:0}
+ .command-zones{grid-template-columns:minmax(0,1fr)}
+ .command-zone{min-height:145px}
+ .bridge-status{border-inline-start:0;border-top:1px solid var(--line);padding:1rem 0 0}
+ .command-bridge .bridge-chain{flex-direction:column}
+ .bridge-link{width:100%}
+ .bridge-arrow{transform:rotate(-90deg)}
+}
+@media(prefers-reduced-motion:reduce){.command-zone{transition:none}.command-zone:hover{transform:none}}
+
+/* Application workbench lives inside the original authenticated Luqta view. */
+.command-workspace{border:1px solid color-mix(in srgb,var(--accent) 42%,var(--line));background:linear-gradient(130deg,var(--accent-soft),var(--surface) 70%);padding:1.2rem;border-radius:14px;display:flex;flex-direction:column;gap:.75rem}
+.command-workspace h2{font-size:1.15rem}
+.command-source-links{display:flex;flex-wrap:wrap;gap:.45rem}
+.command-source-links a{font-size:.8rem}
+#luqta-root .command-workspace .toolbar{gap:.5rem}
+#luqta-root .command-workspace .btn{min-height:38px}
+@media(max-width:680px){.command-workspace{padding:.85rem}#luqta-root .command-workspace .toolbar a{flex:1;justify-content:center}}

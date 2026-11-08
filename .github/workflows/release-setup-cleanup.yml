@@ -1,0 +1,52 @@
+name: Release setup token cleanup
+# Removes the RELEASE_SETUP_TOKEN secret once release-signing-setup.yml has saved the signing key, for an owner who
+# would rather not delete secrets by hand. See docs/release-setup.md.
+#
+# - It deletes that one secret, by name, and nothing else: the SIGNING_* secrets, the release variables and the
+#   production environment are never touched.
+# - It runs only when all three SIGNING_* secrets exist, because until then the token is still needed to create them.
+# - The token deletes the secret that holds it. The token itself stays valid until its expiry date, so the owner
+#   can still delete it from https://github.com/settings/personal-access-tokens; with the secret gone, no workflow
+#   can use it.
+on:
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: release-signing-setup
+  cancel-in-progress: false
+jobs:
+  remove-token:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Delete the RELEASE_SETUP_TOKEN secret
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_SETUP_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "RELEASE_SETUP_TOKEN is not saved; nothing to remove." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          names="$(gh secret list -R "$REPO" --json name --jq '.[].name')"
+          for name in SIGNING_KEYSTORE_BASE64 SIGNING_STORE_PASSWORD SIGNING_KEY_PASSWORD; do
+            if ! grep -Fxq "$name" <<<"$names"; then
+              echo "::error::$name is not saved yet, so the setup token is still needed. Nothing was removed."
+              exit 1
+            fi
+          done
+          gh secret delete RELEASE_SETUP_TOKEN -R "$REPO"
+          names="$(gh secret list -R "$REPO" --json name --jq '.[].name')"
+          if grep -Fxq RELEASE_SETUP_TOKEN <<<"$names"; then
+            echo "::error::RELEASE_SETUP_TOKEN is still saved."
+            exit 1
+          fi
+          {
+            echo "### Setup token secret removed"
+            echo "RELEASE_SETUP_TOKEN was deleted. The signing secrets are unchanged."
+            echo "The token itself expires on its own; you can also delete it from https://github.com/settings/personal-access-tokens."
+          } >> "$GITHUB_STEP_SUMMARY"

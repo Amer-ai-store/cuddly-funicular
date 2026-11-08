@@ -1,0 +1,13 @@
+# ran 2026-11-06T18:48:34Z · node v22.23.4
+ok 1 - DESK-01 start URL must be https unless localhost
+ok 2 - DESK-02 only the app origin and Google/Firebase sign-in open inside the app
+ok 3 - DESK-03 user agent hides the Electron token
+ok 4 - CORE-01 roles: owner from ownerUid only, unknown role values grant nothing
+ok 5 - CORE-02 invite ids and email/social validation
+ok 6 - CORE-03 router: dedupe, forward-only states, receipts required from a recipient
+ok 7 - CORE-04 anomaly engine finds seeded cases and never marks DEMO data as proven
+ok 8 - CORE-05 aggregates are derived from the dataset, not hard coded
+ok 9 - CORE-06 browser module app.js parses as an ES module
+# tests 9
+# pass 9
+# fail 0

@@ -1,0 +1,17 @@
+node_modules/
+*.log
+.DS_Store
+playwright-report/
+test-results/
+*.tar.gz
+*.zip
+.env
+.env.*
+!.env.example
+.wrangler/
+.aas-local/
+dist/server/
+dist/.openai/
+server/assets.generated.mjs
+dist/downloads/aas-execution-kit.zip
+dist/downloads/aas-database-bridge.zip

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "repository": "YOUR_OWNER/YOUR_REPOSITORY",
+  "steps": [
+    {
+      "stepIndex": 0,
+      "patch": "operator-patches/step-1.patch",
+      "commands": [
+        { "name": "Configured Node tests", "argv": ["node", "--test"], "timeoutMs": 120000 }
+      ]
+    }
+  ]
+}

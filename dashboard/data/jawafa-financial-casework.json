@@ -1,0 +1,328 @@
+{
+  "schema": "jawafa-crossproject-casework-v1",
+  "classification": "PUBLIC_OPERATIONAL_METADATA_NO_FINANCIAL_ROWS",
+  "period_investigation": {
+    "from": "2025-01-01",
+    "through": "2026-10-30",
+    "complete_to_date": false
+  },
+  "historical_cashflow_coverage": {
+    "from": "2025-10-01",
+    "through": "2026-08-23",
+    "status": "historical_only"
+  },
+  "source_as_of": "2026-11-02",
+  "source_types": [
+    "historical CASHFLOW recovery report from another project",
+    "legacy bank reconciliation reports",
+    "first Jawafa_DB 1024-file CSV export",
+    "Audit15 verified transfer evidence",
+    "transaction-history analytical reports"
+  ],
+  "chat_coverage": "retrieved relevant available cross-project context and recovered reports; not exhaustive access to all conversation transcripts",
+  "counts": {
+    "first_export_tables": 1024,
+    "audit15_transfer_verified": 15,
+    "audit15_causal_unresolved": 15,
+    "financial_workstreams": 11
+  },
+  "external_links": {
+    "private_evidence_folder": null,
+    "first_export_folder": null,
+    "audit15_folder": null,
+    "private_report": null,
+    "private_detailed_export_report": null,
+    "private_case_json": null,
+    "private_prior_forensics": null,
+    "private_archive_evidence_report": null,
+    "private_historical_casebook": null,
+    "private_date_audit_report": null,
+    "private_long_backdate_finance_report": null,
+    "private_restored_ledger_report": null,
+    "private_restored_raw_evidence_zip": null,
+    "private_all28_matrix": null,
+    "private_latest_cheque_cash_report": null,
+    "private_latest_cheque_evidence": null,
+    "private_latest_export_backup": null,
+    "private_cheque_application_audit": null,
+    "private_cheque_application_events": null,
+    "private_financial_investigation_F75": null,
+    "private_returns_and_purchase_audit_F85": null,
+    "private_unposted_cheques_F87": null,
+    "private_independent_audit_F91": null
+  },
+  "cases": [
+    {
+      "id": "CF-01",
+      "title": "التدفق النقدي والسيولة",
+      "status": "historical_reconstruction",
+      "progress": "تقارير السيولة والكاش فلو السابقة مفهرسة؛ لم تُستكمل مطابقة البنك وإيداعات الصندوق أو اعتماد تقرير نقص السيولة. التقرير F75 مرجع إضافي."
+    },
+    {
+      "id": "CF-02",
+      "title": "العهدة والسحوبات",
+      "status": "definitions_conflict",
+      "progress": "فروقات العهدة تحتاج مستند الجرد والإيداع؛ اختبار RealCash/NetInCash يثبت معادلة الفرق ولا يثبت عجزًا. F63/F75."
+    },
+    {
+      "id": "BANK-03",
+      "title": "حركة البنك والتسوية",
+      "status": "internal_continuity_verified",
+      "progress": "ظهرت 6 روابط لشيكات تاريخية مرتبطة بحركات فك ترحيل في ملحق الشكوى؛ المقارنة مع ملف البنك المستورد وليست كشفًا بنكيًا أصليًا. F87/F91."
+    },
+    {
+      "id": "INTERCO-04",
+      "title": "الأسواق والمطعم والمخبز",
+      "status": "reconciliation_open",
+      "progress": "تجميع التحقيقات بين الأسواق والمطعم والمخبز مفهرس في السجل الموحد؛ المطابقات البنكية والدفاتر بين الجهات لم تُقبل بصورة نهائية."
+    },
+    {
+      "id": "CHEQ-05",
+      "title": "الشيكات الواردة والصادرة",
+      "status": "exceptions_open",
+      "progress": "من 28 سند شيكات مستعادًا: 25 ارتباطًا محاسبيًا و3 مفتوحة؛ 6 مستندات تاريخية غائبة مع بقاء الحركة، وحركات فك ترحيل تستدعي تسوية البنك. F63/F66/F87/F91."
+    },
+    {
+      "id": "GL-06",
+      "title": "السندات المحذوفة وفك الترحيل",
+      "status": "forensic_investigation",
+      "progress": "استعادة تاريخية جزئية: 28/54 GL و6/9 ARP؛ 21 رقم قيد من ملحق الشكوى غير موجودة في تصدير 31 أكتوبر، والتحقق من القيود البديلة مفتوح. F53/F87/F91."
+    },
+    {
+      "id": "CASH-07",
+      "title": "الكاش والعجز والإقفالات",
+      "status": "exceptions_open",
+      "progress": "لا يجوز اعتبار حقل Deffirence السالب خسارة تلقائيًا. يوجد اختبار معادلة موثق في 5,528 سجلًا بتاريخ 31 أكتوبر، وتبقى إيداعات العهدة والتحصيل الفعلي مفتوحة. F63/F75."
+    },
+    {
+      "id": "PROC-08",
+      "title": "تدقيق المشتريات والمردودات",
+      "status": "audit_coverage_open",
+      "progress": "90 مردود مشتريات متطابقة مع المخزون والضريبة، و3 فواتير تغير Verified دون حدث تدقيق مطابق في الأكواد المفحوصة؛ إعادة بناء فاتورة تغيرت قيمتها مستمرة. F75/F85/F91."
+    },
+    {
+      "id": "POS-09",
+      "title": "المبيعات والكاشات الثلاثة",
+      "status": "needs_transaction_linkage",
+      "progress": "تحقيق اختلاف أصناف الكاشير وربط نقطة البيع بالمخزون لا يزال غير محسوم من مصادر التصدير الحالية؛ لا إثبات تغيير فواتير بواسطة SQL."
+    },
+    {
+      "id": "STOCK-10",
+      "title": "المخزون والطلب",
+      "status": "needs_current_stock",
+      "progress": "ربط 90/90 مردودًا بالمخزون (248 سطر أصناف و127 تفصيل ضريبة)، مع تأخر تاريخ الترحيل؛ حساب الرصيد الحالي وحاجة الأصناف ومطابقة المبيعات لم يثبت اكتمالها. F85."
+    },
+    {
+      "id": "QUALITY-11",
+      "title": "جودة بيانات الكاش فلو المشتقة",
+      "status": "data_quality_hold",
+      "progress": "تقرير فحص تصدير 2 نوفمبر ودفعة الترحيل المحاسبية مفهرسان؛ استمرار التجميد GATE-15 وIssue #102 حتى إثباتات قبول مستقلة."
+    }
+  ],
+  "safeguards": [
+    "No private amounts, personal identities, cheque numbers or bank statements are included in this public snapshot.",
+    "The public static dashboard is not an authenticated live SQL source.",
+    "All source accounting data are read-only; historical conflicts remain open until independent evidence.",
+    "Latest V5 export zipped and uploaded to private Drive, verified by CRC and matching MD5; not a full transactional snapshot."
+  ],
+  "status": "NOV02_FORENSIC_REPORTS_INDEXED_IN_STAGING__PRODUCTION_FROZEN_ISSUE_102__INDEPENDENT_ACCEPTANCE_OPEN",
+  "latest_export": {
+    "run": "20261031-0100",
+    "host": "JAWAFFASVR",
+    "location": "C:/Export/hourly-v5/20261031-0100",
+    "classification": "HYBRID_V5_NOT_TRANSACTIONAL_SNAPSHOT",
+    "total_catalog_tables": 1024,
+    "full_success": 1009,
+    "two_day_delta_success": 14,
+    "baseline_reference_not_reexported": 1,
+    "csv_files": 1023,
+    "manifest_sha256_entries": 1023,
+    "manifest_hashes_recomputed_for_selected_financial_files": 10,
+    "selected_hash_matches": 10,
+    "status": "SUCCESS_WITH_HYBRID_SCOPE_LIMIT",
+    "current_export_source_not_live_in_browser": true,
+    "old_csv_keys_missing_in_eight_full_financial_tables": 0,
+    "new_keys_in_eight_full_financial_tables": 143,
+    "issue_level_counts": {
+      "new_cheque_status_changes": 5,
+      "purchase_changed": 19,
+      "purchase_amounts_changed": 9,
+      "cash_closures_changed": 2,
+      "arp_journal_date_changed": 1
+    },
+    "monitor": "JawafaExportAgent20Min VERIFIED_REPAIRED",
+    "monitor_run_result": "V5_COMPLETE_HYBRID_FULL_DELTA_REFERENCE",
+    "source_caveats": [
+      "14 tables cover the last two days only",
+      "ItemSalesSummary not re-exported",
+      "No verified bank debit beyond 2026-08-23",
+      "No proof of a fraud, shortage or person from differences"
+    ],
+    "archive": {
+      "source_run": "20261031-0100",
+      "type": "ZIP_DEFLATED_READ_ONLY_COPY",
+      "original_csv_count": 1023,
+      "control_files": 3,
+      "zip_members": 1026,
+      "compressed_bytes": 103892589,
+      "crc_validation": "PASS",
+      "drive_md5_match_count": 2,
+      "drive_md5_mismatch_count": 0,
+      "drive_upload_verified": true,
+      "protected_drive_file": null,
+      "source_snapshot_transactionally_consistent": false
+    },
+    "historical_voucher_gaps_recheck": {
+      "main_with_deletion_events_still_absent": 54,
+      "arp_nine_gaps_still_absent": 9,
+      "recovered_original_values_from_backup": 34,
+      "claim_status": "HISTORICAL_ORIGINALS_RECOVERED_PARTIALLY__NO_BANK_LOSS_PROVEN",
+      "recovery_prioritization": {
+        "source": "2026-10-30_F10_F31",
+        "total_deletion_events": 54,
+        "events_by_device": {
+          "PC05": 50,
+          "PC02": 4
+        },
+        "dated_recovery_windows_for_main_gl": 13,
+        "backup_3_candidate_vouchers": 12,
+        "backup_4_candidate_vouchers": 5,
+        "backup_5_candidate_vouchers": 2,
+        "batch_examples": [
+          {
+            "date": "2025-08-16",
+            "count": 12
+          },
+          {
+            "date": "2025-08-17",
+            "count": 11
+          },
+          {
+            "date": "2026-01-25",
+            "count": 6
+          },
+          {
+            "date": "2026-05-03",
+            "count": 6
+          },
+          {
+            "date": "2025-05-06",
+            "count": 4
+          }
+        ],
+        "sql_restore_contents_recovered": true,
+        "blocker": "Historical header recovery succeeded; awaiting bank statements, authorization evidence, and earlier backups for remaining cases",
+        "casebook_document": null
+      },
+      "restored_main_gl_headers": 28,
+      "restored_arp_journals": 6,
+      "main_not_found_in_seven_restores": 26,
+      "arp_not_found_in_seven_restores": 3,
+      "main_side_lines_balanced": 28,
+      "main_header_matches_side": 28,
+      "arp_sides_balanced_exact": 3,
+      "arp_sides_small_decimal_differences": 3,
+      "restore_database_readonly_verified": true,
+      "restore_select_queries_completed": 14,
+      "bank_disbursements_independently_verified": false,
+      "restored_ledger_sources": "Seven historical restored SQL database snapshots, all READ_ONLY"
+    },
+    "previous_archive": {
+      "type": "ZIP_DEFLATED_READ_ONLY_COPY",
+      "archive_member_count": 1026,
+      "original_csv_count": 1023,
+      "compressed_bytes": 104004989,
+      "local_crc_test": "PASS",
+      "drive_content_md5_comparison": "2_OF_2_MATCH_0_DIFFERENCES",
+      "drive_upload_verified": true,
+      "protected_drive_file": null,
+      "full_transactional_snapshot": false,
+      "source_run": "20261030-0100"
+    },
+    "comparison_30_vs_31": {
+      "full_finance_tables_compared": 8,
+      "unchanged_key_finance_tables": 7,
+      "old_keys_missing": 0,
+      "new_cash_key_count": 3,
+      "changed_existing_cash_key_count": 1,
+      "cash_difference_formula_matches": 5528,
+      "closed_sessions_with_zero_real_cash_and_negative_difference": 3714,
+      "cash_shortage_proven": false
+    },
+    "analysis_data_cutoff": "2026-11-02",
+    "archive_state_note": "Last verified cloud archive: 2026-10-31. Later 2026-11-02 CSV analyzed; separate offsite immutable backup acceptance not established.",
+    "nov2_financial_delta_status": {
+      "source_export": "20261102-0100",
+      "full_and_delta_analysis": "SOURCE_READ_ONLY",
+      "posted_accounts_journals_count": 157,
+      "posted_purchase_returns_count": 90,
+      "purchase_return_gl_stock_tax_matching_count": 90,
+      "purchase_return_details_line_count": 248,
+      "purchase_return_tax_line_count": 127,
+      "previous_period_posting_approval_proven": false,
+      "verified_invoice_state_audit_gap_count": 3,
+      "bank_statement_primary_verified": false
+    }
+  },
+  "date_and_purchase_audit": {
+    "asof": "2026-10-30",
+    "source": "F38_F39_F40_F41_F43_V5",
+    "journal_date_change_events": 1785,
+    "distinct_affected_journal_numbers": 1701,
+    "unique_last_event_before_v5_matched": 1699,
+    "later_delta_resolves_known_date_exception": true,
+    "still_missing_journal_with_app_delete_event": true,
+    "backdated_30plus_events": 170,
+    "backdated_90plus_events": 27,
+    "distinct_90plus_journal_numbers": 26,
+    "posted_90plus_in_v5": 26,
+    "posting_approved_flag_false": 26,
+    "purchase_serial_gaps_within_2025_2026": 20,
+    "purchase_serial_gaps_with_application_history": 4,
+    "four_missing_purchase_history_stable_between_exports": true,
+    "risk_state": "DOCUMENTED_EVENTS_WITHOUT_PROVEN_UNAUTHORIZED_CHANGE_OR_LOSS",
+    "data_type": "PUBLIC_AGGREGATE_COUNTS_ONLY"
+  },
+  "cheque_recovery_reconciliation": {
+    "asof": "2026-10-31",
+    "historical_GL_journals_recovered": 28,
+    "ERP_current_face_date_matched_journals": 21,
+    "ERP_restored_history_face_date_matched_journals": 3,
+    "ERP_multi_cheque_aggregate_matched_journals": 1,
+    "ERP_unresolved_journals": 3,
+    "cheque_documents_absent_in_current_ERP_with_movement_still_existing": 6,
+    "cheque_document_app_posting_events_matching_selected_doc_ids": 10,
+    "trustsoft_post_issued_cheque_code": "3:239",
+    "trustsoft_cancel_event_explicit_matches_in_selected_functions": 0,
+    "automated_archival_or_deletion_mechanism_confirmed": false,
+    "bank_statement_current_verification": false,
+    "source_scope": "Restored SQL READ_ONLY; full baseline TransactionHistory; Oct 31 V5 CSV; legacy bank-sheet through Aug 23",
+    "private_report": null,
+    "private_raw_evidence": null,
+    "status": "25_OF_28_ACCOUNTING_LINKS_CORROBORATED__BANK_AND_CAUSALITY_NOT_PROVEN",
+    "private_app_event_audit": null,
+    "private_app_event_rows": null
+  },
+  "investigation_registry": {
+    "schema": "jawafa-investigation-reports-v1",
+    "source_path": "data/jawafa-investigation-reports.json",
+    "related_project": "Jawafa financial investigation and TrustSoft forensic casework",
+    "report_links_validated_on_drive": 8,
+    "cited_main_reports": [
+      "F53",
+      "F63",
+      "F66",
+      "F75",
+      "F85",
+      "F87",
+      "F91",
+      "CASEBOOK"
+    ],
+    "latest_independent_case_reference": "F91",
+    "evidence_data_cutoff": "2026-11-02",
+    "linked_in_unified_native_dashboard": true,
+    "page_deployed_to_production": false,
+    "deployment_freeze_issue": 102,
+    "report_catalog_only_no_live_db_feed": true
+  }
+}

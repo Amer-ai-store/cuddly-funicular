@@ -1,0 +1,243 @@
+{
+  "schema": "jawafa.public.forensic-workspace.v1",
+  "classification": "PUBLIC_TOPIC_METADATA_NO_PERSONAL_OR_FINANCIAL_RECORDS",
+  "version": "2026-11-06-R2",
+  "workspace": "التحقيق الموسع — الأدلة والقرائن",
+  "ownership": "المدير التنفيذي 777 — عبر موزع المهام 2",
+  "report_ref": "JAW-INVESTIGATION-MASTER-20261106-R2",
+  "report_visibility": "OWNER_GOOGLE_DRIVE_ONLY_NO_PUBLIC_LINK",
+  "source_limits": "الملف التفصيلي والمستندات الأصلية محفوظة خارج GitHub العام. الورقي الممسوح ضوئيًا يحتاج معاينة وتوثيق أصوله.",
+  "delivery": {
+    "mailbox_issue": 168,
+    "message_id": "INVESTIGATION-REVIEW-20261106-R2",
+    "github_comment_id": 6687463888,
+    "state": "SENT_TO_GITHUB_MAILBOX_ONLY",
+    "manager_delivered_verified": false,
+    "manager_read_verified": false,
+    "manager_ack_verified": false
+  },
+  "source_connection": {
+    "type": "PRIVATE_OWNER_AUTH_REQUIRED",
+    "central_gitHub_pages_live_financial_data_verified": false,
+    "last_local_bridge_probe_utc": "2026-11-06T14:42:40.731Z",
+    "local_schema_tables_observed": 1024,
+    "local_declared_fk_observed": 38,
+    "source_is_public_live_sql": false,
+    "full_live_sql_financial_e2e_verified": false,
+    "export_mode_last_observed": "PARTIAL_REFERENCE_ONLY",
+    "new_tables_exported": 1023,
+    "total_tables": 1024
+  },
+  "cases": [
+    {
+      "id": "P0-01",
+      "title": "فك الترحيل والأرقام غير الظاهرة في دفتر اليومية",
+      "priority": "P0",
+      "basis": "DOCUMENT_REPORTED",
+      "next": "مطابقة أصول السند قبل/بعد والسجل التاريخي وسبب الإلغاء",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-02",
+      "title": "إثبات هوية مستخدم الحساب المشترك والجهاز",
+      "priority": "P0",
+      "basis": "IDENTITY_UNVERIFIED",
+      "next": "ربط جلسة الحساب والجهاز والتفويض والسجل الزمني المستقل",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-03",
+      "title": "تسلسل القيود وتعديل تواريخها بعد الترحيل",
+      "priority": "P0",
+      "basis": "PRIOR_REPORT",
+      "next": "إعادة بناء الإصدارات التاريخية لكل قيد بمفتاح مركب",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-04",
+      "title": "سجل الشيكات والكثافة والتوقيع البنكي",
+      "priority": "P0",
+      "basis": "DOCUMENT_REPORTED",
+      "next": "مطابقة الشيك مع كشف البنك والتوقيع والاستحقاق",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-05",
+      "title": "عهد الشيكات وحيازة الأصول الورقية",
+      "priority": "P0",
+      "basis": "OWNER_STATEMENT",
+      "next": "مطابقة جرد أصل الشيك وحركة التسليم وسلسلة الحيازة",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-06",
+      "title": "استثمار الموردين والخصومات والضريبة",
+      "priority": "P0",
+      "basis": "NEEDS_CONTRACT",
+      "next": "احتساب شهري من العقود والفواتير والخصومات",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-07",
+      "title": "قيود خصومات استثمار بأوصاف غير مسجلة",
+      "priority": "P0",
+      "basis": "DOCUMENT_REPORTED",
+      "next": "ربط وصف السند بالفترة المستحقة والإثبات الأصلي",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-08",
+      "title": "صرف الشيك وعكسه وإرجاعه في النظام",
+      "priority": "P0",
+      "basis": "PRIOR_REPORT",
+      "next": "مطابقة أصل البنك مع السند وكل حركة إلغاء أو إعادة صرف",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-09",
+      "title": "الشيكات المتبادلة بين وحدات المجموعة",
+      "priority": "P0",
+      "basis": "PRIOR_REPORT",
+      "next": "تمييز الجهة والسند والحساب المستفيد دون احتساب مزدوج",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-10",
+      "title": "مبيعات ومشتريات ومردودات الأسواق والمطعم والأفران",
+      "priority": "P0",
+      "basis": "OWNER_STATEMENT",
+      "next": "مقارنة قيود الشركات المتقابلة وإلغاء الحركات الداخلية",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-11",
+      "title": "فروق الجداول التاريخية الخمسة عشر",
+      "priority": "P0",
+      "basis": "CSV_DIFF",
+      "next": "مقارنة مفاتيح السجلات والبصمات وتزامن النسخ",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-12",
+      "title": "سلامة توقيت الأحداث وسلسلة حيازة الأدلة",
+      "priority": "P0",
+      "basis": "CONTROL_REQUIREMENT",
+      "next": "تحقق من ترتيب الأحداث وتوقيت المصدر الخارجي",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-13",
+      "title": "صلاحيات SQL وجسر TrustSoft",
+      "priority": "P0",
+      "basis": "SECURITY_GAP",
+      "next": "حساب SELECT فقط وبوابة HTTPS ومصادقة واختبار المنع",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P0-14",
+      "title": "مستندات التحقيق الورقية والصور الأصلية",
+      "priority": "P0",
+      "basis": "DOCUMENT_SCAN",
+      "next": "فحص المستندات والتوقيعات والأصول قبل الاستنتاج",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-15",
+      "title": "إيرادات أخرى ومصروفات قائمة الدخل",
+      "priority": "P1",
+      "basis": "PRIOR_REPORT",
+      "next": "مطابقة القيود الأصلية ومنع جمع أثرين لحدث واحد",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-16",
+      "title": "منع فواتير الموردين المكررة والفواتير المخفية",
+      "priority": "P1",
+      "basis": "HYPOTHESIS",
+      "next": "اختبار تكرار الرقم للمورد وتاريخ الفاتورة ومردودها",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-17",
+      "title": "الفواتير الإلكترونية ومحاولات إعادة الإرسال",
+      "priority": "P1",
+      "basis": "SOURCE_EVENT",
+      "next": "تسوية الفاتورة في POS والضريبة وعدم عد المحاولات مبيعات",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-18",
+      "title": "رصيد الصنف منذ أول المدة وكميات البيع",
+      "priority": "P1",
+      "basis": "TEST_ASSUMPTION",
+      "next": "رصيد متوقع = مشتريات + مرتجعات - مبيعات - تسويات",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-19",
+      "title": "إلغاءات أصناف POS وسجلات الشاشات",
+      "priority": "P1",
+      "basis": "CSV_DIFF",
+      "next": "ربط الإلغاء بالكاشير والسجل والفاتورة الفعلية",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-20",
+      "title": "المردودات بين الشركات والمعالجة الضريبية",
+      "priority": "P1",
+      "basis": "OWNER_STATEMENT",
+      "next": "اختبار فواتير الشراء والبيع والضرائب وقيد المرتجع",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-21",
+      "title": "الرواتب والسلف والضمان وسجلات الدوام",
+      "priority": "P1",
+      "basis": "PRIOR_REPORT",
+      "next": "مطابقة البصمة وكشف الرواتب والسلف والاعتماد",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-22",
+      "title": "الفواتير غير الظاهرة للمورد والمخزون",
+      "priority": "P1",
+      "basis": "PRIOR_REPORT",
+      "next": "الحصول على الأصل والسند الضريبي ومطابقة الاستلام",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-23",
+      "title": "سندات الذمم غير المسلمة والأصول المفقودة",
+      "priority": "P1",
+      "basis": "DOCUMENT_ALLEGATION",
+      "next": "محضر جرد وأدلة تسليم وشهود وقيمة مستحقة",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-24",
+      "title": "فجوات الفترة المشمولة بكشوف البنوك",
+      "priority": "P1",
+      "basis": "COVERAGE_GAP",
+      "next": "إكمال كل كشوف البنك حتى تاريخ القطع",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-25",
+      "title": "استثمارات الموردين وتصنيف التوريدات",
+      "priority": "P1",
+      "basis": "PRIOR_REQUEST",
+      "next": "تجنب ازدواج العقود والمردودات والمستثمرين",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    },
+    {
+      "id": "P1-26",
+      "title": "تسليم الوكلاء والمراجعة الأمنية المستقلة",
+      "priority": "P1",
+      "basis": "WORKFLOW_GAP",
+      "next": "سجل SENT/DELIVERED/READ/ACK وتدقيق استقلالي",
+      "status": "NEEDS_INDEPENDENT_VERIFICATION"
+    }
+  ],
+  "privacy_rule": "No personal allegations, cheque amounts, account identifiers, private evidence links, credentials or financial row content in public GitHub Pages.",
+  "release_gate": "GATE15_NOT_ACCEPTED_PR148_UNMERGED"
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "jawafa-ops-snapshot-v1",
+  "classification": "PUBLIC_OPERATIONAL_METADATA_ONLY",
+  "source": "JAWAFFASVR local read-only inspection",
+  "source_timestamp_utc": "2026-10-29T18:01:45.8868363Z",
+  "source_clock_warning": "Server clock skew has been reported; timestamp is server-reported, not an independently synchronized UTC value.",
+  "display_mode": "verified_snapshot_not_live",
+  "server": {
+    "name": "JAWAFFASVR",
+    "status": "responded",
+    "database": "Jawafa_DB",
+    "api_check": {
+      "tested": 3,
+      "passed": 3,
+      "ports_masked": true
+    },
+    "accounting_writes": false
+  },
+  "export": {
+    "snapshot": "20261026-1640",
+    "file_count": 1024,
+    "bytes": 8639903500,
+    "zero_byte_files": 0,
+    "first_file_server_local": "2026-10-26T16:40:47+03:00",
+    "newest_file_server_local": "2026-10-27T18:05:05+03:00",
+    "integrity": "file-count and nonzero-size checked; full hashes, complete counts and GATE-15 acceptance NOT established",
+    "largest_files": [
+      {
+        "label": "ملف تصدير 1",
+        "bytes": 2292401966
+      },
+      {
+        "label": "ملف تصدير 2",
+        "bytes": 1714047040
+      },
+      {
+        "label": "ملف تصدير 3",
+        "bytes": 1369820282
+      },
+      {
+        "label": "ملف تصدير 4",
+        "bytes": 809163567
+      },
+      {
+        "label": "ملف تصدير 5",
+        "bytes": 537071924
+      },
+      {
+        "label": "ملف تصدير 6",
+        "bytes": 236190459
+      },
+      {
+        "label": "ملف تصدير 7",
+        "bytes": 235107025
+      },
+      {
+        "label": "ملف تصدير 8",
+        "bytes": 230707284
+      }
+    ]
+  },
+  "monitored_tasks": [
+    {
+      "name": "JawafaContinuityWatchdog",
+      "display": "وكيل استمرارية العمل",
+      "health": "ok",
+      "state": "Ready",
+      "last_result": 0,
+      "last_run_server": "2026-10-29T21:01:01+03:00",
+      "next_run_server": "2026-10-29T21:02:02+03:00"
+    },
+    {
+      "name": "GuavaAutoRecover",
+      "display": "الاستعادة التلقائية",
+      "health": "ok",
+      "state": "Ready",
+      "last_result": 0,
+      "last_run_server": "2026-10-29T21:01:01+03:00"
+    },
+    {
+      "name": "GuavaBridgeHealthMonitor",
+      "display": "مراقبة جسر البيانات",
+      "health": "ok",
+      "state": "Ready",
+      "last_result": 0,
+      "last_run_server": "2026-10-29T21:01:01+03:00"
+    },
+    {
+      "name": "JawafaAutoHealingMonitor",
+      "display": "المعالجة الذاتية",
+      "health": "ok",
+      "state": "Ready",
+      "last_result": 0,
+      "last_run_server": "2026-10-29T20:50:50+03:00"
+    },
+    {
+      "name": "Jawafa_FinalReport_AutoBackup",
+      "display": "النسخ الاحتياطي للتقرير",
+      "health": "ok",
+      "state": "Ready",
+      "last_result": 0,
+      "last_run_server": "2026-10-29T20:59:59+03:00"
+    }
+  ],
+  "cloud_bridge": {
+    "name": "TRUSTSOFT signed AppDeploy link",
+    "status": "blocked",
+    "latest_error": "HTTP_402",
+    "last_logged_server_utc": "2026-10-29T17:58:58.813Z",
+    "consequence": "Live synced financial data is currently unavailable on this public static page."
+  },
+  "audit": {
+    "gate15": "not_accepted",
+    "financial_records_in_public_page": 0,
+    "verified_financial_reconciliation": "not_proven",
+    "original_source_modified": false
+  },
+  "notes": [
+    "هذه لقطة تشغيلية عامة مأخوذة من فحص حقيقي؛ لا تتضمن أي بيانات حسابات أو شيكات أو قيود.",
+    "الحالة Ready تشير إلى جاهزية مهمة Windows ولا تعني أنها تعمل في اللحظة الحالية.",
+    "آخر نتيجة 0 لا تعني سلامة جميع البيانات أو اكتمال التحقيق.",
+    "معلومات السيرفر لا تتحول إلى بث حي على GitHub Pages دون قناة HTTPS محمية مستقلة."
+  ]
+}

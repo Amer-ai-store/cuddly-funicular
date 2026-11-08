@@ -1,0 +1,146 @@
+{
+  "ranAt": "2026-11-06T18:48:56.397Z",
+  "environment": "Firebase Auth + Firestore emulators, Chromium (Playwright), local static server",
+  "results": [
+    {
+      "id": "E2E-01",
+      "result": "PASS",
+      "detail": "Firebase SDK loaded and emulator connected"
+    },
+    {
+      "id": "E2E-02",
+      "result": "PASS",
+      "detail": "14 views render after navigation"
+    },
+    {
+      "id": "E2E-03",
+      "result": "PASS",
+      "detail": "demo figures carry DEMO badges (31 badges on home)"
+    },
+    {
+      "id": "E2E-04",
+      "result": "PASS",
+      "detail": "company screen requires sign-in"
+    },
+    {
+      "id": "E2E-05",
+      "result": "PASS",
+      "detail": "assistant answers from dataset and cites DEMO source"
+    },
+    {
+      "id": "E2E-19",
+      "result": "PASS",
+      "detail": "global search: typing «المخزون» + Enter opens the inventory screen"
+    },
+    {
+      "id": "E2E-20",
+      "result": "PASS",
+      "detail": "English mode: dir=ltr, navigation and headings in English (Inventory & warehouses)"
+    },
+    {
+      "id": "E2E-21",
+      "result": "PASS",
+      "detail": "light theme applied; body text contrast 16.6:1 (≥ 7 required)"
+    },
+    {
+      "id": "E2E-22",
+      "result": "PASS",
+      "detail": "CSV export: BOM, source line, formula injection neutralised, numbers kept"
+    },
+    {
+      "id": "E2E-23",
+      "result": "PASS",
+      "detail": "demo hidden → no figures shown, \"LIVE: BLOCKED\" panel instead"
+    },
+    {
+      "id": "E2E-06",
+      "result": "PASS",
+      "detail": "owner created company A (Firestore write accepted by rules)"
+    },
+    {
+      "id": "E2E-07",
+      "result": "PASS",
+      "detail": "invalid (http) Facebook URL rejected client-side: facebook: يجب أن يبدأ الرابط بـ https:// ونطاق المنصة الصحيح"
+    },
+    {
+      "id": "E2E-08",
+      "result": "PASS",
+      "detail": "valid social links saved to company profile"
+    },
+    {
+      "id": "E2E-09",
+      "result": "PASS",
+      "detail": "owner invited auditor.a@example.com as auditor (email normalised)"
+    },
+    {
+      "id": "E2E-24",
+      "result": "PASS",
+      "detail": "branch saved to Firestore and listed with a Google Maps link"
+    },
+    {
+      "id": "E2E-25",
+      "result": "PASS",
+      "detail": "audit viewer lists company.create, member.invite and branch.create"
+    },
+    {
+      "id": "E2E-26",
+      "result": "PASS",
+      "detail": "user profile stores the last selected company in Firestore"
+    },
+    {
+      "id": "E2E-10",
+      "result": "PASS",
+      "detail": "agent message persisted in Firestore with status QUEUED (no delivery channel → not advanced)"
+    },
+    {
+      "id": "E2E-11",
+      "result": "PASS",
+      "detail": "invitee accepted and joined with role auditor"
+    },
+    {
+      "id": "E2E-12",
+      "result": "PASS",
+      "detail": "auditor sees company profile read-only"
+    },
+    {
+      "id": "E2E-13",
+      "result": "PASS",
+      "detail": "auditor direct API write rejected by server: permission-denied"
+    },
+    {
+      "id": "E2E-27",
+      "result": "PASS",
+      "detail": "auditor sees the company branch but no add form"
+    },
+    {
+      "id": "E2E-14",
+      "result": "PASS",
+      "detail": "stranger API access to company A denied: {\"doc\":\"permission-denied\",\"msgs\":\"permission-denied\",\"plan\":\"permission-denied\"}"
+    },
+    {
+      "id": "E2E-15",
+      "result": "PASS",
+      "detail": "owner cannot self-upgrade to Premium Plus: permission-denied"
+    },
+    {
+      "id": "E2E-16",
+      "result": "PASS",
+      "detail": "no horizontal scroll at 390px (overflow 0px)"
+    },
+    {
+      "id": "E2E-17",
+      "result": "PASS",
+      "detail": "mobile bottom navigation visible"
+    },
+    {
+      "id": "E2E-18",
+      "result": "PASS",
+      "detail": "no unexpected page/console errors"
+    },
+    {
+      "id": "PERF-01",
+      "result": "PASS",
+      "detail": "time to ready (load + Firebase SDK + emulator): desktop 831 ms, mobile 546 ms"
+    }
+  ]
+}

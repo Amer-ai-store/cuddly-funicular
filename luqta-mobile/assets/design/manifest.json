@@ -1,0 +1,470 @@
+{
+ "logo-mark": {
+  "design": "1bd33927-image.png",
+  "box": [
+   690,
+   28,
+   822,
+   160
+  ],
+  "size": [
+   120,
+   122
+  ]
+ },
+ "cat-food": {
+  "design": "1bd33927-image.png",
+  "box": [
+   672,
+   556,
+   778,
+   655
+  ],
+  "size": [
+   85,
+   85
+  ]
+ },
+ "cat-electronics": {
+  "design": "1bd33927-image.png",
+  "box": [
+   474,
+   568,
+   584,
+   650
+  ],
+  "size": [
+   94,
+   66
+  ]
+ },
+ "cat-fashion": {
+  "design": "1bd33927-image.png",
+  "box": [
+   274,
+   566,
+   378,
+   650
+  ],
+  "size": [
+   91,
+   76
+  ]
+ },
+ "cat-home": {
+  "design": "1bd33927-image.png",
+  "box": [
+   80,
+   564,
+   176,
+   650
+  ],
+  "size": [
+   83,
+   76
+  ]
+ },
+ "p-rice": {
+  "design": "1bd33927-image.png",
+  "box": [
+   146,
+   856,
+   310,
+   1060
+  ],
+  "size": [
+   157,
+   197
+  ]
+ },
+ "p-headphones": {
+  "design": "475947b0-image.png",
+  "box": [
+   196,
+   214,
+   664,
+   776
+  ],
+  "size": [
+   468,
+   560
+  ]
+ },
+ "p-headphones-2": {
+  "design": "475947b0-image.png",
+  "box": [
+   58,
+   362,
+   172,
+   478
+  ],
+  "size": [
+   79,
+   109
+  ]
+ },
+ "p-headphones-3": {
+  "design": "475947b0-image.png",
+  "box": [
+   58,
+   508,
+   172,
+   620
+  ],
+  "size": [
+   85,
+   88
+  ]
+ },
+ "p-headphones-4": {
+  "design": "475947b0-image.png",
+  "box": [
+   58,
+   650,
+   172,
+   765
+  ],
+  "size": [
+   90,
+   87
+  ]
+ },
+ "p-milk": {
+  "design": "de61b531-image.png",
+  "box": [
+   460,
+   1384,
+   584,
+   1600
+  ],
+  "size": [
+   124,
+   204
+  ]
+ },
+ "p-banana": {
+  "design": "ca81e430-image.png",
+  "box": [
+   626,
+   836,
+   796,
+   1004
+  ],
+  "size": [
+   162,
+   161
+  ]
+ },
+ "p-chair": {
+  "design": "1cab3014-image.png",
+  "box": [
+   140,
+   410,
+   676,
+   915
+  ],
+  "size": [
+   536,
+   497
+  ]
+ },
+ "ex-grocery": {
+  "design": "de61b531-image.png",
+  "box": [
+   52,
+   686,
+   270,
+   872
+  ],
+  "size": [
+   204,
+   167
+  ]
+ },
+ "ex-electronics": {
+  "design": "de61b531-image.png",
+  "box": [
+   316,
+   696,
+   544,
+   868
+  ],
+  "size": [
+   215,
+   160
+  ]
+ },
+ "ex-fashion": {
+  "design": "de61b531-image.png",
+  "box": [
+   582,
+   686,
+   818,
+   872
+  ],
+  "size": [
+   223,
+   182
+  ]
+ },
+ "ex-home": {
+  "design": "de61b531-image.png",
+  "box": [
+   42,
+   972,
+   284,
+   1172
+  ],
+  "size": [
+   230,
+   189
+  ]
+ },
+ "ex-beauty": {
+  "design": "de61b531-image.png",
+  "box": [
+   316,
+   976,
+   534,
+   1168
+  ],
+  "size": [
+   193,
+   167
+  ]
+ },
+ "ex-sports": {
+  "design": "de61b531-image.png",
+  "box": [
+   580,
+   976,
+   814,
+   1164
+  ],
+  "size": [
+   223,
+   177
+  ]
+ },
+ "camera-3d": {
+  "design": "4c76ce01-image.png",
+  "box": [
+   262,
+   548,
+   578,
+   782
+  ],
+  "size": [
+   297,
+   226
+  ]
+ },
+ "pose-walk": {
+  "design": "1bd33927-image.png",
+  "box": [
+   166,
+   1344,
+   326,
+   1590
+  ],
+  "size": [
+   153,
+   239
+  ]
+ },
+ "pose-cart": {
+  "design": "de61b531-image.png",
+  "box": [
+   576,
+   166,
+   853,
+   562
+  ],
+  "size": [
+   277,
+   396
+  ]
+ },
+ "pose-thumbs": {
+  "design": "475947b0-image.png",
+  "box": [
+   652,
+   580,
+   804,
+   880
+  ],
+  "size": [
+   142,
+   297
+  ]
+ },
+ "pose-crossed": {
+  "design": "1cab3014-image.png",
+  "box": [
+   700,
+   600,
+   820,
+   920
+  ],
+  "size": [
+   120,
+   310
+  ]
+ },
+ "pose-crossed-2": {
+  "design": "4c76ce01-image.png",
+  "box": [
+   586,
+   1070,
+   704,
+   1334
+  ],
+  "size": [
+   109,
+   261
+  ]
+ },
+ "pose-stand": {
+  "design": "fbe0a2d3-image.png",
+  "box": [
+   326,
+   326,
+   506,
+   686
+  ],
+  "size": [
+   180,
+   356
+  ]
+ },
+ "pose-point": {
+  "design": "5a780504-image.png",
+  "box": [
+   626,
+   230,
+   794,
+   540
+  ],
+  "size": [
+   161,
+   306
+  ]
+ },
+ "pose-think": {
+  "design": "033b9a08-image.png",
+  "box": [
+   700,
+   180,
+   806,
+   414
+  ],
+  "size": [
+   106,
+   228
+  ]
+ },
+ "pose-thumbs-2": {
+  "design": "a33d8c85-image.png",
+  "box": [
+   700,
+   186,
+   814,
+   364
+  ],
+  "size": [
+   112,
+   174
+  ]
+ },
+ "pose-run": {
+  "design": "0a4f04d7-image.png",
+  "box": [
+   696,
+   250,
+   814,
+   500
+  ],
+  "size": [
+   103,
+   238
+  ]
+ },
+ "pose-thumbs-3": {
+  "design": "b522f4e1-image.png",
+  "box": [
+   700,
+   186,
+   814,
+   404
+  ],
+  "size": [
+   105,
+   214
+  ]
+ },
+ "pose-sit": {
+  "design": "5ce5b418-image.png",
+  "box": [
+   676,
+   210,
+   818,
+   466
+  ],
+  "size": [
+   134,
+   228
+  ]
+ },
+ "pose-sleep": {
+  "design": "5b8cc41d-image.png",
+  "box": [
+   452,
+   1576,
+   826,
+   1724
+  ],
+  "size": [
+   370,
+   144
+  ]
+ },
+ "pose-listen": {
+  "design": "7b0e8d00-image.png",
+  "box": [
+   676,
+   304,
+   830,
+   614
+  ],
+  "size": [
+   147,
+   310
+  ]
+ },
+ "pose-jump": {
+  "design": "36125fa4-image.png",
+  "box": [
+   578,
+   240,
+   790,
+   640
+  ],
+  "size": [
+   209,
+   385
+  ]
+ },
+ "pose-thumbs-cart": {
+  "design": "ca81e430-image.png",
+  "box": [
+   730,
+   1430,
+   853,
+   1655
+  ],
+  "size": [
+   106,
+   219
+  ]
+ }
+}

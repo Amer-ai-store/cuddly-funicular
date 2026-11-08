@@ -1,0 +1,49 @@
+{
+  "name": "jawafa-one-desktop",
+  "productName": "JAWAFA ONE AI",
+  "version": "0.1.0",
+  "description": "JAWAFA ONE AI desktop app (Windows) — wraps the hosted multi-company command center.",
+  "main": "main.js",
+  "author": "Amer AI Store",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.cjs",
+    "dist:win": "electron-builder --win nsis zip --x64 --publish never",
+    "dist:dir": "electron-builder --win dir --x64 --publish never",
+    "dist:zip": "electron-builder --win zip --x64 --publish never"
+  },
+  "build": {
+    "appId": "ai.jawafa.one.desktop",
+    "productName": "JAWAFA ONE AI",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "offline.html",
+      "config.cjs"
+    ],
+    "win": {
+      "icon": "build/icon.png",
+      "signAndEditExecutable": false,
+      "artifactName": "JAWAFA-ONE-AI-${version}-${arch}-win.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "language": "1025",
+      "shortcutName": "JAWAFA ONE AI"
+    }
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amer-ai-store/Mohammad-Ahmed-Ghannam"
+  }
+}

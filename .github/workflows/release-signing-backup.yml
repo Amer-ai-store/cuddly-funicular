@@ -1,0 +1,101 @@
+name: Release signing key backup
+# Makes an encrypted, downloadable backup of the stable upload key, for an owner without a terminal. GitHub never shows
+# a secret again, so without this the SIGNING_* secrets are the only copy of the key, and losing them would stop
+# installed apps from updating (AGENTS.md asks for an independent encrypted copy). See docs/release-setup.md.
+#
+# - The owner chooses a long password and saves it as the SIGNING_BACKUP_PASSWORD secret first. The backup is a 7z
+#   archive encrypted with it (AES-256, file names encrypted too), so the artifact is useless without that password.
+# - The archive holds the keystore, its passwords and alias, the certificate fingerprint and how to restore it.
+# - Before uploading, the job opens the archive with the password and checks the key inside.
+# - The artifact is kept for one day only: download it, save it somewhere you control (such as Google Drive), and
+#   keep the password separately.
+# - It only reads the signing secrets; it never changes them, the release variables or the production environment.
+on:
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: release-signing-setup
+  cancel-in-progress: false
+jobs:
+  backup:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build and check the encrypted backup
+        env:
+          SIGNING_KEYSTORE_BASE64: ${{ secrets.SIGNING_KEYSTORE_BASE64 }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          BACKUP_PASSWORD: ${{ secrets.SIGNING_BACKUP_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          if [ -z "$SIGNING_KEYSTORE_BASE64" ] || [ -z "$SIGNING_STORE_PASSWORD" ]; then
+            echo "::error::The signing key is not saved (SIGNING_KEYSTORE_BASE64, SIGNING_STORE_PASSWORD). Nothing to back up."
+            exit 1
+          fi
+          if [ "${#BACKUP_PASSWORD}" -lt 16 ]; then
+            echo "::error::Save a password of at least 16 characters as the SIGNING_BACKUP_PASSWORD secret first (docs/release-setup.md)."
+            exit 1
+          fi
+          key_password="${SIGNING_KEY_PASSWORD:-$SIGNING_STORE_PASSWORD}"
+          work="$RUNNER_TEMP/backup"
+          trap 'rm -rf "$work"' EXIT
+          mkdir -p "$work/key" "$work/check" "$RUNNER_TEMP/out"
+          printf '%s' "$SIGNING_KEYSTORE_BASE64" | base64 -d > "$work/key/upload-key.jks"
+          if ! details="$(keytool -list -v -keystore "$work/key/upload-key.jks" -storepass "$SIGNING_STORE_PASSWORD" -alias upload 2>&1)"; then
+            echo "::error::The saved keystore has no 'upload' key, or its password does not open it."
+            exit 1
+          fi
+          fingerprint="$(sed -n 's/^[[:space:]]*SHA256: //p' <<<"$details" | sed -n 1p)"
+          owner="$(sed -n 's/^Owner: //p' <<<"$details" | sed -n 1p)"
+          if [ -z "$fingerprint" ]; then
+            echo "::error::Could not read the certificate fingerprint of the saved key."
+            exit 1
+          fi
+          {
+            echo "Amer AI Store / Luqta - Android upload key backup"
+            echo "Created: $(date -u +%Y-%m-%dT%H:%M:%SZ) by ${GITHUB_REPOSITORY} run ${GITHUB_RUN_ID}"
+            echo
+            echo "Keystore file: upload-key.jks (PKCS12)"
+            echo "Key alias: upload"
+            echo "Store password: $SIGNING_STORE_PASSWORD"
+            echo "Key password: $key_password"
+            echo "Certificate: $owner"
+            echo "Certificate SHA-256: $fingerprint"
+            echo
+            echo "To restore, save these repository secrets (Settings > Secrets and variables > Actions):"
+            echo "  SIGNING_KEYSTORE_BASE64 = the output of: base64 -w0 upload-key.jks"
+            echo "  SIGNING_STORE_PASSWORD  = the store password above"
+            echo "  SIGNING_KEY_PASSWORD    = the key password above"
+          } > "$work/key/README.txt"
+          archive="$RUNNER_TEMP/out/luqta-signing-key-backup.7z"
+          (cd "$work/key" && 7z a -t7z -mhe=on -mx=9 -p"$BACKUP_PASSWORD" "$archive" upload-key.jks README.txt >/dev/null)
+          # Open the archive the way a restore would, and check the key inside.
+          7z x -p"$BACKUP_PASSWORD" -o"$work/check" "$archive" >/dev/null
+          cmp -s "$work/key/upload-key.jks" "$work/check/upload-key.jks"
+          keytool -list -keystore "$work/check/upload-key.jks" -storepass "$SIGNING_STORE_PASSWORD" -alias upload >/dev/null
+          if 7z l -p"wrong-$BACKUP_PASSWORD" "$archive" >/dev/null 2>&1; then
+            echo "::error::The archive opened without the right password."
+            exit 1
+          fi
+          {
+            echo "### Signing key backup ready"
+            echo "Download **luqta-signing-key-backup** below (kept for 1 day) and save it somewhere you control, such as Google Drive."
+            echo "It opens only with your SIGNING_BACKUP_PASSWORD password; keep that password separately."
+            echo
+            echo "Certificate SHA-256: \`$fingerprint\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: luqta-signing-key-backup
+          path: ${{ runner.temp }}/out/luqta-signing-key-backup.7z
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0

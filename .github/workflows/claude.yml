@@ -1,0 +1,44 @@
+# Issue #107: safe deterministic PR review while Claude provider authentication is unavailable.
+# This deliberately does not claim AI review, use secrets, write code or deploy.
+# Issue #102 production release gates remain enforced separately.
+name: Safe code review CI (no Claude OAuth)
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: safe-review-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deterministic-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout source without persistent credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Set up Node 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # pinned
+        with:
+          node-version: '24'
+      - name: Run non-production security and integration regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test jawafa-command-bridge/test.cjs
+          node --test dashboard/tests/navigation.test.mjs
+          node --test dashboard/tests/jawafa-native-integration.test.cjs
+      - name: Record review limitations
+        run: |
+          echo 'PASS means only deterministic regression checks ran.'
+          echo 'Claude authentication and semantic AI review remain unverified.'
+          echo 'No production publish; Issue #102 and GATE-15 remain separate.'

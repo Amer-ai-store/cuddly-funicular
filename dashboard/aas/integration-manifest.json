@@ -1,0 +1,112 @@
+{
+  "format": "aas-cc-integrated-client-v1",
+  "sourceRevision": "f0623ea7a7128c6ffd1e6cbce949d7d334e063cb",
+  "privateBackend": "https://amer-ai-command-center.eagerlark64.chatgpt.site",
+  "apiTransport": "owner-session-popup",
+  "sharedStorage": "existing-private-D1",
+  "routes": [
+    "overview",
+    "orchestration",
+    "advisor",
+    "database",
+    "execution",
+    "workspaces",
+    "tasks",
+    "agents",
+    "approvals",
+    "activity",
+    "commerce",
+    "repository",
+    "integrations",
+    "settings"
+  ],
+  "files": [
+    {
+      "path": "api-store.js",
+      "bytes": 9901,
+      "sha256": "60b5d5a8dff17b7345964c7a3e545c3659f181a0755820b8986c98ed519aee19"
+    },
+    {
+      "path": "app.js",
+      "bytes": 129627,
+      "sha256": "a558af0717aa8ee536552de7e93a1b239438392b8016258338e97a44ca8e393a"
+    },
+    {
+      "path": "assets/arabic-400.ttf",
+      "bytes": 219592,
+      "sha256": "02609c5ef845ef511676c8badb24d1fc8b4aed3dc3b9d8bbdab22c14431b7c16"
+    },
+    {
+      "path": "assets/arabic-500.ttf",
+      "bytes": 224816,
+      "sha256": "1fe214ca7ff822ff8b73e5bb9584414bfc6c845e7ddab41f24ac4fce8e55a860"
+    },
+    {
+      "path": "assets/arabic-600.ttf",
+      "bytes": 227276,
+      "sha256": "9e8b030f3326946e481c874a2f751c1321cb0708cba81b79e6c3f9ffacc931df"
+    },
+    {
+      "path": "assets/arabic-700.ttf",
+      "bytes": 229352,
+      "sha256": "05616a64c5dca137a327b30b1fe7f4fcd1e16892a332e1665b49d52038858044"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "bytes": 219,
+      "sha256": "e740708f40179c6f014111c6efd3d7f17451a6aa07426f1503a58b81c7b14ab8"
+    },
+    {
+      "path": "assets/FONT-LICENSE.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "path": "bridge-protocol.js",
+      "bytes": 2093,
+      "sha256": "790bc152b3c07e840c151c5e76a1cad2b2e1819986ef45b4d003dc803cfc366e"
+    },
+    {
+      "path": "control-center.js",
+      "bytes": 58908,
+      "sha256": "2cfa83f64790b3e2adb005e5bb899f8862f4ef6e16b8224adf53b5b8545ee35e"
+    },
+    {
+      "path": "downloads/aas-database-bridge.zip",
+      "bytes": 20423,
+      "sha256": "37b9da0094a84cc3e688eb1072e7daec64e327b7ef06c8aa1c8d288e9da8d7d9"
+    },
+    {
+      "path": "downloads/aas-execution-kit.zip",
+      "bytes": 14995,
+      "sha256": "e99cf7292fee7e66495fb9e4ab9c58c8ceadc46e513c804f186003a44504021b"
+    },
+    {
+      "path": "host-connection.js",
+      "bytes": 5462,
+      "sha256": "2612594be98ff481009db23b3eec8e1b87c3b29268ea92cc74e230ccb7d84952"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1615,
+      "sha256": "0d012d5a67d85e67b2f9f26a4bfbaf626079fb48b245ef92f241aef32dd3849f"
+    },
+    {
+      "path": "legacy-migration.js",
+      "bytes": 13286,
+      "sha256": "e1a129925332b9b3a7144d855e0ec24e5012402600e0b7ca3a61a22820729c84"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 147308,
+      "sha256": "5c099f7588676db1547e77d4c6ce44713a4b8571c3f174ce42dcf67e73925ccb"
+    },
+    {
+      "path": "theme.js",
+      "bytes": 2465,
+      "sha256": "b294c78df20e39ea3857f401e692c619d35794751665d7f77f1066d209cfa661"
+    }
+  ],
+  "productionDataCopied": false,
+  "credentialsCopied": false
+}

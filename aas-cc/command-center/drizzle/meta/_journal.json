@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791841311701,
+      "tag": "0000_aromatic_omega_flight",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1792153447578,
+      "tag": "0001_brown_silver_samurai",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1792283602471,
+      "tag": "0002_abandoned_black_crow",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "temporary-staging",
+  "origin": "https://suburban-clear-swaziland-else.trycloudflare.com",
+  "source": "JAWAFFASVR:8790 through Cloudflare Quick Tunnel",
+  "persistent": false,
+  "requiresAdminLogin": true,
+  "inventorySalesNotApproved": true,
+  "note": "Quick Tunnel address may change or go offline; never treat as production or store secrets here"
+}

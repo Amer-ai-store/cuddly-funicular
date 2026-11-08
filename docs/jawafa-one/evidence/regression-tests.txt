@@ -1,0 +1,57 @@
+# ran 2026-11-06T18:48:34Z · regression: all dashboard tests
+ok 1 - all14 AAS screens exist in original central navigation with its existing modules preserved
+ok 2 - every public client file matches its generated migration manifest
+ok 3 - owner API remains private and is not replaced with a public credential or simulated state
+ok 4 - all 19 official roles have unique stable source ids and no actual AI runtime claim
+ok 5 - safe planner adds missing official agents and groups without disturbing existing protected data
+ok 6 - idempotent second pass does not create duplicate agents or workspaces
+ok 7 - conflicting agent identity blocks the migration without mutating source
+ok 8 - existing live server health prevents bulk import from clearing evidence
+ok 9 - import UI requires owner-session bridge and verifies readback
+ok 10 - 29 historical source-backed profiles and advisor in unified directory
+not ok 11 - central dashboard navigation and directory view keep original live agents route
+ok 12 - existing dashboard inline JavaScript compiles
+ok 13 - chat on static site displays honest AI off state and manual fallback
+ok 14 - fallback needs user click and copies only authored question
+ok 15 - logout cannot be undone by an older successful API response
+ok 16 - signed worker heartbeat alone is not private gateway or E2E acceptance
+ok 17 - accepted HTTPS and E2E never bypass NOT ACCEPTED GATE-15 for reconciliation
+ok 18 - no authorized worker heartbeat, no command even with gateway flags
+ok 19 - invalid schema and unauthenticated refresh fail closed
+ok 20 - standalone export monitor and central integration are wired
+ok 21 - one existing dashboard, 16 native views in original navigation
+ok 22 - existing host application and login are preserved
+ok 23 - native scripts compile with no extraneous app redirect
+ok 24 - no false live SQL or command success and no browser secrets
+ok 25 - dated repair report remains in the native errors view and is public-safe
+ok 26 - snapshot tracks verified v5 manifest without claiming full export acceptance
+ok 27 - dashboard JavaScript syntax is valid
+ok 28 - required operations and accounting screens exist
+ok 29 - original GATE-15 command panel links to new module
+ok 30 - no privileged operations or browser-held API credentials
+ok 31 - CSV accepts escaped quotes, CRLF and Arabic headers
+ok 32 - CSV rejects malformed and duplicate headers
+ok 33 - exported CSV cells escape separators and Excel-breaking control lines
+ok 34 - homepage has the evidence panel and direct source links
+ok 35 - success and failure are shown only from actual GitHub API runs
+ok 36 - completed workflows never masquerade as running
+ok 37 - stale in_progress runs cannot receive a green running indicator
+ok 38 - failed source never keeps a prior successful result
+ok 39 - no SQL or fake ChatGPT progress API
+ok 40 - only exact HTTPS server origins are accepted
+ok 41 - admin login verifies service and role before storing an in-memory session
+ok 42 - customer role is rejected and expired admin session is cleared
+ok 43 - all 6 operational groups exist and each has detailed destinations
+ok 44 - all navigation entries are unique and resolve to an existing view
+ok 45 - mobile navigation is scoped to one group and reports active page
+ok 46 - all Luqta sub-screens have deep links and can select their actual code
+ok 47 - inline scripts and integrations parse as valid JavaScript
+ok 48 - CORE-01 roles: owner from ownerUid only, unknown role values grant nothing
+ok 49 - CORE-02 invite ids and email/social validation
+ok 50 - CORE-03 router: dedupe, forward-only states, receipts required from a recipient
+ok 51 - CORE-04 anomaly engine finds seeded cases and never marks DEMO data as proven
+ok 52 - CORE-05 aggregates are derived from the dataset, not hard coded
+ok 53 - CORE-06 browser module app.js parses as an ES module
+# tests 53
+# pass 52
+# fail 1

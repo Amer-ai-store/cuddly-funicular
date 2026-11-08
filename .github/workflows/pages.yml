@@ -1,0 +1,137 @@
+name: Public-safe unified command dashboard — GitHub Pages
+# Owner-authorized static-only release. No financial backend, secrets, or PR deployment.
+on:
+  pull_request:
+    paths:
+      - "dashboard/**"
+      - ".github/workflows/pages.yml"
+  push:
+    branches: [main]
+    paths:
+      - "dashboard/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: public-pages-readonly
+  cancel-in-progress: false
+jobs:
+  verify-public-artifact:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Node tests — native navigation and private-link fail-closed guard
+        run: node --test dashboard/tests/navigation.test.mjs dashboard/tests/jawafa-investigation.test.mjs dashboard/tests/release-verification.test.mjs dashboard/tests/central-transfer-audit.test.mjs dashboard/tests/jawafa-forensic-workspace.test.mjs dashboard/tests/cca999-task-flow.test.mjs dashboard/tests/cca999-api-health.test.mjs
+      - name: Publication preflight — reject private links in entire dashboard artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, re
+          root = Path("dashboard")
+          assert (root / "index.html").is_file()
+          pattern = re.compile(rb"https://(?:drive|docs)\.google\.com/")
+          offenders=[]
+          for f in root.rglob("*"):
+              if f.is_file() and f.suffix.lower() in {".html",".js",".css",".json",".md",".mjs",".cjs",".txt"}:
+                  if pattern.search(f.read_bytes()):
+                      offenders.append(str(f))
+          if offenders:
+              raise SystemExit("PRIVATE_DRIVE_LINK_IN_PUBLIC_ARTIFACT: " + ", ".join(offenders))
+          manifest=json.loads((root/"data/jawafa-investigation-reports.json").read_text())
+          assert manifest["classification"] == "PUBLIC_STATUS_ONLY__PRIVATE_LINKS_REDACTED"
+          assert manifest["release_gate"] == "BLOCKED_ISSUE_102"
+          assert manifest["published_to_production"] is False
+          assert all(r["href"] is None for r in manifest["reports"])
+          assert all(r["href"] is None for r in manifest["private_evidence"])
+          assert "id=\"jf-investigation\"" in (root/"index.html").read_text()
+          print("PASS: static public status only; all private evidence URLs withheld")
+          PY
+  package-static-site:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: verify-public-artifact
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: ./dashboard
+  publish:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: package-static-site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Publish public-only static dashboard
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+  verify-live:
+    needs: publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Independent public URL readback — do not mark done without it
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://amer-ai-store.github.io/Mohammad-Ahmed-Ghannam/"
+          for n in $(seq 1 15); do
+            if curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${BASE}?verify=${GITHUB_SHA}" -o /tmp/live-dashboard.html \
+              && grep -Fq 'id="jf-investigation"' /tmp/live-dashboard.html \
+              && grep -Fq 'id="release-verification-root"' /tmp/live-dashboard.html \
+              && grep -Fq 'id="central-transfer-audit-root"' /tmp/live-dashboard.html \
+              && grep -Fq 'id="jawafa-forensic-workspace-root"' /tmp/live-dashboard.html \
+              && curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${BASE}release-verification.mjs?verify=${GITHUB_SHA}" -o /tmp/live-verification.mjs \
+              && grep -Fq 'export const REPO=' /tmp/live-verification.mjs \
+              && curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${BASE}data/jawafa-investigation-reports.json?verify=${GITHUB_SHA}" -o /tmp/live-manifest.json \
+              && curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${BASE}data/central-transfer-audit.json?verify=${GITHUB_SHA}" -o /tmp/live-transfer-audit.json \
+              && curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${BASE}central-transfer-audit.mjs?verify=${GITHUB_SHA}" -o /tmp/live-transfer-code.mjs \
+              && curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${BASE}data/jawafa-forensic-workspace-public.json?verify=${GITHUB_SHA}" -o /tmp/live-forensic-metadata.json \
+              && curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${BASE}jawafa-forensic-workspace.js?verify=${GITHUB_SHA}" -o /tmp/live-forensic-workspace.js \
+              && python3 - <<'PY'
+          import json
+          with open("/tmp/live-manifest.json") as f: doc=json.load(f)
+          assert doc["classification"]=="PUBLIC_STATUS_ONLY__PRIVATE_LINKS_REDACTED"
+          assert len(doc["reports"])==8
+          assert all(x["href"] is None for x in doc["reports"])
+          assert all(x["href"] is None for x in doc["private_evidence"])
+          with open("/tmp/live-transfer-audit.json") as f: transfer=json.load(f)
+          assert transfer["schema"]=="aas.central.transfer.audit.v1"
+          assert transfer["scope"]=="PUBLIC_METADATA_ONLY_NO_PRIVATE_DB_ROWS_NO_SECRETS"
+          assert transfer["public_inventory"]["aas_manifest_files"]==17
+          assert len(transfer["sections"])==8
+          code=open("/tmp/live-transfer-code.mjs",encoding="utf-8").read()
+          assert "crypto.subtle.digest('SHA-256'" in code
+          with open("/tmp/live-forensic-metadata.json",encoding="utf-8") as f: fmeta=json.load(f)
+          assert fmeta["classification"]=="PUBLIC_TOPIC_METADATA_NO_PERSONAL_OR_FINANCIAL_RECORDS"
+          assert len(fmeta["cases"])==26
+          assert fmeta["delivery"]["manager_ack_verified"] is False
+          assert "Jawafa_DB" not in open("/tmp/live-forensic-workspace.js",encoding="utf-8").read()
+          print("Published manifest and transfer audit verified; private references absent")
+          PY
+            then
+              echo "LIVE_PUBLIC_STATIC_DASHBOARD_VERIFIED"
+              exit 0
+            fi
+            sleep 12
+          done
+          echo "Live production readback failed; no DONE claim" >&2
+          exit 1

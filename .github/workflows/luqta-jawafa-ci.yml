@@ -1,0 +1,76 @@
+name: Luqta storefront and Jawafa inventory validation
+on:
+  pull_request:
+    paths:
+      - 'luqta-mobile/**'
+      - 'dashboard/luqta-*.js'
+      - 'dashboard/index.html'
+      - 'dashboard/aas-roster.html'
+      - 'dashboard/tests/aas-roster.test.cjs'
+      - '.github/workflows/luqta-jawafa-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'luqta-mobile/**'
+      - 'dashboard/luqta-*.js'
+      - 'dashboard/index.html'
+      - 'dashboard/aas-roster.html'
+      - 'dashboard/tests/aas-roster.test.cjs'
+      - '.github/workflows/luqta-jawafa-ci.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: luqta-mobile
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: luqta-mobile/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: node --check ../dashboard/luqta-integration.js
+      - run: node --check ../dashboard/luqta-api.js
+      - run: node --test ../dashboard/tests/aas-roster.test.cjs
+
+  # Drives the exported web app and the central dashboard in Chromium against the real server, then requires
+  # passing evidence for all 125 features on every surface they list (server, app, dashboard).
+  e2e:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: luqta-mobile
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: luqta-mobile/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e:build
+      - run: npm run evidence
+      - name: Upload screenshots of failing steps and the feature evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: luqta-e2e-evidence
+          path: |
+            luqta-mobile/e2e/artifacts/
+            luqta-mobile/server/feature-status.json
+          if-no-files-found: ignore
+          retention-days: 14

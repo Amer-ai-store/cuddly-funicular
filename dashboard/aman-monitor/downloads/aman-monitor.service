@@ -1,0 +1,30 @@
+[Unit]
+Description=Aman read-only SSH access monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=aman-monitor
+Group=aman-monitor
+SupplementaryGroups=systemd-journal
+EnvironmentFile=/etc/aman-monitor.env
+ExecStart=/usr/bin/python3 /opt/aman-monitor/collector.py --endpoint ${AMAN_INGEST_URL} --source-id ${AMAN_SOURCE_ID} --spool /var/lib/aman-monitor/spool.sqlite3
+StateDirectory=aman-monitor
+StateDirectoryMode=0700
+UMask=0077
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

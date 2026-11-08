@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {prepareJawafaSnapshot} from './jawafaInventory.mjs';
+const base=()=>({schema:'jawafa-inventory-v1',snapshotAt:new Date().toISOString(),items:[{id:'SKU_1',name:'صنف',category:'food',price:1.5,readyQuantity:12,unpostedSalesQuantity:4,actualQuantity:8}]});
+test('subtracts unposted sales exactly once',()=>assert.equal(prepareJawafaSnapshot(base()).items[0].stock,8));
+test('rejects inconsistent actual',()=>{const p=base();p.items[0].actualQuantity=12; assert.throws(()=>prepareJawafaSnapshot(p),/تعارض/)});
+test('rejects unposted greater than ready',()=>{const p=base();p.items[0].unpostedSalesQuantity=13;assert.throws(()=>prepareJawafaSnapshot(p),/تتجاوز/)});
+test('rejects stale snapshots',()=>{const p=base();p.snapshotAt='2020-01-01T00:00:00.000Z';assert.throws(()=>prepareJawafaSnapshot(p),/قديمة/)});
+test('does not silently accept decimals when commerce schema is integer',()=>{const p=base();p.items[0].readyQuantity=1.5;assert.throws(()=>prepareJawafaSnapshot(p),/عددًا صحيحًا/)});
+test('rejects duplicates',()=>{const p=base();p.items.push({...p.items[0]});assert.throws(()=>prepareJawafaSnapshot(p),/مكرر/)});

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="مركز قيادة استمرارية الأعمال والتحقق التشغيلي لمشروع جوافة">
+<title>JAWAFA • مركز قيادة الاستمرارية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+ color-scheme:dark;--base:#050915;--side:#07101f;--panel:#0b1930;--panel2:#0d1d36;--border:rgba(91,142,191,.18);--strong-border:rgba(95,173,229,.35);
+ --text:#e5f0ff;--muted:#8da7c6;--cyan:#45e1ed;--blue:#81aeff;--green:#55e2b0;--amber:#ffca76;--red:#ff7b98;
+ --font:'IBM Plex Sans Arabic',Tahoma,Arial,sans-serif;--mono:'Orbitron',Consolas,monospace
+}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--base);color:var(--text);font:14px var(--font);overflow-x:hidden}
+button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.starfield{position:fixed;inset:0;pointer-events:none;opacity:.7;z-index:0;background:radial-gradient(ellipse at 65% 13%,rgba(54,76,177,.17),transparent 38%),radial-gradient(ellipse at 5% 74%,rgba(8,143,147,.11),transparent 38%),radial-gradient(1px 1px at 12% 9%,#d9eaff 80%,transparent),radial-gradient(1px 1px at 49% 24%,#bcd4ef 80%,transparent),radial-gradient(1px 1px at 81% 72%,#a4caee 80%,transparent)}
+.starfield:after{content:"";position:absolute;inset:0;background-image:radial-gradient(#9dc5f6 .75px,transparent 1px),radial-gradient(#7c9ed0 .8px,transparent 1px);background-size:117px 117px,173px 173px;background-position:21px 36px,92px 53px;opacity:.2}
+.shell{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh;position:relative;z-index:1}
+.sidebar{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,rgba(8,19,38,.98),rgba(5,13,28,.98));border-left:1px solid var(--border);padding:26px 16px;display:flex;flex-direction:column;gap:26px}
+.brand{display:flex;gap:13px;align-items:center;padding:0 8px 23px;border-bottom:1px solid var(--border)}
+.brand-icon{width:39px;height:39px;border:1px solid rgba(60,231,230,.5);border-radius:12px;display:grid;place-items:center;background:radial-gradient(circle at center,rgba(29,164,201,.31),transparent);box-shadow:0 0 25px #45e1ed12;color:var(--cyan);font-size:25px}
+.brand-title{font-weight:700;font-size:18px;line-height:1.3}.brand small{display:block;color:var(--muted);font:500 9px var(--mono);letter-spacing:.09em;direction:ltr;text-align:right;margin-top:3px}
+.nav-group{color:#6782a4;font:600 9px var(--mono);letter-spacing:.16em;margin:0 12px 8px;direction:ltr;text-align:right}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav button,.nav a{display:flex;width:100%;align-items:center;gap:11px;text-align:right;padding:12px 13px;background:transparent;border:1px solid transparent;border-radius:10px;color:#95aecb;font-weight:500;font-size:13px}
+.nav button:hover,.nav a:hover{background:#10223a;color:white}.nav button.active{background:linear-gradient(90deg,rgba(24,102,149,.3),rgba(38,175,205,.11));border-color:rgba(91,207,235,.22);color:var(--cyan);font-weight:700}
+.nav svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.6;flex-shrink:0}
+.nav .tiny{margin-right:auto;font:500 9px var(--mono);color:var(--muted)}
+.side-bottom{margin-top:auto}.side-panel{border:1px solid var(--border);padding:14px;border-radius:12px;background:#0c1b31}
+.side-panel .smallcap{color:var(--muted);font:500 9px var(--mono);letter-spacing:.14em;direction:ltr}.side-panel strong{display:block;font:600 11px var(--mono);direction:ltr;text-align:right;margin:9px 0;color:#d2e3ff}
+.side-panel p{color:#84a0bf;font-size:11px;line-height:1.8;margin:0}
+.main{min-width:0;padding:0 clamp(19px,3.1vw,52px) 50px}
+.topbar{height:78px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.breadcrumb{color:var(--muted);font-size:12px}.breadcrumb span{color:#d7eafc}
+.top-actions{display:flex;gap:13px;align-items:center}.ghost-btn{background:rgba(15,34,56,.65);border:1px solid var(--border);border-radius:9px;color:#b8d0e8;padding:9px 13px;font-size:12px}
+.ghost-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.tag{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:7px;border:1px solid var(--border);font-size:11px;color:var(--muted)}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.dot.green{background:var(--green);box-shadow:0 0 11px var(--green)}.dot.red{background:var(--red)}.dot.amber{background:var(--amber)}
+.view[hidden],section[hidden]{display:none!important}
+.heading{margin:27px 0 22px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.overline{font:600 10px var(--mono);letter-spacing:.13em;direction:ltr;text-align:right;color:var(--cyan)}
+h1{margin:6px 0 3px;font-size:clamp(24px,2.5vw,35px);letter-spacing:-.03em;line-height:1.5}
+.heading p{margin:0;color:var(--muted);font-size:12px}
+.label-data{font:500 10px var(--mono);letter-spacing:.1em;color:#748bac;direction:ltr}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.85fr);gap:16px}
+.panel{background:linear-gradient(158deg,rgba(15,33,61,.93),rgba(7,19,39,.92));border:1px solid var(--border);border-radius:15px;min-width:0;box-shadow:0 16px 50px rgba(0,0,0,.11),inset 0 1px rgba(185,228,255,.025)}
+.pad{padding:21px}
+.orbit-panel{position:relative;min-height:334px;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 225px;align-items:center;padding:25px}
+.orbit-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(21,108,174,.13),transparent 58%),repeating-linear-gradient(90deg,rgba(90,170,215,.03) 0px,rgba(90,170,215,.03) 1px,transparent 1px,transparent 33px);pointer-events:none}
+.hero-content{position:relative;z-index:2}.line-number{font:500 11px var(--mono);letter-spacing:.11em;color:var(--cyan)}
+.hero-content h2{font-size:23px;line-height:1.7;margin:14px 0 5px;max-width:330px}
+.hero-content p{color:#a1bad3;line-height:2;max-width:320px;font-size:12px;margin:0}
+.hero-chip{display:inline-block;margin-top:21px;padding:9px 13px;border:1px solid rgba(93,221,237,.22);border-radius:9px;background:#0c2c3d66;font-size:12px;color:#a9edee}
+.orbit{position:relative;width:222px;height:222px;display:grid;place-items:center;z-index:2}
+.orbit:before{content:"";position:absolute;inset:9px;border:1px solid rgba(58,207,255,.29);border-radius:50%;box-shadow:0 0 0 21px rgba(54,170,255,.025),0 0 0 43px rgba(54,170,255,.016)}
+.orbit .circle{position:absolute;border:1px dashed rgba(95,160,239,.28);border-radius:50%;width:168px;height:168px;animation:rotate 28s linear infinite}
+.orbit .circle.c2{width:213px;height:213px;border-style:solid;border-color:rgba(63,159,243,.16);animation:rotate 44s linear reverse infinite}
+.orbit .circle.c3{width:125px;height:125px;border-color:rgba(60,223,240,.38);animation:rotate 18s linear reverse infinite}
+.orbit .circle.c3:before,.orbit .circle.c2:after{content:"";position:absolute;top:0;left:50%;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 17px var(--cyan)}
+.orbit-core{width:91px;height:91px;border-radius:50%;background:radial-gradient(circle at 38% 26%,rgba(83,233,244,.9),#18547d 23%,#11224a 70%,#060c24 100%);box-shadow:0 0 60px #1a9ba04a,inset -17px -19px 27px #0008;display:grid;place-items:center;text-align:center;color:#defaff;font:700 10px var(--mono);letter-spacing:.08em;line-height:1.65}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.summary-stack{display:grid;gap:14px;align-content:stretch}
+.signal-panel{padding:23px;display:flex;flex-direction:column;justify-content:center}
+.signal-panel strong{display:block;margin:10px 0 6px;font-size:19px}
+.signal-panel p{font-size:12px;color:var(--muted);line-height:1.9;margin:0}
+.signal-top{display:flex;justify-content:space-between;gap:6px;align-items:center}
+.signal-pill{font:600 10px var(--mono);color:var(--amber);border:1px solid rgba(255,202,118,.24);padding:5px 8px;border-radius:6px}
+.connector-line{height:5px;border-radius:10px;background:linear-gradient(90deg,#1a8c90 0 74%,#ffae6d 74% 100%);margin:20px 0 9px;opacity:.83}
+.connection-state{display:flex;justify-content:space-between;gap:8px;color:#94aac4;font:500 10px var(--mono)}
+.evidence-panel{padding:20px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:14px}
+.licon{width:47px;height:47px;border:1px solid rgba(96,188,245,.26);border-radius:12px;display:grid;place-items:center;font-size:21px;color:var(--blue)}
+.evidence-panel strong{font-size:14px}.evidence-panel p{font-size:11px;color:var(--muted);margin:5px 0;line-height:1.7}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:17px}
+.kpi{padding:20px;position:relative;min-height:134px;overflow:hidden}
+.kpi:after{content:"";position:absolute;inset:auto -29px -42px auto;width:115px;height:115px;border:1px solid rgba(102,177,229,.07);border-radius:50%;box-shadow:0 0 0 17px rgba(83,150,241,.021),0 0 0 34px rgba(83,150,241,.01);pointer-events:none}
+.kpi .kpi-label{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:7px}
+.kpi .kpi-icon{color:var(--cyan);font:700 10px var(--mono)}
+.kpi .value{font:600 clamp(20px,2.3vw,31px) var(--mono);color:#e6f2ff;margin:14px 0 5px;direction:ltr;text-align:right;word-break:break-all}
+.kpi .note{font-size:10.5px;color:#7490ae}
+.value.warn{color:var(--amber)}.value.healthy{color:var(--green)}.value.error{color:var(--red)}
+.section-row{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap;margin:26px 0 12px}
+.section-row h3{margin:0;font-size:15px;display:flex;gap:8px;align-items:center}
+.section-row h3:before{content:"";display:block;width:3px;height:17px;border-radius:5px;background:var(--cyan);box-shadow:0 0 12px #45e1ed66}
+.section-row .meta{font:500 9px var(--mono);color:#647f9c;direction:ltr}
+.body-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(290px,.88fr);gap:15px}
+.filechart{display:flex;flex-direction:column;gap:12px;margin-top:15px}
+.chart-row{display:grid;grid-template-columns:100px minmax(0,1fr) 75px;gap:12px;align-items:center;font-size:11px}
+.chart-label{color:#93b2d0}.chart-track{height:7px;border-radius:8px;background:#1e334d;overflow:hidden;direction:ltr}
+.chart-fill{height:100%;background:linear-gradient(90deg,#244f9c,#3ce5de);border-radius:8px}
+.chart-number{color:#b7cce5;font:500 10px var(--mono);text-align:left;direction:ltr}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:570px}
+th,td{padding:13px 11px;border-bottom:1px solid rgba(126,178,219,.1);text-align:right;font-size:11.5px}
+th{color:#7894b4;font-size:10px}td{color:#c3d6ee}tr:last-child td{border-bottom:0}
+.pill{border:1px solid rgba(83,226,175,.18);color:var(--green);padding:3px 8px;border-radius:7px;font-size:10px;background:#1a4b4520}
+.pill.warning{color:var(--amber);border-color:rgba(255,202,118,.2)}
+.muted{color:var(--muted);line-height:1.85}
+.alert{display:flex;gap:12px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(126,178,219,.1)}
+.alert:last-child{border-bottom:0}.alert-symbol{width:31px;height:31px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;background:rgba(255,187,100,.11);color:var(--amber);font:700 13px var(--mono)}
+.alert-symbol.good{color:var(--green);background:rgba(83,226,175,.1)}
+.alert-title{font-weight:600;font-size:12px}.alert-desc{color:var(--muted);font-size:11px;line-height:1.9;margin-top:3px}
+.empty{padding:28px;text-align:center;color:#6e8baa;font-size:12px;border:1px dashed var(--border);border-radius:9px}
+.steps{display:grid;gap:12px}.step{display:flex;gap:12px;padding:14px;background:rgba(12,31,57,.6);border:1px solid var(--border);border-radius:12px}
+.step .num{font:600 11px var(--mono);color:var(--cyan);min-width:24px}
+.step strong{font-size:12px}.step p{font-size:11px;margin:3px 0;color:var(--muted);line-height:1.9}
+.input{width:100%;max-width:100%;color:var(--text);background:rgba(4,15,28,.85);border:1px solid #27465e;border-radius:9px;padding:11px}
+.input:focus{outline:1px solid var(--cyan)}
+.action{background:linear-gradient(100deg,#197b9b,#18598b);border:1px solid #2aaeca;border-radius:10px;padding:10px 15px;color:white;font-weight:700}
+.action:hover{filter:brightness(1.18)}
+.form-item{margin:12px 0}.form-item label{font-size:11px;color:var(--muted);display:block;margin-bottom:7px}
+.fineprint{font-size:10.5px;color:#7592b1;line-height:1.9}
+.foot{margin-top:30px;padding-top:20px;border-top:1px solid var(--border);color:#637d9d;font-size:10px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.focus-card{padding:22px}
+.focus-card h2{font-size:21px;margin:5px 0 10px}
+.focus-card p{line-height:2;color:var(--muted);max-width:760px}
+.mission-badge{font:600 10px var(--mono);color:var(--cyan);letter-spacing:.1em}
+@media(max-width:1170px){.hero-grid,.body-grid{grid-template-columns:1fr}.summary-stack{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){.shell{grid-template-columns:minmax(0,1fr)}.sidebar{position:static;height:auto;display:block;padding:12px 16px}.brand{padding:0 0 10px;border-bottom:0}.side-bottom,.nav-group{display:none}.nav{display:flex;flex-direction:row;overflow-x:auto;padding-bottom:4px}.nav button,.nav a{width:auto;white-space:nowrap;flex-shrink:0;padding:10px}.main{padding:0 16px 32px}.topbar{height:59px}.top-actions .tag{display:none}}
+@media(max-width:650px){.orbit-panel{grid-template-columns:1fr;min-height:440px}.orbit{margin:0 auto}.kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.kpi{min-height:117px;padding:14px}.summary-stack{grid-template-columns:1fr}.hero-content h2{font-size:20px}.chart-row{grid-template-columns:86px minmax(0,1fr) 61px;gap:7px}.heading{margin:17px 0}.heading h1{font-size:25px}.top-actions .ghost-btn{padding:7px 9px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="starfield" aria-hidden="true"></div>
+<div class="shell">
+<aside class="sidebar">
+ <div class="brand"><div class="brand-icon">◇</div><div><div class="brand-title">جوافة | القيادة</div><small>JAWAFA MISSION CONTROL</small></div></div>
+ <div>
+  <p class="nav-group">MISSION NAVIGATION</p>
+  <nav class="nav" aria-label="أقسام لوحة التحكم">
+   <button class="active" data-view="overview"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>القيادة الرئيسية</button>
+   <button data-view="tasks"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h9M8 13h9M8 17h5"/></svg>الوكلاء والمهام</button>
+   <button data-view="exports"><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>أدلة التصدير</button>
+   <button data-view="connection"><svg viewBox="0 0 24 24"><path d="M3 9a13 13 0 0 1 18 0M6 12a9 9 0 0 1 12 0M9 15a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg>مصادر الاتصال</button>
+   <a href="./jawafa-operations.html"><svg viewBox="0 0 24 24"><path d="M14 5h6v14H4V5h6M9 12h10M15 8l4 4-4 4"/></svg>المركز المالي</a>
+  </nav>
+ </div>
+ <div class="side-bottom">
+  <div class="side-panel"><span class="smallcap">SECURITY MODE</span><strong>PUBLIC · METADATA ONLY</strong><p>معلومات تشغيلية معتمدة دون كشف القيود المالية أو بيانات التحقيق.</p></div>
+ </div>
+</aside>
+<main class="main">
+ <div class="topbar"><div class="breadcrumb">جوافة <span> / مركز استمرارية الأعمال</span></div>
+ <div class="top-actions"><span class="tag" id="sourceTag"><span class="dot amber"></span>مصدر البيانات: جارٍ الفحص</span><button class="ghost-btn" id="refreshBtn" type="button">↻ تحديث</button></div></div>
+ <div id="errorNotice" class="panel pad" style="display:none;margin-top:15px;border-color:rgba(255,123,152,.34)" role="alert"></div>
+ <div class="view" data-page="overview">
+  <header class="heading"><div><div class="overline">OPERATIONS INTELLIGENCE / 01</div><h1>غرفة القيادة التنفيذية</h1><p>مراقبة الاستمرارية، التصدير، الاتصال، والتحقق المستقل من الإنجاز.</p></div><span class="label-data" id="captureDate">SOURCE SNAPSHOT / —</span></header>
+  <section class="hero-grid">
+   <div class="panel orbit-panel">
+    <div class="hero-content"><span class="line-number">JAWAFFA · SYSTEM COMMAND</span><h2>العمليات تحت المراقبة والتحقق</h2><p>معلومات تشغيلية موثقة من الخادم. لا تُعتبر بيانات مالية معتمدة دون إغلاق بوابات القبول.</p><span class="hero-chip" id="heroStatus">جاري قراءة المعلومات...</span></div>
+    <div class="orbit" aria-hidden="true"><div class="circle c2"></div><div class="circle"></div><div class="circle c3"></div><div class="orbit-core">JAWAFA<br>CORE</div></div>
+   </div>
+   <div class="summary-stack">
+    <div class="panel signal-panel"><div class="signal-top"><span class="label-data">DATA TRANSPORT</span><span class="signal-pill" id="cloudCode">CHECKING</span></div><strong id="cloudTitle">التحقق من الجسر السحابي</strong><p id="cloudDesc">الفحص جارٍ</p><div class="connector-line"></div><div class="connection-state"><span>LOCAL BRIDGE</span><span>REMOTE CLOUD</span></div></div>
+    <div class="panel evidence-panel"><div class="licon">◎</div><div><strong>التفريق بين الإنجاز والادعاء</strong><p>حالة مهمة Windows ووجود ملف تصدير لا تعني اكتمال المطابقة أو قبول GATE-15.</p></div></div>
+   </div>
+  </section>
+  <section class="kpis" aria-label="مؤشرات تشغيل موثقة">
+   <div class="panel kpi"><div class="kpi-label">ملفات التصدير <span class="kpi-icon">01</span></div><div class="value" id="filesNum">—</div><div class="note">عدد ملفات CSV الفعلية</div></div>
+   <div class="panel kpi"><div class="kpi-label">الحجم الكلي <span class="kpi-icon">02</span></div><div class="value" id="exportSize">—</div><div class="note">إجمالي حجم ملفات التصدير</div></div>
+   <div class="panel kpi"><div class="kpi-label">ملفات فارغة <span class="kpi-icon">03</span></div><div class="value" id="emptyFiles">—</div><div class="note">فحص الحجم الصفري</div></div>
+   <div class="panel kpi"><div class="kpi-label">بوابات API المحلية <span class="kpi-icon">04</span></div><div class="value" id="apiCount">—</div><div class="note">التي نجحت في اختبار HTTP</div></div>
+   <div class="panel kpi"><div class="kpi-label">المهام المسجلة <span class="kpi-icon">05</span></div><div class="value" id="agentsCount">—</div><div class="note">آخر نتائج المهام المجدولة</div></div>
+   <div class="panel kpi"><div class="kpi-label">مزامنة البيانات المالية <span class="kpi-icon">06</span></div><div class="value error" id="syncStatus">—</div><div class="note">لا نعرض أي بيانات مالية للعموم</div></div>
+  </section>
+  <div class="section-row"><h3>هيكل أدلة التصدير</h3><span class="meta">VERIFIED EXPORT FILE SIZES</span></div>
+  <section class="body-grid"><div class="panel pad"><div class="muted" style="font-size:11px">أكبر ملفات التصدير حسب الحجم، دون كشف أسماء الجداول في الصفحة العامة.</div><div class="filechart" id="fileChart"><div class="empty">في انتظار بيانات فحص التصدير</div></div></div>
+  <div class="panel pad"><div class="section-row" style="margin:0 0 2px"><h3>ملاحظات تشغيلية</h3></div><div id="alerts"><div class="empty">لم تصل الملاحظات</div></div></div></section>
+ </div>
+ <div class="view" data-page="tasks" hidden>
+  <header class="heading"><div><div class="overline">OPERATIONS INTELLIGENCE / 02</div><h1>الوكلاء والمهام</h1><p>نتائج المجدول الفعلية، مع فصل حالة الاستعداد عن التشغيل المستمر.</p></div><span class="label-data" id="taskCapture">STATUS / —</span></header>
+  <div class="panel pad"><div class="section-row" style="margin:0 0 14px"><h3>سجل مراقبة الاستمرارية</h3><span class="tag" id="taskCount">—</span></div><div class="tablewrap"><table><thead><tr><th>الوظيفة</th><th>مهمة الخادم</th><th>التقييم</th><th>حالة Windows</th><th>آخر تشغيل</th><th>رمز النتيجة</th></tr></thead><tbody id="taskRows"><tr><td colspan="6" class="muted">لم تُحمَّل بيانات بعد</td></tr></tbody></table></div></div>
+  <div class="section-row"><h3>حدود الصلاحيات</h3><span class="meta">FAIL-SAFE DESIGN</span></div><div class="panel pad muted">هذا الوكيل يراقب المهام ويطلب الاستعادة ضمن شروط آمنة؛ لا يستطيع إيقاظ المحادثات أو إجبار ChatGPT على الكلام، ولا يغيّر البيانات الأصلية. إذا ظهر تأخر أو عطل، فلا تعتبر آخر نتيجة نجاح سابقة دليلًا على سلامة التشغيل الحالي.</div>
+ </div>
+ <div class="view" data-page="exports" hidden>
+  <header class="heading"><div><div class="overline">OPERATIONS INTELLIGENCE / 03</div><h1>مركز أدلة التصدير</h1><p>إحصاءات الملف المرجعي والتحقق من سلامة الأعداد الأولية.</p></div><span class="label-data">READ ONLY · CSV</span></header>
+  <div class="kpis" style="margin-top:0"><div class="panel kpi"><div class="kpi-label">عدد الملفات</div><div class="value" id="exFiles">—</div></div><div class="panel kpi"><div class="kpi-label">حجم الملفات</div><div class="value" id="exSize">—</div></div><div class="panel kpi"><div class="kpi-label">صفر بايت</div><div class="value" id="exEmpty">—</div></div></div>
+  <div class="section-row"><h3>التوزيع حسب الحجم</h3><span class="meta">SIZE DISTRIBUTION</span></div><div class="panel pad"><div id="largeChart" class="filechart"></div></div>
+  <div class="section-row"><h3>ما تم التحقق منه وما لم يتم</h3></div><div class="panel pad"><div class="steps">
+   <div class="step"><span class="num">01</span><div><strong>التحقق الأولي من عدد ملفات CSV والحجم</strong><p>هذه القيم مستخرجة من تعداد الملفات وحساب أحجامها على الخادم.</p></div></div>
+   <div class="step"><span class="num">02</span><div><strong>مطابقة محتوى كل جدول وعدد السجلات</strong><p>لم تُثبت سلامة جميع السجلات من خلال فحص أحجام الملفات وحده.</p></div></div>
+   <div class="step"><span class="num">03</span><div><strong>قبول بوابة GATE-15 والمطابقات المالية</strong><p>غير مثبتة كمرحلة مكتملة؛ لا يتم استخدام أي أرقام مالية هنا على أنها نتائج تحقيق.</p></div></div>
+  </div></div>
+ </div>
+ <div class="view" data-page="connection" hidden>
+  <header class="heading"><div><div class="overline">OPERATIONS INTELLIGENCE / 04</div><h1>مصادر البيانات والاتصال</h1><p>عرض صريح لمصدر كل رقم وكيف تم الحصول عليه، دون إظهار اتصال غير موجود.</p></div><span class="label-data">SOURCE VERIFICATION</span></header>
+  <div class="body-grid">
+   <div class="panel pad"><h2>المصدر الحالي</h2><p class="muted" id="sourceExplanation">جارٍ التحقق...</p><div class="step"><span class="num">◈</span><div><strong>مصدر تشغيل الخادم</strong><p id="serverLabel">JAWAFFASVR</p></div></div><div class="step" style="margin-top:11px"><span class="num">◈</span><div><strong>جسر قاعدة البيانات المحلي</strong><p id="apiExplanation">—</p></div></div><div class="step" style="margin-top:11px"><span class="num">!</span><div><strong>جسر AppDeploy السحابي</strong><p id="bridgeExplanation">—</p></div></div></div>
+   <div class="panel pad"><h2>تحميل حالة حديثة بشكل آمن</h2><p class="muted" style="font-size:12px">على جهاز الخادم يمكن فتح صفحة المراقبة المحلية. من المتصفح الحالي يمكن اختيار ملف JSON للتشغيل، أو رابط HTTPS خاص يخضع للتفويض. لا تُدخل بيانات مالية أو مفاتيح سرية هنا.</p>
+    <div class="form-item"><label for="fileInput">ملف JSON محلي</label><input class="input" type="file" accept=".json,application/json" id="fileInput"></div>
+    <div class="form-item"><label for="urlInput">رابط حالة HTTPS خاص (اختياري)</label><input class="input" type="url" id="urlInput" placeholder="https://private-server.example/status.json"></div>
+    <button class="action" type="button" id="connectBtn">تحقق من المصدر الخاص</button><p id="connectMsg" class="fineprint" aria-live="polite"></p>
+   </div>
+  </div>
+  <div class="section-row"><h3>الانضباط المعلوماتي</h3></div><div class="panel pad muted">لا تنشر هذه الصفحة أرقام شيكات أو قيود أو بيانات موظفين أو سجلات جنائية. الواجهة العامة تعرض مؤشرات تشغيلية محدودة. الوصول إلى الملفات المالية الأصلية يحتاج بيئة خاصة بتوثيق وصلاحيات وتشفير.</div>
+ </div>
+ <footer class="foot"><span>JAWAFA CONTROL / OPERATIONAL OBSERVABILITY · PUBLIC-SAFE</span><span id="footerStamp">المصدر: بانتظار القراءة</span></footer>
+</main></div>
+<script>
+'use strict';
+(function(){
+const $=id=>document.getElementById(id);
+const set=(id,value)=>{const el=$(id);if(el)el.textContent=String(value==null?'—':value)};
+const fmtNumber=v=>Number(v||0).toLocaleString('en-US');
+const fmtBytes=n=>!Number.isFinite(Number(n))?'—':(Number(n)/1e9).toFixed(2)+' GB';
+const fmtDate=v=>{if(!v)return '—';const dt=new Date(v);return Number.isFinite(dt.getTime())?dt.toLocaleString('ar-JO',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Amman'}):String(v)};
+const topTasks=[];
+let data=null,mode='snapshot',timer=null,lastChecked=null;
+function addAlert(title,desc,good=false){
+ const row=document.createElement('div');row.className='alert';
+ const ico=document.createElement('span');ico.className='alert-symbol'+(good?' good':'');ico.textContent=good?'✓':'!';
+ const body=document.createElement('div');const head=document.createElement('div');head.className='alert-title';head.textContent=title;
+ const sub=document.createElement('div');sub.className='alert-desc';sub.textContent=desc;
+ body.append(head,sub);row.append(ico,body);$('alerts').append(row)
+}
+function buildChart(target,items){
+ const holder=$(target);holder.replaceChildren();
+ if(!Array.isArray(items)||!items.length){holder.textContent='لا توجد بيانات أحجام موثقة';return}
+ const largest=Math.max(1,...items.map(v=>Number(v.bytes)||0));
+ items.forEach((f,i)=>{
+  const row=document.createElement('div');row.className='chart-row';
+  const label=document.createElement('span');label.className='chart-label';label.textContent=f.label||('ملف '+(i+1));
+  const track=document.createElement('div');track.className='chart-track';const fill=document.createElement('div');fill.className='chart-fill';fill.style.width=Math.max(0,Math.min(100,Number(f.bytes)/largest*100))+'%';
+  track.append(fill);const num=document.createElement('span');num.className='chart-number';num.textContent=(Number(f.bytes)/1e9).toFixed(2)+' GB';row.append(label,track,num);holder.append(row)
+ })
+}
+function sourceBadge(text,tone){$('sourceTag').replaceChildren();const dot=document.createElement('span');dot.className='dot '+tone;$('sourceTag').append(dot,document.createTextNode(text))}
+function render(o,origin='snapshot'){
+ if(!o||typeof o!=='object')throw Error('الملف ليس JSON صالحًا');
+ const legacy=o.schema==='jawafa-continuity-v1';
+ const current=o.schema==='jawafa-ops-snapshot-v1';
+ if(!legacy&&!current)throw Error('نوع JSON غير مدعوم');
+ data=o;mode=origin;
+ const isLive=origin==='private_live';
+ const snapshotLabel=isLive?'فحص من مصدر خاص':'لقطة تحقق تشغيلية غير حيّة';
+ sourceBadge(snapshotLabel,isLive?'green':'amber');
+ const srcDate=o.source_timestamp_utc||o.monitored_at_utc;
+ set('captureDate','SOURCE TIME / '+fmtDate(srcDate));set('taskCapture','SOURCE TIME / '+fmtDate(srcDate));
+ set('footerStamp',snapshotLabel+' | '+fmtDate(srcDate));
+ set('sourceExplanation',isLive?'قراءة مباشرة من مصدر HTTPS خاص أو خادم محلي.':'البيانات محمّلة تلقائيًا من ملف تشغيل موثق منشور في المستودع. ليست اتصالًا مباشرًا بالخادم.');
+ set('serverLabel',o.server?.name||o.server||'JAWAFFASVR');
+ set('heroStatus',isLive?'بيانات التشغيل من المصدر الخاص':'أرقام فعلية | لقطة تحقق وليست بثًا مباشرًا');
+ const allTasks=o.monitored_tasks||o.tasks||[];
+ const ex=o.export||{};
+ const conn=o.cloud_bridge||{};
+ const apiTotal=o.server?.api_check?.tested,apiPassed=o.server?.api_check?.passed;
+ set('filesNum',ex.file_count??'غير متوفر');set('exFiles',ex.file_count??'غير متوفر');
+ set('exportSize',ex.bytes!=null?fmtBytes(ex.bytes):'غير متوفر');set('exSize',ex.bytes!=null?fmtBytes(ex.bytes):'غير متوفر');
+ set('emptyFiles',ex.zero_byte_files??'غير متوفر');set('exEmpty',ex.zero_byte_files??'غير متوفر');
+ set('apiCount',apiPassed!=null?apiPassed+'/'+apiTotal:(o.api_health==='up'?'1 / 1':'غير متوفر'));
+ set('agentsCount',allTasks.length);set('taskCount',String(allTasks.length)+' مهمة');
+ const isBlocked=conn.status==='blocked';
+ set('syncStatus',isBlocked?'HTTP 402':(conn.status==='ok'?'متصل':'غير متحقق'));
+ set('cloudCode',isBlocked?'HTTP 402':(conn.status==='ok'?'CONNECTED':'NO DATA'));
+ set('cloudTitle',isBlocked?'المزامنة السحابية متوقفة':conn.status==='ok'?'المزامنة متصلة':'لا توجد حالة اتصال مثبتة');
+ set('cloudDesc',isBlocked?'فشل الاتصال السحابي لأسباب تتعلق برمز HTTP 402. بيانات العمليات المحلية موجودة، لكنها غير متاحة مباشرة في الصفحة العامة.':'القياسات المحلية لا تثبت وحدها قدرة لوحة الإنترنت على استيراد البيانات.');
+ set('apiExplanation',apiPassed!=null?'استجابت '+apiPassed+' من '+apiTotal+' بوابات فحص داخلية في آخر فحص موثق.':'حالة آخر فحص: '+(o.api_health||'غير معروفة'));
+ set('bridgeExplanation',isBlocked?'آخر رمز خطأ مسجل: HTTP 402، وهذا يمنع المزامنة الحية من الموصل الحالي.':(conn.status||'غير متحقق'));
+ buildChart('fileChart',ex.largest_files);buildChart('largeChart',ex.largest_files);
+ const tbody=$('taskRows');tbody.replaceChildren();
+ allTasks.forEach(t=>{
+  const tr=document.createElement('tr');
+  const arr=[t.display||t.name,t.name,t.health,t.state,t.last_run_server||t.last_run,t.last_result??t.result_code];
+  arr.forEach((v,i)=>{const td=document.createElement('td');if(i===2){const p=document.createElement('span');p.className='pill'+(v==='ok'?'':' warning');p.textContent=v==='ok'?'آخر فحص ناجح':(v||'غير معروف');td.append(p)}else td.textContent=i===4?fmtDate(v):String(v==null?'—':v);tr.append(td)});
+  tbody.append(tr)
+ });
+ if(!allTasks.length){let row=document.createElement('tr');let cell=document.createElement('td');cell.colSpan=6;cell.textContent='لا توجد مهام في ملف المصدر';row.append(cell);tbody.append(row)}
+ $('alerts').replaceChildren();
+ if(isBlocked)addAlert('مزامنة البيانات السحابية متوقفة','سجل الموصل أظهر HTTP 402؛ لا توجد الآن تغذية مالية حية للصفحة العامة.');
+ if(ex.file_count!=null)addAlert('اكتشاف ملفات التصدير',fmtNumber(ex.file_count)+' ملف CSV بإجمالي '+fmtBytes(ex.bytes)+'. هذا تحقق أولي من الملفات وليس قبولًا نهائيًا.',true);
+ if(o.audit?.gate15==='not_accepted')addAlert('بوابة القبول GATE-15 لم تُغلق','الحالة المعتمدة للتدقيق المالي والتقني لا تزال غير مثبتة كقبول نهائي.');
+ if(!isLive)addAlert('البيانات المعروضة ليست مباشرة','آخر معلومات جرى استيرادها من لقطة منشورة. للاطلاع على بث حي يلزم مصدر HTTPS خاص موثق.');
+ $('errorNotice').style.display='none';
+}
+function showError(message){const b=$('errorNotice');b.style.display='block';b.textContent=message}
+function switchView(view){
+ document.querySelectorAll('.view').forEach(el=>el.hidden=el.dataset.page!==view);
+ document.querySelectorAll('[data-view]').forEach(el=>el.classList.toggle('active',el.dataset.view===view));
+ window.location.hash=view==='overview'?'':view;
+}
+document.querySelectorAll('[data-view]').forEach(btn=>btn.addEventListener('click',()=>switchView(btn.dataset.view)));
+window.addEventListener('hashchange',()=>{const key=location.hash.slice(1);if(['overview','tasks','exports','connection'].includes(key))switchView(key)});
+if(['tasks','exports','connection'].includes(location.hash.slice(1)))switchView(location.hash.slice(1));
+async function loadBundled(){
+ try{const response=await fetch('./data/jawafa-status.json?nocache='+Date.now(),{cache:'no-store'});
+ if(!response.ok)throw Error('HTTP '+response.status);
+ const packet=await response.json();
+ render(packet,packet.display_mode==='private_live'?'private_live':'snapshot');
+ }catch(e){showError('تعذر تحميل بيانات التشغيل: '+e.message+'. لا تُعرض بيانات افتراضية.');sourceBadge('المصدر غير متصل','red')}
+}
+$('refreshBtn').addEventListener('click',()=>{if(privateEndpoint)readPrivate();else loadBundled()});
+$('fileInput').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>1500000)throw Error('ملف أكبر من الحد المسموح');render(JSON.parse(await file.text()),'manual_upload');set('connectMsg','تم تحميل لقطة من الملف المحدد محليًا، ولم تُرفع إلى الإنترنت.')}catch(err){set('connectMsg',err.message)}});
+let privateEndpoint='';
+async function readPrivate(){
+ try{const url=new URL(privateEndpoint);if(url.protocol!=='https:'&&url.hostname!=='127.0.0.1'&&url.hostname!=='localhost')throw Error('HTTPS مطلوب للمصادر البعيدة');
+ const ctl=new AbortController(),id=setTimeout(()=>ctl.abort(),10000);
+ let res;try{res=await fetch(url.href,{cache:'no-store',signal:ctl.signal,credentials:'omit'})}finally{clearTimeout(id)}
+ if(!res.ok)throw Error('HTTP '+res.status);
+ const v=await res.json();
+ render(v,'private_live');set('connectMsg','آخر قراءة من المصدر الخاص تمت بنجاح.')
+ }catch(e){set('connectMsg','تعذر قراءة المصدر الخاص: '+e.message);sourceBadge('اتصال خاص معطّل','red')}
+}
+$('connectBtn').addEventListener('click',()=>{
+ const txt=$('urlInput').value.trim();if(!txt){set('connectMsg','يرجى تحديد عنوان HTTPS');return}
+ privateEndpoint=txt;if(timer)clearInterval(timer);readPrivate();timer=setInterval(readPrivate,60000)
+});
+loadBundled();
+})();
+</script>
+</body>
+</html>

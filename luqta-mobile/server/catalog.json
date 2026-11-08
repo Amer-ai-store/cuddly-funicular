@@ -1,0 +1,1906 @@
+[
+  {
+    "id": "headphones",
+    "name": "سماعات هدوء لاسلكية",
+    "price": 249,
+    "category": "electronics",
+    "description": "سماعات مريحة للأيام الطويلة، مع عزل للضوضاء وصوت واضح للموسيقى والمكالمات. تصميم خفيف يرافقك في المكتب وأثناء التنقل.",
+    "tags": [
+      "سماعات",
+      "سماعة",
+      "لاسلكية",
+      "عزل الضوضاء",
+      "موسيقى",
+      "عمل",
+      "مكتب",
+      "هدية",
+      "headphones",
+      "audio"
+    ],
+    "nameEn": "Quiet wireless headphones",
+    "subtitle": "صوت أقرب. عالم أهدأ.",
+    "brand": "SONORA",
+    "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=900&auto=format&fit=crop&q=85"
+    ],
+    "oldPrice": 349,
+    "badge": "الأكثر طلبًا",
+    "features": [
+      "عزل نشط للضوضاء",
+      "بطارية حتى ٣٠ ساعة",
+      "اتصال Bluetooth",
+      "وسائد مريحة وقابلة للتعديل"
+    ],
+    "colors": [
+      "#2A2A2A",
+      "#E1DACE",
+      "#66756E"
+    ],
+    "barcode": "6250000000010",
+    "sku": "headphones",
+    "specs": [
+      {
+        "label": "البطارية",
+        "value": "حتى 30 ساعة"
+      },
+      {
+        "label": "الاتصال",
+        "value": "بلوتوث 5.3"
+      },
+      {
+        "label": "العزل",
+        "value": "عزل ضوضاء نشط"
+      }
+    ],
+    "model3d": {
+      "shape": "headphones",
+      "color": "#2A2A2A",
+      "scale": 1
+    }
+  },
+  {
+    "id": "speaker",
+    "name": "مكبر صوت ميني",
+    "price": 179,
+    "category": "electronics",
+    "description": "مكبر صوت محمول بحجم صغير وصوت غني. مناسب لجلسات المنزل ورحلات نهاية الأسبوع، مع تصميم بسيط يسهل حمله.",
+    "tags": [
+      "مكبر صوت",
+      "صوت",
+      "موسيقى",
+      "لاسلكي",
+      "رحلات",
+      "هدية",
+      "speaker",
+      "audio"
+    ],
+    "nameEn": "Mini speaker",
+    "subtitle": "موسيقاك، أينما كنت",
+    "brand": "SONORA",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=900&auto=format&fit=crop&q=85"
+    ],
+    "oldPrice": 219,
+    "badge": "اختيار لقطة",
+    "features": [
+      "بطارية حتى ١٢ ساعة",
+      "مقاوم للرذاذ",
+      "اتصال Bluetooth",
+      "وزن خفيف وسهل الحمل"
+    ],
+    "colors": [
+      "#202523",
+      "#B6C1B4",
+      "#DDD3C6"
+    ],
+    "barcode": "6250000000027",
+    "sku": "speaker",
+    "specs": [
+      {
+        "label": "البطارية",
+        "value": "12 ساعة"
+      },
+      {
+        "label": "مقاومة الماء",
+        "value": "IPX5"
+      },
+      {
+        "label": "الوزن",
+        "value": "350 غ"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#202523",
+      "scale": 1
+    }
+  },
+  {
+    "id": "keyboard",
+    "name": "لوحة مفاتيح كلاود",
+    "price": 199,
+    "category": "electronics",
+    "description": "لوحة مفاتيح لاسلكية بتصميم مضغوط ومفاتيح مريحة. لمسة أنيقة لمكتبك مع سهولة الانتقال بين أجهزتك.",
+    "tags": [
+      "لوحة مفاتيح",
+      "كيبورد",
+      "حاسوب",
+      "كمبيوتر",
+      "مكتب",
+      "عمل",
+      "دراسة",
+      "keyboard",
+      "office"
+    ],
+    "nameEn": "Cloud keyboard",
+    "subtitle": "مساحة عمل تلهمك",
+    "brand": "FORM",
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=900&auto=format&fit=crop&q=85"
+    ],
+    "features": [
+      "اتصال لاسلكي",
+      "تصميم مضغوط",
+      "مفاتيح هادئة",
+      "متوافقة مع الكمبيوتر والأجهزة اللوحية"
+    ],
+    "colors": [
+      "#F2EFE9",
+      "#303433"
+    ],
+    "barcode": "6250000000034",
+    "sku": "keyboard",
+    "specs": [
+      {
+        "label": "المفاتيح",
+        "value": "ميكانيكية هادئة"
+      },
+      {
+        "label": "الاتصال",
+        "value": "لاسلكي وUSB-C"
+      },
+      {
+        "label": "الإضاءة",
+        "value": "خلفية دافئة"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#F2EFE9",
+      "scale": 1
+    }
+  },
+  {
+    "id": "lamp",
+    "name": "مصباح هالة",
+    "price": 129,
+    "category": "home",
+    "description": "مصباح طاولة بإضاءة دافئة وتصميم هادئ. يضيف أجواء مريحة لركن القراءة أو الطاولة بجوار سريرك.",
+    "tags": [
+      "مصباح",
+      "إضاءة",
+      "لمبة",
+      "مكتب",
+      "عمل",
+      "غرفة",
+      "نوم",
+      "منزل",
+      "ديكور",
+      "هدية",
+      "lamp",
+      "office",
+      "bedroom"
+    ],
+    "nameEn": "Halo lamp",
+    "subtitle": "ضوء دافئ لتفاصيلك",
+    "brand": "NEST",
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=900&auto=format&fit=crop&q=85"
+    ],
+    "oldPrice": 169,
+    "badge": "وصل حديثًا",
+    "features": [
+      "إضاءة LED دافئة",
+      "٣ مستويات سطوع",
+      "تحكم باللمس",
+      "قاعدة ثابتة"
+    ],
+    "colors": [
+      "#E8DDCB",
+      "#727F71"
+    ],
+    "barcode": "6250000000041",
+    "sku": "lamp",
+    "specs": [
+      {
+        "label": "الإضاءة",
+        "value": "LED قابل للتعتيم"
+      },
+      {
+        "label": "الطاقة",
+        "value": "8 واط"
+      },
+      {
+        "label": "الارتفاع",
+        "value": "38 سم"
+      }
+    ],
+    "model3d": {
+      "shape": "lamp",
+      "color": "#E8DDCB",
+      "scale": 1
+    }
+  },
+  {
+    "id": "chair",
+    "name": "كرسي ركن",
+    "price": 449,
+    "category": "home",
+    "description": "كرسي بذراعين وخطوط بسيطة، مع مقعد مبطن وأرجل خشبية. قطعة تضيف الدفء والراحة إلى غرفة المعيشة.",
+    "tags": [
+      "كرسي",
+      "أثاث",
+      "منزل",
+      "غرفة",
+      "ديكور",
+      "قراءة",
+      "راحة",
+      "chair",
+      "home"
+    ],
+    "nameEn": "Corner chair",
+    "subtitle": "مكانك المفضل للاسترخاء",
+    "brand": "NEST",
+    "image": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=900&auto=format&fit=crop&q=85"
+    ],
+    "oldPrice": 549,
+    "features": [
+      "مقعد مبطن",
+      "أرجل خشبية",
+      "قماش ناعم",
+      "تصميم مناسب للمساحات الصغيرة"
+    ],
+    "colors": [
+      "#DDCEB7",
+      "#8F9B8A",
+      "#C49B7E"
+    ],
+    "barcode": "6250000000058",
+    "sku": "chair",
+    "specs": [
+      {
+        "label": "المادة",
+        "value": "خشب زان وقماش"
+      },
+      {
+        "label": "الحمل",
+        "value": "حتى 120 كغ"
+      },
+      {
+        "label": "الأبعاد",
+        "value": "70×75×82 سم"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#DDCEB7",
+      "scale": 1
+    }
+  },
+  {
+    "id": "mug",
+    "name": "كوب صباح سيراميك",
+    "price": 59,
+    "category": "home",
+    "description": "كوب سيراميك بملمس لطيف ومقبض مريح. للقهوة الصباحية والشاي في استراحة يومك، أو هدية بسيطة لمن تحب.",
+    "tags": [
+      "كوب",
+      "سيراميك",
+      "قهوة",
+      "شاي",
+      "منزل",
+      "مكتب",
+      "عمل",
+      "هدية",
+      "mug",
+      "coffee",
+      "office"
+    ],
+    "nameEn": "Morning ceramic mug",
+    "subtitle": "بداية صغيرة، جميلة",
+    "brand": "NEST",
+    "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=900&auto=format&fit=crop&q=85"
+    ],
+    "features": [
+      "سعة ٣٥٠ مل",
+      "سيراميك متين",
+      "آمن لغسالة الصحون",
+      "مقبض مريح"
+    ],
+    "colors": [
+      "#D7C3A6",
+      "#6B7E71",
+      "#F0E9DC"
+    ],
+    "barcode": "6250000000065",
+    "sku": "mug",
+    "specs": [
+      {
+        "label": "السعة",
+        "value": "350 مل"
+      },
+      {
+        "label": "المادة",
+        "value": "سيراميك"
+      },
+      {
+        "label": "آمن",
+        "value": "للميكروويف وغسالة الصحون"
+      }
+    ],
+    "model3d": {
+      "shape": "mug",
+      "color": "#D7C3A6",
+      "scale": 1
+    }
+  },
+  {
+    "id": "sneakers",
+    "name": "حذاء ستريت اليومي",
+    "price": 219,
+    "category": "fashion",
+    "description": "حذاء يومي بوسادة قدم مريحة ونعل مرن. تصميم سهل التنسيق يناسب المشي والتنقل وإطلالاتك البسيطة.",
+    "tags": [
+      "حذاء",
+      "أحذية",
+      "جزمة",
+      "سنيكرز",
+      "أزياء",
+      "موضة",
+      "مشي",
+      "رياضي",
+      "sneakers",
+      "shoes"
+    ],
+    "nameEn": "Everyday street sneakers",
+    "subtitle": "خفّة ترافق كل خطوة",
+    "brand": "PACE",
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=900&auto=format&fit=crop&q=85"
+    ],
+    "oldPrice": 289,
+    "badge": "اختيار لقطة",
+    "features": [
+      "نعل مرن",
+      "بطانة مريحة",
+      "خامة تسمح بالتهوية",
+      "تصميم يومي"
+    ],
+    "colors": [
+      "#F1ECE2",
+      "#1E2221",
+      "#C4AF8E"
+    ],
+    "barcode": "6250000000072",
+    "sku": "sneakers",
+    "specs": [
+      {
+        "label": "النعل",
+        "value": "مطاط مرن"
+      },
+      {
+        "label": "المقاسات",
+        "value": "38–45"
+      },
+      {
+        "label": "الخامة",
+        "value": "قماش قابل للتنفس"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#F1ECE2",
+      "scale": 1
+    }
+  },
+  {
+    "id": "bag",
+    "name": "حقيبة كل يوم",
+    "price": 149,
+    "category": "fashion",
+    "description": "حقيبة قماشية واسعة بتصميم بسيط ومقابض مريحة. رفيقة للمشاوير والعمل والتسوق، مع مساحة لترتيب أغراضك اليومية.",
+    "tags": [
+      "حقيبة",
+      "شنطة",
+      "ظهر",
+      "أزياء",
+      "عمل",
+      "مكتب",
+      "دراسة",
+      "سفر",
+      "هدية",
+      "bag",
+      "backpack",
+      "office"
+    ],
+    "nameEn": "Everyday bag",
+    "subtitle": "كل ما تحتاجه، بخفّة",
+    "brand": "ROAM",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop&q=85"
+    ],
+    "badge": "وصل حديثًا",
+    "features": [
+      "خامة قماشية",
+      "مساحة داخلية واسعة",
+      "مقابض مريحة",
+      "وزن خفيف"
+    ],
+    "colors": [
+      "#3C4A40",
+      "#BBA484",
+      "#272C2A"
+    ],
+    "barcode": "6250000000089",
+    "sku": "bag",
+    "specs": [
+      {
+        "label": "السعة",
+        "value": "18 لتر"
+      },
+      {
+        "label": "الجيوب",
+        "value": "6 جيوب"
+      },
+      {
+        "label": "الخامة",
+        "value": "قماش مقاوم للماء"
+      }
+    ],
+    "model3d": {
+      "shape": "bag",
+      "color": "#3C4A40",
+      "scale": 1
+    }
+  },
+  {
+    "id": "watch",
+    "name": "ساعة مومنت",
+    "price": 279,
+    "category": "fashion",
+    "description": "ساعة ذكية بواجهة بسيطة وسوار مريح. تجمع بين لمسة أنيقة ومتابعة نشاطك اليومي وإشعارات الهاتف.",
+    "tags": [
+      "ساعة",
+      "إكسسوارات",
+      "أزياء",
+      "موضة",
+      "هدية",
+      "watch",
+      "accessories"
+    ],
+    "nameEn": "Moment watch",
+    "subtitle": "تفصيل لا يمرّ",
+    "brand": "MOMENT",
+    "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=900&auto=format&fit=crop&q=85"
+    ],
+    "oldPrice": 329,
+    "features": [
+      "شاشة ملونة",
+      "سوار قابل للتعديل",
+      "متابعة النشاط اليومي",
+      "إشعارات الهاتف"
+    ],
+    "colors": [
+      "#B6A16B",
+      "#AEB5B3",
+      "#363A38"
+    ],
+    "barcode": "6250000000096",
+    "sku": "watch",
+    "specs": [
+      {
+        "label": "العلبة",
+        "value": "40 مم"
+      },
+      {
+        "label": "مقاومة الماء",
+        "value": "5 ATM"
+      },
+      {
+        "label": "السوار",
+        "value": "جلد طبيعي"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#B6A16B",
+      "scale": 1
+    }
+  },
+  {
+    "id": "serum",
+    "name": "سيروم الترطيب اليومي",
+    "price": 89,
+    "category": "care",
+    "description": "سيروم خفيف للترطيب اليومي بقوام سريع الامتصاص. أضفه إلى روتين العناية بالبشرة، مع اختبار المنتج على مساحة صغيرة أولًا.",
+    "tags": [
+      "سيروم",
+      "بشرة",
+      "عناية",
+      "ترطيب",
+      "وجه",
+      "جمال",
+      "serum",
+      "skincare",
+      "care"
+    ],
+    "nameEn": "Daily hydration serum",
+    "subtitle": "عناية تبدأ بلحظة",
+    "brand": "BOTANICA",
+    "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=900&auto=format&fit=crop&q=85"
+    ],
+    "oldPrice": 119,
+    "features": [
+      "حجم ٣٠ مل",
+      "قوام خفيف",
+      "سريع الامتصاص",
+      "للاستخدام اليومي"
+    ],
+    "colors": [
+      "#DDC9A9"
+    ],
+    "barcode": "6250000000102",
+    "sku": "serum",
+    "specs": [
+      {
+        "label": "الحجم",
+        "value": "30 مل"
+      },
+      {
+        "label": "المكوّن",
+        "value": "حمض الهيالورونيك"
+      },
+      {
+        "label": "البشرة",
+        "value": "جميع الأنواع"
+      }
+    ],
+    "model3d": {
+      "shape": "bottle",
+      "color": "#DDC9A9",
+      "scale": 1
+    }
+  },
+  {
+    "id": "fragrance",
+    "name": "عطر وود آند مسك",
+    "price": 199,
+    "category": "care",
+    "description": "عطر يجمع نغمات الخشب والمسك مع لمسة دافئة. عبوة أنيقة تصلح للاستخدام اليومي ولإهداء شخص عزيز.",
+    "tags": [
+      "عطر",
+      "عطور",
+      "مسك",
+      "خشب",
+      "عناية",
+      "هدية",
+      "perfume",
+      "fragrance",
+      "care"
+    ],
+    "nameEn": "Wood & musk fragrance",
+    "subtitle": "أثر هادئ، لا يُنسى",
+    "brand": "ATELIER",
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=900&auto=format&fit=crop&q=85"
+    ],
+    "badge": "الأكثر طلبًا",
+    "features": [
+      "حجم ٥٠ مل",
+      "نغمات خشبية",
+      "لمسات من المسك",
+      "عبوة قابلة لإعادة الاستخدام"
+    ],
+    "colors": [
+      "#B39157"
+    ],
+    "barcode": "6250000000119",
+    "sku": "fragrance",
+    "specs": [
+      {
+        "label": "الحجم",
+        "value": "100 مل"
+      },
+      {
+        "label": "التركيز",
+        "value": "أو دو بارفان"
+      },
+      {
+        "label": "النوتات",
+        "value": "خشب ومسك"
+      }
+    ],
+    "model3d": {
+      "shape": "bottle",
+      "color": "#B39157",
+      "scale": 1
+    }
+  },
+  {
+    "id": "diffuser",
+    "name": "فواحة سكون",
+    "price": 119,
+    "category": "care",
+    "description": "فواحة منزلية بعيدان خشبية ورائحة لطيفة. تمنح ركنك المفضل أجواء هادئة دون الحاجة إلى الكهرباء.",
+    "tags": [
+      "فواحة",
+      "رائحة",
+      "عناية",
+      "استرخاء",
+      "منزل",
+      "غرفة",
+      "نوم",
+      "هدية",
+      "diffuser",
+      "care",
+      "bedroom"
+    ],
+    "nameEn": "Calm diffuser",
+    "subtitle": "مساحة تتنفّس هدوءًا",
+    "brand": "BOTANICA",
+    "image": "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=900&auto=format&fit=crop&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=900&auto=format&fit=crop&q=85"
+    ],
+    "features": [
+      "حجم ١٠٠ مل",
+      "عيدان خشبية",
+      "لا تحتاج كهرباء",
+      "رائحة لطيفة للمنزل"
+    ],
+    "colors": [
+      "#D6C5A8",
+      "#ADBAA7"
+    ],
+    "barcode": "6250000000126",
+    "sku": "diffuser",
+    "specs": [
+      {
+        "label": "السعة",
+        "value": "250 مل"
+      },
+      {
+        "label": "التشغيل",
+        "value": "حتى 8 ساعات"
+      },
+      {
+        "label": "الإضاءة",
+        "value": "7 ألوان"
+      }
+    ],
+    "model3d": {
+      "shape": "bottle",
+      "color": "#D6C5A8",
+      "scale": 1
+    },
+    "video": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+  },
+  {
+    "id": "tomato",
+    "name": "طماطم بلدية",
+    "nameEn": "Local tomatoes",
+    "price": 0.85,
+    "category": "fresh",
+    "description": "طماطم بلدية حمراء وناضجة، مناسبة للسلطات والطبخ اليومي.",
+    "tags": [
+      "طماطم",
+      "بندوره",
+      "خضار",
+      "سلطه",
+      "طبخ"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1 كغ",
+    "emoji": "🍅",
+    "image": "",
+    "features": [
+      "من مزارع وادي الأردن",
+      "تُقطف يوميًا"
+    ],
+    "colors": [
+      "#E53935"
+    ],
+    "barcode": "6250000000133",
+    "sku": "tomato",
+    "expiryDays": 7,
+    "stock": 80,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "7 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#E53935",
+      "scale": 1
+    }
+  },
+  {
+    "id": "cucumber",
+    "name": "خيار بلدي",
+    "nameEn": "Local cucumbers",
+    "price": 0.75,
+    "category": "fresh",
+    "description": "خيار بلدي مقرمش للسلطة والمقبلات.",
+    "tags": [
+      "خيار",
+      "خضار",
+      "سلطه",
+      "فتوش"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1 كغ",
+    "emoji": "🥒",
+    "image": "",
+    "features": [
+      "مقرمش وطازج",
+      "مناسب للمخللات"
+    ],
+    "colors": [
+      "#43A047"
+    ],
+    "barcode": "6250000000140",
+    "sku": "cucumber",
+    "expiryDays": 7,
+    "stock": 70,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "7 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#43A047",
+      "scale": 1
+    }
+  },
+  {
+    "id": "onion",
+    "name": "بصل أحمر",
+    "nameEn": "Red onions",
+    "price": 0.6,
+    "category": "fresh",
+    "description": "بصل أحمر للطبخ والسلطات.",
+    "tags": [
+      "بصل",
+      "خضار",
+      "طبخ"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1 كغ",
+    "emoji": "🧅",
+    "image": "",
+    "features": [
+      "نكهة متوازنة",
+      "يحفظ طويلًا"
+    ],
+    "colors": [
+      "#8E3B6E"
+    ],
+    "barcode": "6250000000157",
+    "sku": "onion",
+    "expiryDays": 30,
+    "stock": 90,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "30 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#8E3B6E",
+      "scale": 1
+    }
+  },
+  {
+    "id": "lettuce",
+    "name": "خس طازج",
+    "nameEn": "Fresh lettuce",
+    "price": 0.5,
+    "category": "fresh",
+    "description": "خس أخضر طازج لأطباق السلطة.",
+    "tags": [
+      "خس",
+      "خضار",
+      "سلطه",
+      "فتوش"
+    ],
+    "subtitle": "حبة",
+    "brand": "لُقطة طازج",
+    "unit": "حبة",
+    "emoji": "🥬",
+    "image": "",
+    "features": [
+      "أوراق مقرمشة",
+      "مغسول ومنتقى"
+    ],
+    "colors": [
+      "#7CB342"
+    ],
+    "barcode": "6250000000164",
+    "sku": "lettuce",
+    "expiryDays": 5,
+    "stock": 50,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "حبة"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "5 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#7CB342",
+      "scale": 1
+    }
+  },
+  {
+    "id": "lemon",
+    "name": "ليمون",
+    "nameEn": "Lemons",
+    "price": 1.2,
+    "category": "fresh",
+    "description": "ليمون غني بالعصير للسلطات والمشروبات.",
+    "tags": [
+      "ليمون",
+      "حمضيات",
+      "فواكه"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1 كغ",
+    "emoji": "🍋",
+    "image": "",
+    "features": [
+      "كثير العصير",
+      "فيتامين C"
+    ],
+    "colors": [
+      "#FDD835"
+    ],
+    "barcode": "6250000000171",
+    "sku": "lemon",
+    "expiryDays": 20,
+    "stock": 60,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "20 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#FDD835",
+      "scale": 1
+    }
+  },
+  {
+    "id": "banana",
+    "name": "موز",
+    "nameEn": "Bananas",
+    "price": 1.1,
+    "category": "fresh",
+    "description": "موز ناضج وحلو لوجبة خفيفة أو العصائر.",
+    "tags": [
+      "موز",
+      "فواكه",
+      "فطور"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1 كغ",
+    "emoji": "🍌",
+    "image": "",
+    "features": [
+      "حلو المذاق",
+      "طاقة سريعة"
+    ],
+    "colors": [
+      "#FFEB3B"
+    ],
+    "barcode": "6250000000188",
+    "sku": "banana",
+    "expiryDays": 6,
+    "stock": 70,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "6 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#FFEB3B",
+      "scale": 1
+    }
+  },
+  {
+    "id": "apple",
+    "name": "تفاح أحمر",
+    "nameEn": "Red apples",
+    "price": 1.5,
+    "category": "fresh",
+    "description": "تفاح أحمر مقرمش وحلو.",
+    "tags": [
+      "تفاح",
+      "فواكه"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1 كغ",
+    "emoji": "🍎",
+    "image": "",
+    "features": [
+      "مقرمش",
+      "مناسب للأطفال"
+    ],
+    "colors": [
+      "#C62828"
+    ],
+    "barcode": "6250000000195",
+    "sku": "apple",
+    "expiryDays": 21,
+    "stock": 60,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "21 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#C62828",
+      "scale": 1
+    }
+  },
+  {
+    "id": "strawberry",
+    "name": "فراولة",
+    "nameEn": "Strawberries",
+    "price": 1.9,
+    "category": "fresh",
+    "description": "فراولة حمراء طازجة للحلويات والعصائر.",
+    "tags": [
+      "فراوله",
+      "فواكه",
+      "حلويات"
+    ],
+    "subtitle": "500 غ",
+    "brand": "لُقطة طازج",
+    "unit": "500 غ",
+    "emoji": "🍓",
+    "image": "",
+    "features": [
+      "موسمية",
+      "منتقاة يدويًا"
+    ],
+    "colors": [
+      "#E91E63"
+    ],
+    "barcode": "6250000000201",
+    "sku": "strawberry",
+    "expiryDays": 4,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "500 غ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "4 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#E91E63",
+      "scale": 1
+    }
+  },
+  {
+    "id": "chicken",
+    "name": "دجاج كامل طازج",
+    "nameEn": "Fresh whole chicken",
+    "price": 3.6,
+    "category": "meat",
+    "description": "دجاج كامل طازج مبرد، مثالي للكبسة والمقلوبة.",
+    "tags": [
+      "دجاج",
+      "لحوم",
+      "دواجن",
+      "كبسه",
+      "مقلوبه"
+    ],
+    "subtitle": "1.2 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1.2 كغ",
+    "emoji": "🍗",
+    "image": "",
+    "features": [
+      "مبرد غير مجمد",
+      "مذبوح حلال"
+    ],
+    "colors": [
+      "#F4C7A1"
+    ],
+    "barcode": "6250000000218",
+    "sku": "chicken",
+    "expiryDays": 3,
+    "stock": 40,
+    "carbonKg": 3.5,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1.2 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "3 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#F4C7A1",
+      "scale": 1
+    }
+  },
+  {
+    "id": "milk",
+    "name": "حليب طازج كامل الدسم",
+    "nameEn": "Fresh full-cream milk",
+    "price": 1.15,
+    "category": "dairy",
+    "description": "حليب بقري طازج مبستر.",
+    "tags": [
+      "حليب",
+      "البان",
+      "فطور"
+    ],
+    "subtitle": "1 لتر",
+    "brand": "لُقطة طازج",
+    "unit": "1 لتر",
+    "emoji": "🥛",
+    "image": "",
+    "features": [
+      "مبستر",
+      "غني بالكالسيوم"
+    ],
+    "colors": [
+      "#F5F5F0"
+    ],
+    "barcode": "6250000000225",
+    "sku": "milk",
+    "expiryDays": 7,
+    "stock": 80,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 لتر"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "7 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "bottle",
+      "color": "#F5F5F0",
+      "scale": 1
+    }
+  },
+  {
+    "id": "labneh",
+    "name": "لبنة بلدية",
+    "nameEn": "Local labneh",
+    "price": 1.6,
+    "category": "dairy",
+    "description": "لبنة كريمية للفطور والسندويشات.",
+    "tags": [
+      "لبنه",
+      "البان",
+      "فطور"
+    ],
+    "subtitle": "500 غ",
+    "brand": "لُقطة طازج",
+    "unit": "500 غ",
+    "emoji": "🫙",
+    "image": "",
+    "features": [
+      "قوام كريمي",
+      "طعم بلدي"
+    ],
+    "colors": [
+      "#F3EBDD"
+    ],
+    "barcode": "6250000000232",
+    "sku": "labneh",
+    "expiryDays": 14,
+    "stock": 50,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "500 غ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "14 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#F3EBDD",
+      "scale": 1
+    }
+  },
+  {
+    "id": "cheese",
+    "name": "جبنة بيضاء",
+    "nameEn": "White cheese",
+    "price": 2.4,
+    "category": "dairy",
+    "description": "جبنة بيضاء طرية قليلة الملح.",
+    "tags": [
+      "جبنه",
+      "جبن",
+      "البان",
+      "فطور"
+    ],
+    "subtitle": "500 غ",
+    "brand": "لُقطة طازج",
+    "unit": "500 غ",
+    "emoji": "🧀",
+    "image": "",
+    "features": [
+      "قليلة الملح",
+      "للفطور والمعجنات"
+    ],
+    "colors": [
+      "#FFF3C4"
+    ],
+    "barcode": "6250000000249",
+    "sku": "cheese",
+    "expiryDays": 20,
+    "stock": 50,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "500 غ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "20 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#FFF3C4",
+      "scale": 1
+    }
+  },
+  {
+    "id": "laban",
+    "name": "لبن رائب",
+    "nameEn": "Plain yogurt",
+    "price": 1.0,
+    "category": "dairy",
+    "description": "لبن رائب طبيعي يرافق المقلوبة والوجبات.",
+    "tags": [
+      "لبن",
+      "زبادي",
+      "البان",
+      "مقلوبه"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "1 كغ",
+    "emoji": "🥣",
+    "image": "",
+    "features": [
+      "طبيعي 100%",
+      "بروبيوتيك"
+    ],
+    "colors": [
+      "#F0F0EA"
+    ],
+    "barcode": "6250000000256",
+    "sku": "laban",
+    "expiryDays": 10,
+    "stock": 50,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "10 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#F0F0EA",
+      "scale": 1
+    }
+  },
+  {
+    "id": "eggs",
+    "name": "بيض بلدي",
+    "nameEn": "Free-range eggs",
+    "price": 3.9,
+    "category": "dairy",
+    "description": "بيض طازج من مزارع محلية.",
+    "tags": [
+      "بيض",
+      "فطور",
+      "شكشوكه",
+      "بان كيك"
+    ],
+    "subtitle": "30 حبة",
+    "brand": "لُقطة طازج",
+    "unit": "30 حبة",
+    "emoji": "🥚",
+    "image": "",
+    "features": [
+      "من دجاج حر",
+      "مختوم بالتاريخ"
+    ],
+    "colors": [
+      "#F2D7B6"
+    ],
+    "barcode": "6250000000263",
+    "sku": "eggs",
+    "expiryDays": 21,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "30 حبة"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "21 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "sphere",
+      "color": "#F2D7B6",
+      "scale": 1
+    }
+  },
+  {
+    "id": "bread",
+    "name": "خبز عربي",
+    "nameEn": "Arabic bread",
+    "price": 0.35,
+    "category": "bakery",
+    "description": "خبز عربي طازج يُخبز كل صباح.",
+    "tags": [
+      "خبز",
+      "فطور",
+      "فتوش",
+      "مخبوزات"
+    ],
+    "subtitle": "ربطة",
+    "brand": "لُقطة طازج",
+    "unit": "ربطة",
+    "emoji": "🫓",
+    "image": "",
+    "features": [
+      "يُخبز يوميًا",
+      "طري"
+    ],
+    "colors": [
+      "#D9A066"
+    ],
+    "barcode": "6250000000270",
+    "sku": "bread",
+    "expiryDays": 3,
+    "stock": 100,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "ربطة"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "3 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#D9A066",
+      "scale": 1
+    }
+  },
+  {
+    "id": "croissant",
+    "name": "كرواسون زبدة",
+    "nameEn": "Butter croissants",
+    "price": 1.8,
+    "category": "bakery",
+    "description": "كرواسون هش بالزبدة.",
+    "tags": [
+      "كرواسون",
+      "مخبوزات",
+      "فطور"
+    ],
+    "subtitle": "4 حبات",
+    "brand": "لُقطة طازج",
+    "unit": "4 حبات",
+    "emoji": "🥐",
+    "image": "",
+    "features": [
+      "زبدة طبيعية",
+      "هش وخفيف"
+    ],
+    "colors": [
+      "#E0A458"
+    ],
+    "barcode": "6250000000287",
+    "sku": "croissant",
+    "expiryDays": 3,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "4 حبات"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "3 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#E0A458",
+      "scale": 1
+    }
+  },
+  {
+    "id": "flour",
+    "name": "طحين متعدد الاستعمالات",
+    "nameEn": "All-purpose flour",
+    "price": 1.4,
+    "category": "bakery",
+    "description": "طحين أبيض للمعجنات والحلويات.",
+    "tags": [
+      "طحين",
+      "خبز",
+      "بان كيك",
+      "حلويات"
+    ],
+    "subtitle": "2 كغ",
+    "brand": "لُقطة طازج",
+    "unit": "2 كغ",
+    "emoji": "🌾",
+    "image": "",
+    "features": [
+      "ناعم",
+      "مدعّم بالحديد"
+    ],
+    "colors": [
+      "#F1E3C6"
+    ],
+    "barcode": "6250000000294",
+    "sku": "flour",
+    "expiryDays": 180,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "2 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "180 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#F1E3C6",
+      "scale": 1
+    }
+  },
+  {
+    "id": "orange-juice",
+    "name": "عصير برتقال طبيعي",
+    "nameEn": "Fresh orange juice",
+    "price": 1.75,
+    "category": "drinks",
+    "description": "عصير برتقال طبيعي دون سكر مضاف.",
+    "tags": [
+      "عصير",
+      "برتقال",
+      "مشروبات",
+      "فطور"
+    ],
+    "subtitle": "1 لتر",
+    "brand": "لُقطة",
+    "unit": "1 لتر",
+    "emoji": "🧃",
+    "image": "",
+    "features": [
+      "دون سكر مضاف",
+      "معصور طازجًا"
+    ],
+    "colors": [
+      "#FB8C00"
+    ],
+    "barcode": "6250000000300",
+    "sku": "orange-juice",
+    "expiryDays": 7,
+    "stock": 50,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 لتر"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "7 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "bottle",
+      "color": "#FB8C00",
+      "scale": 1
+    }
+  },
+  {
+    "id": "water",
+    "name": "مياه معدنية",
+    "nameEn": "Mineral water",
+    "price": 1.5,
+    "category": "drinks",
+    "description": "مياه معدنية طبيعية للعائلة.",
+    "tags": [
+      "مياه",
+      "ماء",
+      "مشروبات"
+    ],
+    "subtitle": "6 × 1.5 لتر",
+    "brand": "لُقطة",
+    "unit": "6 × 1.5 لتر",
+    "emoji": "💧",
+    "image": "",
+    "features": [
+      "معدنية طبيعية",
+      "عبوة اقتصادية"
+    ],
+    "colors": [
+      "#4FC3F7"
+    ],
+    "barcode": "6250000000317",
+    "sku": "water",
+    "expiryDays": 365,
+    "stock": 80,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "6 × 1.5 لتر"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "365 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "bottle",
+      "color": "#4FC3F7",
+      "scale": 1
+    }
+  },
+  {
+    "id": "arabic-coffee",
+    "name": "قهوة عربية بالهيل",
+    "nameEn": "Arabic coffee with cardamom",
+    "price": 3.25,
+    "category": "drinks",
+    "description": "قهوة عربية محمصة بالهيل.",
+    "tags": [
+      "قهوه",
+      "هيل",
+      "مشروبات"
+    ],
+    "subtitle": "250 غ",
+    "brand": "لُقطة",
+    "unit": "250 غ",
+    "emoji": "☕",
+    "image": "",
+    "features": [
+      "تحميص متوسط",
+      "هيل فاخر"
+    ],
+    "colors": [
+      "#6D4C41"
+    ],
+    "barcode": "6250000000324",
+    "sku": "arabic-coffee",
+    "expiryDays": 180,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "250 غ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "180 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#6D4C41",
+      "scale": 1
+    }
+  },
+  {
+    "id": "rice",
+    "name": "أرز بسمتي",
+    "nameEn": "Basmati rice",
+    "price": 6.5,
+    "category": "pantry",
+    "description": "أرز بسمتي طويل الحبة للكبسة والمقلوبة.",
+    "tags": [
+      "ارز",
+      "رز",
+      "كبسه",
+      "مقلوبه",
+      "منسف"
+    ],
+    "subtitle": "5 كغ",
+    "brand": "لُقطة",
+    "unit": "5 كغ",
+    "emoji": "🍚",
+    "image": "",
+    "features": [
+      "حبة طويلة",
+      "لا يلتصق"
+    ],
+    "colors": [
+      "#EDE7DA"
+    ],
+    "barcode": "6250000000331",
+    "sku": "rice",
+    "expiryDays": 365,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "5 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "365 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#EDE7DA",
+      "scale": 1
+    }
+  },
+  {
+    "id": "olive-oil",
+    "name": "زيت زيتون بكر",
+    "nameEn": "Extra virgin olive oil",
+    "price": 6.9,
+    "category": "pantry",
+    "description": "زيت زيتون بكر ممتاز من عصرة أولى.",
+    "tags": [
+      "زيت",
+      "زيتون",
+      "طبخ",
+      "سلطه"
+    ],
+    "subtitle": "1 لتر",
+    "brand": "لُقطة",
+    "unit": "1 لتر",
+    "emoji": "🫒",
+    "image": "",
+    "features": [
+      "عصرة أولى",
+      "زيتون أردني"
+    ],
+    "colors": [
+      "#6B8E23"
+    ],
+    "barcode": "6250000000348",
+    "sku": "olive-oil",
+    "expiryDays": 540,
+    "stock": 30,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 لتر"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "540 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "bottle",
+      "color": "#6B8E23",
+      "scale": 1
+    }
+  },
+  {
+    "id": "pasta",
+    "name": "معكرونة",
+    "nameEn": "Pasta",
+    "price": 0.65,
+    "category": "pantry",
+    "description": "معكرونة من القمح القاسي.",
+    "tags": [
+      "معكرونه",
+      "مكرونه",
+      "باستا"
+    ],
+    "subtitle": "500 غ",
+    "brand": "لُقطة",
+    "unit": "500 غ",
+    "emoji": "🍝",
+    "image": "",
+    "features": [
+      "قمح قاسٍ",
+      "تُطهى في 9 دقائق"
+    ],
+    "colors": [
+      "#F2C46D"
+    ],
+    "barcode": "6250000000355",
+    "sku": "pasta",
+    "expiryDays": 365,
+    "stock": 60,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "500 غ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "365 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#F2C46D",
+      "scale": 1
+    }
+  },
+  {
+    "id": "tomato-sauce",
+    "name": "صلصة طماطم",
+    "nameEn": "Tomato sauce",
+    "price": 0.55,
+    "category": "pantry",
+    "description": "صلصة طماطم مركّزة للطبخ.",
+    "tags": [
+      "صلصه",
+      "طماطم",
+      "معكرونه",
+      "طبخ"
+    ],
+    "subtitle": "400 غ",
+    "brand": "لُقطة",
+    "unit": "400 غ",
+    "emoji": "🥫",
+    "image": "",
+    "features": [
+      "طماطم ناضجة",
+      "دون مواد حافظة"
+    ],
+    "colors": [
+      "#D84315"
+    ],
+    "barcode": "6250000000362",
+    "sku": "tomato-sauce",
+    "expiryDays": 365,
+    "stock": 60,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "400 غ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "365 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#D84315",
+      "scale": 1
+    }
+  },
+  {
+    "id": "sugar",
+    "name": "سكر أبيض",
+    "nameEn": "White sugar",
+    "price": 1.3,
+    "category": "pantry",
+    "description": "سكر أبيض ناعم.",
+    "tags": [
+      "سكر",
+      "حلويات",
+      "بان كيك"
+    ],
+    "subtitle": "2 كغ",
+    "brand": "لُقطة",
+    "unit": "2 كغ",
+    "emoji": "🍬",
+    "image": "",
+    "features": [
+      "ناعم",
+      "للحلويات والمشروبات"
+    ],
+    "colors": [
+      "#F7F3EA"
+    ],
+    "barcode": "6250000000379",
+    "sku": "sugar",
+    "expiryDays": 720,
+    "stock": 50,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "2 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "720 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#F7F3EA",
+      "scale": 1
+    }
+  },
+  {
+    "id": "chickpeas",
+    "name": "حمص حب",
+    "nameEn": "Dried chickpeas",
+    "price": 1.4,
+    "category": "pantry",
+    "description": "حمص حب لتحضير الحمص والفلافل.",
+    "tags": [
+      "حمص",
+      "بقوليات"
+    ],
+    "subtitle": "1 كغ",
+    "brand": "لُقطة",
+    "unit": "1 كغ",
+    "emoji": "🫘",
+    "image": "",
+    "features": [
+      "حبة كبيرة",
+      "ينضج سريعًا"
+    ],
+    "colors": [
+      "#D8B26E"
+    ],
+    "barcode": "6250000000386",
+    "sku": "chickpeas",
+    "expiryDays": 365,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "1 كغ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "365 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "box",
+      "color": "#D8B26E",
+      "scale": 1
+    }
+  },
+  {
+    "id": "tahini",
+    "name": "طحينة",
+    "nameEn": "Tahini",
+    "price": 2.2,
+    "category": "pantry",
+    "description": "طحينة سمسم ناعمة.",
+    "tags": [
+      "طحينه",
+      "حمص",
+      "سلطه"
+    ],
+    "subtitle": "450 غ",
+    "brand": "لُقطة",
+    "unit": "450 غ",
+    "emoji": "🥜",
+    "image": "",
+    "features": [
+      "سمسم محمص",
+      "قوام ناعم"
+    ],
+    "colors": [
+      "#C8A27A"
+    ],
+    "barcode": "6250000000393",
+    "sku": "tahini",
+    "expiryDays": 270,
+    "stock": 40,
+    "specs": [
+      {
+        "label": "الوزن/الحجم",
+        "value": "450 غ"
+      },
+      {
+        "label": "الصلاحية",
+        "value": "270 يوم تقريبًا"
+      }
+    ],
+    "model3d": {
+      "shape": "cylinder",
+      "color": "#C8A27A",
+      "scale": 1
+    }
+  }
+]

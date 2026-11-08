@@ -1,0 +1,13 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {generateKeyPairSync,createSign} from 'node:crypto';
+import {verifyOwner,OWNER_EMAIL,FIREBASE_PROJECT,generateToken,sha256,publicIpv4,limitedJson} from './core.mjs';
+const {privateKey,publicKey}=generateKeyPairSync('rsa',{modulusLength:2048});
+const jwk={...publicKey.export({format:'jwk'}),kid:'synthetic'};
+const now=Date.now(), seconds=Math.floor(now/1000);
+function jwt(changes={},header={}){const h=Buffer.from(JSON.stringify({alg:'RS256',kid:'synthetic',...header})).toString('base64url');const p=Buffer.from(JSON.stringify({aud:FIREBASE_PROJECT,iss:'https://securetoken.google.com/'+FIREBASE_PROJECT,sub:'synthetic-owner',email:OWNER_EMAIL,email_verified:true,iat:seconds,auth_time:seconds,exp:seconds+3600,...changes})).toString('base64url');const data=h+'.'+p;return data+'.'+createSign('RSA-SHA256').update(data).sign(privateKey).toString('base64url');}
+test('owner authentication verifies the RS256 signature and fixed Firebase identity',async()=>assert.equal(await verifyOwner(jwt(),async()=>({keys:[jwk]}),now),'synthetic-owner'));
+test('forged identities, unsigned JWTs, wrong projects and expired tokens are rejected',async()=>{for(const change of [{email:'other@example.test'},{email_verified:false},{aud:'wrong'},{iss:'https://evil.test'},{exp:seconds-1},{iat:seconds+3600},{sub:''}])await assert.rejects(verifyOwner(jwt(change),async()=>({keys:[jwk]}),now),{status:401});await assert.rejects(verifyOwner(jwt({}, {alg:'none'}),async()=>({keys:[jwk]}),now),{status:401});const token=jwt();await assert.rejects(verifyOwner(token.slice(0,-20)+'AAAAAAAAAAAAAAAAAAAA',async()=>({keys:[jwk]}),now),{status:401});});
+test('opaque write tokens have cryptographic entropy and independent digests',async()=>{const a=generateToken(),b=generateToken();assert.match(a,/^aman_[A-Za-z0-9_-]{43}$/);assert.notEqual(a,b);assert.match(await sha256(a),/^[a-f0-9]{64}$/);assert.notEqual(await sha256(a),await sha256(b));});
+test('manual GeoIP rejects private, documentation, reserved and malformed addresses',()=>{for(const value of ['127.0.0.1','10.0.0.1','192.0.2.1','198.51.100.1','203.0.113.1','100.64.0.1','192.168.1.1','224.1.1.1','0.0.0.0','8.8.8.8/path','::1'])assert.equal(publicIpv4(value),false);assert.equal(publicIpv4('8.8.8.8'),true);});
+test('body reader bounds streaming content and rejects invalid JSON',async()=>{await assert.rejects(limitedJson(new Request('https://test.invalid',{method:'POST',headers:{'Content-Type':'application/json'},body:'x'.repeat(30)}),20),{status:413});await assert.rejects(limitedJson(new Request('https://test.invalid',{method:'POST',headers:{'Content-Type':'application/json'},body:'{' })),{status:400});});

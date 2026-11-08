@@ -1,0 +1,39 @@
+name: AAS Owner Agent Roster Import QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'dashboard/aas-roster.html'
+      - 'dashboard/aas-roster-sync.js'
+      - 'dashboard/aas/official-agent-roster.mjs'
+      - 'dashboard/aas/host-connection.js'
+      - 'dashboard/tests/aas-roster.test.cjs'
+      - 'dashboard/tests/aas-owner-roster-import.test.cjs'
+      - '.github/workflows/aas-owner-roster-qa.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'dashboard/aas-roster.html'
+      - 'dashboard/aas-roster-sync.js'
+      - 'dashboard/aas/official-agent-roster.mjs'
+      - 'dashboard/aas/host-connection.js'
+      - 'dashboard/tests/aas-roster.test.cjs'
+      - 'dashboard/tests/aas-owner-roster-import.test.cjs'
+      - '.github/workflows/aas-owner-roster-qa.yml'
+permissions:
+  contents: read
+jobs:
+  safe-roster-import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Check import script and safe roster source syntax
+        run: |
+          node --check dashboard/aas-roster-sync.js
+          node --check dashboard/aas/official-agent-roster.mjs
+      - name: Run isolated idempotency, conflict, no-data-loss and UI tests
+        run: node --test dashboard/tests/aas-roster.test.cjs dashboard/tests/aas-owner-roster-import.test.cjs

@@ -1,0 +1,28 @@
+{
+  "name": "amer-ai-command-center",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AAS-CC command center and AAS-AW agent workspaces",
+  "scripts": {
+    "dev": "node --use-env-proxy scripts/dev-server.mjs",
+    "build": "node scripts/build-worker.mjs",
+    "package:site": "node scripts/package-site.mjs",
+    "db:generate": "drizzle-kit generate",
+    "pretest": "npm run build",
+    "test": "node --test scripts/*.test.mjs integrations/runner/*.test.mjs integrations/database-bridge/*.test.mjs",
+    "check": "node --check dist/app.js && node --check dist/control-center.js && node --check dist/theme.js && node --check dist/api-store.js && node --check dist/legacy-migration.js && node --check server/worker.mjs && node --check server/state.mjs && node --check server/github.mjs && node --check server/github-cache.mjs && node --check server/source-analysis.mjs && node --check server/assistant.mjs && node --check server/assistant-state.mjs && node --check server/control.mjs && node --check server/database.mjs && node --check server/provider-settings.mjs && node --check server/coordination.mjs"
+  },
+  "engines": {
+    "node": ">=24.5.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.0",
+    "drizzle-orm": "^0.44.0",
+    "esbuild": "^0.25.0",
+    "miniflare": "^4"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3"
+  }
+}
