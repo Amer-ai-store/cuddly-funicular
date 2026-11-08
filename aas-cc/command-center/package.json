@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "drizzle-kit": "^0.31.0",
-    "drizzle-orm": "^0.44.0",
-    "esbuild": "^0.25.0",
+    "drizzle-orm": "^0.45.2",
+    "esbuild": "^0.28.1",
     "miniflare": "^4"
   },
   "dependencies": {
