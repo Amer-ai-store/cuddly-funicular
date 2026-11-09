@@ -22,7 +22,7 @@ jobs:
             echo "::error title=Jawafa Drive OIDC configuration missing::Set the JAWAFA_WIF_PROVIDER and JAWAFA_WIF_SERVICE_ACCOUNT repository Actions variables. See docs/jawafa-drive-setup.md. Export has NOT been verified."
             {
               echo "### Jawafa Drive inventory — BLOCKED (not verified)"
-              echo "Configure the repository Actions variables `JAWAFA_WIF_PROVIDER` and `JAWAFA_WIF_SERVICE_ACCOUNT` using a Google Cloud Workload Identity Provider and a read-only service account."
+              echo "Configure the repository Actions variables JAWAFA_WIF_PROVIDER and JAWAFA_WIF_SERVICE_ACCOUNT using a Google Cloud Workload Identity Provider and a read-only service account."
               echo "Setup: docs/jawafa-drive-setup.md"
               echo "No Drive inventory was downloaded or verified in this run."
             } >> "$GITHUB_STEP_SUMMARY"
