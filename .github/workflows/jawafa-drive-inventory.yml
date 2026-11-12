@@ -1,8 +1,8 @@
-name: Jawafa Drive inventory verification
+name: Jawafa Drive inventory verification (manual WIF fallback)
+# Scheduled verification runs privately on JAWAFFASVR using rclone (see docs/jawafa-drive-setup.md).
+# The WIF variant remains available only by manual dispatch after its identity variables are configured.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '25 3 * * *'
 permissions:
   contents: read
   id-token: write
