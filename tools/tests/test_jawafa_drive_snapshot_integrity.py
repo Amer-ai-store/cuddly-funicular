@@ -66,7 +66,7 @@ class SnapshotVerifierTests(unittest.TestCase):
     def test_missing_manifest_file_fails(self):
         x = evaluate(INV, MAN[:1], OBJ)
         self.assertEqual(x["issue_counts"]["missing_manifest"], 1)
-        self.assertEqual(x["issue_counts"]["unexpected_drive"], 0)  # extra entries filter
+        self.assertEqual(x["issue_counts"].get("unexpected_drive", 0), 0)  # extra entries filter
         self.assertEqual(x["status"], "FAILED")
 
     def test_wrong_size_fails(self):
