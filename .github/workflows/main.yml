@@ -1,2 +1,0 @@
-- name: Buildalon unity-uwp-builder
-  uses: buildalon/unity-uwp-builder@v1.0.4
